@@ -1,27 +1,30 @@
 package com.soa2019.group4.refix.company.model;
 
-
-import java.util.ArrayList;
-
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+@Entity
 public class Company {
-    private String id;
+
+    private @Id @GeneratedValue
+    Long id;
     private String name;
     private String detail;
     public Company() {
 
     }
-    public Company(String id, String name, String detail) {
+    public Company(Long id, String name, String detail) {
 
         this.id = id;
         this.name = name;
         this.detail = detail;
     }
 
-    public String getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

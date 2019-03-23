@@ -18,6 +18,7 @@ public class CompanyControllerTest {
 
     @Test
     public void company(){
-        Company company = restTemplate.getForObject("/company/test", Company.class);
+        Company company = restTemplate.getForObject("/companies/test", Company.class);
+        assertEquals();
     }
 }
