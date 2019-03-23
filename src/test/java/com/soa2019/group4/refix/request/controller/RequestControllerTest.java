@@ -20,6 +20,6 @@ public class RequestControllerTest {
     @Test
     public void request() {
         Request request = restTemplate.getForObject("/request/test", Request.class);
-        assertEquals("hello world ! : test", request.getmessage());
+        assertEquals("hello world ! : test", request.getMessage());
     }
 }
