@@ -1,4 +1,4 @@
-package com.soa2019.group4.refix.request.Service;
+package com.soa2019.group4.refix.bill;
 
 import com.soa2019.group4.refix.request.model.Request;
 import com.soa2019.group4.refix.request.repository.RequestRepository;
@@ -6,13 +6,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.Optional;
 
-
-public class RequestService {
-
+public class BillService {
     private RequestRepository requestRepository;
 
     @Autowired
-    public RequestService(RequestRepository requestRepository)
+    public BillService(RequestRepository requestRepository)
     {
         this.requestRepository = requestRepository;
     }
