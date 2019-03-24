@@ -9,12 +9,17 @@ public class Bill {
     {
 
     }
-    public Bill(Long cost, long invoice) {
 
+    public Bill(String s)
+    {
+
+    }
+    public Bill(Long cost, Long invoice) {
 
         this.cost = cost;
         this.invoice = invoice;
     }
+
 
     public long getInvoice() {
         return invoice;
