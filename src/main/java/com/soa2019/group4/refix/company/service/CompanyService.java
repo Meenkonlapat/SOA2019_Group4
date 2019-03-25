@@ -1,4 +1,4 @@
-package com.soa2019.group4.refix.company;
+package com.soa2019.group4.refix.company.service;
 
 import com.soa2019.group4.refix.company.model.Company;
 import com.soa2019.group4.refix.company.repository.CompanyRepository;
@@ -56,5 +56,10 @@ public class CompanyService {
         } catch (EmptyStackException e){
             return false;
         }
+    }
+
+    public String formatData(String name) {
+        Optional<Company> someCompany = companyRepo.findByCompanyName(name);
+        return "Hello" + someCompany.get().getName();
     }
 }

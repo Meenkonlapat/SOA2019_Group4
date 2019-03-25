@@ -1,7 +1,7 @@
 package com.soa2019.group4.refix.company.controller;
 
 import com.soa2019.group4.refix.company.model.Company;
-import com.soa2019.group4.refix.company.CompanyService;
+import com.soa2019.group4.refix.company.service.CompanyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

@@ -6,5 +6,5 @@ import java.util.Optional;
 import org.springframework.data.repository.CrudRepository;
 public interface CompanyRepository extends CrudRepository<Company, Long> {
 
-    Optional<Company> findByCompanyId(Long id);
+    Optional<Company> findByCompanyName(String name);
 }
