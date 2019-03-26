@@ -18,13 +18,12 @@ public class RequestServiceTest {
     @Mock
     RequestRepository requestRepository;
 
-//    @Test
+    @Test
     public void formatData() {
         Request stubRequest = new Request("i'm abc", "ABC");
         when(requestRepository.findByCustomerId("ABC")).thenReturn(Optional.of(stubRequest));
-
-        // cannot find symbol : class RequestService here. don't know why
-//        RequestService service = new RequestService(requestRepository);
-//        assertEquals("Hello : ABC", service.formatData("ABC"));
+        
+        RequestService service = new RequestService(requestRepository);
+        assertEquals("Hello : ABC", service.formatData("ABC"));
     }
 }

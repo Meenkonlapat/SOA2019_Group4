@@ -12,5 +12,6 @@ public class RequestController {
     public Request request(@PathVariable String message)
     {
         return new Request("hello world ! : " + message);
+
     }
 }
