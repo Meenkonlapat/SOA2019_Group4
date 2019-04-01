@@ -1,0 +1,30 @@
+{
+  "name": "requestService",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "jest --watchAll"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Meenkonlapat/SOA2019_Group4.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Meenkonlapat/SOA2019_Group4/issues"
+  },
+  "homepage": "https://github.com/Meenkonlapat/SOA2019_Group4#readme",
+  "dependencies": {
+    "express": "^4.16.4",
+    "express-async-errors": "^3.1.1",
+    "joi": "^14.3.1",
+    "mongoose": "^5.4.20",
+    "winston": "^3.2.1"
+  },
+  "devDependencies": {
+    "jest": "^24.5.0"
+  }
+}
