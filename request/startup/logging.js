@@ -3,15 +3,15 @@ const winston = require("winston");
 
 module.exports = function()
 {
-    winston.exceptions.handle(
+    winston.add(
         new winston.transports.Console({
-            colorize: true,
-            exitOnError: false,
+            handleExceptions: true,
             format: winston.format.combine(
-                    winston.format.colorize(),
-                    winston.format.simple()
+                winston.format.colorize(),
+                winston.format.simple()
                 )
         }));
+    winston.exitOnError = false;
 
     process.on("unhandledRejection", (ex) => {
         console.log("uncaughtRejection occured");
