@@ -12,6 +12,8 @@ require("./startup/db.js")();
 require("./startup/routes.js")(app);
 
 const port = process.env.PORT || 3000;
-app.listen(port, ()=>{
+const server = app.listen(port, ()=>{
     console.log("connected to port " + port + " :3");
 });
+
+module.exports = server;
