@@ -1,0 +1,23 @@
+{
+  "name": "bill",
+  "version": "1.0.0",
+  "description": "",
+  "main": "bill.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.4",
+    "express-async-errors": "^3.1.1",
+    "joi": "^14.3.1",
+    "mongoose": "^5.4.20",
+    "nodemon": "^1.18.10",
+    "winston": "^3.2.1"
+  },
+  "devDependencies": {
+    "jest": "^24.5.0"
+  }
+}
