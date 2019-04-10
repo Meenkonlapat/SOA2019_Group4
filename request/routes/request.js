@@ -3,6 +3,7 @@ const Joi = require("joi");
 const mongoose = require("mongoose");
 const express = require("express");
 const router = express.Router();
+const validateObjectId = require("../middleware/validateObjectId")
 
 const Request = mongoose.model("Request", new mongoose.Schema({
     requestId: String,
@@ -35,7 +36,7 @@ router.post("/", async (req, res) => {
     res.send(request);
 })
 
-router.put("/:id", async (req, res) => {
+router.put("/:id", validateObjectId, async (req, res) => {
     const result = await Request.findOneAndUpdate(
     {
         _id: req.params.id
@@ -53,13 +54,13 @@ router.put("/:id", async (req, res) => {
     res.send(result);
 })
 
-router.delete("/:id", async (req, res) => {
+router.delete("/:id", validateObjectId, async (req, res) => {
     const result = await Request.findOneAndDelete({_id: req.params.id});
     if(!result) return res.status(404).send("request not found")
     res.send(result);
 })
 
-router.get("/:id", async (req, res) => {
+router.get("/:id", validateObjectId, async (req, res) => {
     const request = await Request.findOne({_id: req.params.id});
     if(!request) return res.status(404).send("request not found")
     res.send(request);
@@ -79,4 +80,4 @@ function validateRequest(request)
     return Joi.validate(request, schema);
 }
 
-module.exports = {router, validateRequest};
+module.exports = {router, validateRequest, Request};
