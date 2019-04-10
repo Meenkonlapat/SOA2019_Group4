@@ -49,9 +49,12 @@ router.put("/:id",async(req,res)=>{
             customerId: req.body.customerId,
             companyId: req.body.companyId,
             billDetail: req.body.billDetail,
+            price: req.body.price,
+            date: req.body.date
         }
     },
     {new : true})
+    res.send(result)
 })
 
 router.delete("/:id", async (req, res) => {
@@ -73,7 +76,7 @@ function validateBill(bill)
         requestId: Joi.string(),
         customerId: Joi.string(),
         companyId: Joi.string(),
-        date: Joi.string(),
+        date: Joi.date(),
         price: Joi.number(),
         billDetail: Joi.string()
     }
