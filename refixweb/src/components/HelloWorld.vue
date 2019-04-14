@@ -1,11 +1,6 @@
 <template>
   <div class="container" id="home">
-    <b-nav tabs class="container">
-    <b-col><b-nav-item class="item" active>Active</b-nav-item></b-col>
-    <b-col><b-nav-item class="item">Link</b-nav-item></b-col>
-    <b-col><b-nav-item class="item">Another Link</b-nav-item></b-col>
-    <b-col><b-nav-item class="item">Disabled</b-nav-item></b-col>
-  </b-nav>
+    <div>
     <b-card
         title="ABC Home Inc."
         img-src="https://picsum.photos/600/300/?image=25"
@@ -15,8 +10,11 @@
         class="mb-2">
       <b-card-text>ABC HOME</b-card-text>
     </b-card>
+    </div>
   </div>
 </template>
+
+
 <style>
 </style>
 
