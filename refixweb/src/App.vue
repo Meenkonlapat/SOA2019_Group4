@@ -23,10 +23,6 @@ export default {
 </script>
 
 <style>
-.item:hover{
-  color: black;
-  background-color: aliceblue;
-}
 img.imgLogo{
   width: 10%;
   height: 10%;
@@ -38,6 +34,5 @@ img.imgLogo{
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  margin-top: 60px;
 }
 </style>
