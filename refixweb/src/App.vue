@@ -4,20 +4,20 @@
       <navigation/>
     </div>
     <div id="contents">
-      <HelloWorld msg="Welcome to Refix. I will help you 24Hr."/>
+      <Home msg="Welcome to Refix. I will help you 24Hr."/>
     </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Home from './components/Home.vue'
 import navigation from './components/navigation.vue';
 
 export default {
   name: 'app',
   components: {
     navigation,
-    HelloWorld
+    Home
   }
 }
 </script>
