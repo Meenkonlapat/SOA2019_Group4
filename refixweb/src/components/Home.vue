@@ -5,52 +5,46 @@
         <h3 style="text-align:start">Device</h3>
       </div>
       <div class="in-card row" style="height: 325;">
-        <a href="status.html"> 
-        <b-card
-        title="ABC Home Inc."
-        img-src="https://upload.wikimedia.org/wikipedia/commons/6/69/June_odd-eyed-cat_cropped.jpg"
-        img-alt="name inc."
-        img-top
-        style="max-width: 11.5rem; height: 18.5rem;"
-        class="card-info">
-      <b-card-text>ABC HOME</b-card-text>
-    </b-card>
-          </a>
-    <b-card
-        title="ABC Home Inc."
-        img-src="https://picsum.photos/600/300/?image=25"
-        img-alt="name inc."
-        img-top
-        style="max-width: 11.5rem; height: 18.5rem;"
-        class="mb-2 card-info">
-      <b-card-text>ABC HOME</b-card-text>
-    </b-card><b-card
-        title="ABC Home Inc."
-        img-src="https://picsum.photos/600/300/?image=25"
-        img-alt="name inc."
-        img-top
-        style="max-width: 11.5rem; height: 18.5rem;"
-        class="mb-2 card-info">
-      <b-card-text>ABC HOME</b-card-text>
-    </b-card><b-card
-        title="ABC Home Inc."
-        img-src="https://picsum.photos/600/300/?image=25"
-        img-alt="name inc."
-        img-top
-        style="max-width: 11.5rem; height: 18.5rem;"
-        class="mb-2 card-info">
-      <b-card-text>ABC HOME</b-card-text>
-    </b-card><b-card
-        title="ABC Home Inc."
-        img-src="https://picsum.photos/600/300/?image=25"
-        img-alt="name inc."
-        img-top
-        style="max-width: 11.5rem; height: 18.5rem;"
-        class="mb-2 card-info final-card">
-      <b-card-text>ABC HOME</b-card-text>
-    </b-card>
+        <div class="card card-info" style="width: 13rem; height: 19.5rem">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/6/69/June_odd-eyed-cat_cropped.jpg" class="card-img-top" alt="Image company">
+          <div class="card-body">
+            <h5 class="card-title">ABC Home Inc.</h5>
+            <p class="card-text"> Bangkok</p>
+          </div>
+        </div>
+        <!--  -->
+        <div class="card card-info" style="width: 13rem; height: 19.5rem">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/6/69/June_odd-eyed-cat_cropped.jpg" class="card-img-top" alt="Image company">
+          <div class="card-body">
+            <h5 class="card-title">ABC Home Inc.</h5>
+            <p class="card-text">Location: Bangkok</p>
+          </div>
+        </div>
+        <!--  -->
+        <div class="card card-info" style="width: 13rem; height: 19.5rem">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/6/69/June_odd-eyed-cat_cropped.jpg" class="card-img-top" alt="Image company">
+          <div class="card-body">
+            <h5 class="card-title">ABC Home Inc.</h5>
+            <p class="card-text">Location: Bangkok</p>
+          </div>
+        </div>
+        <!--  -->
+        <div class="card card-info" style="width: 13rem; height: 19.5rem">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/6/69/June_odd-eyed-cat_cropped.jpg" class="card-img-top" alt="Image company">
+          <div class="card-body">
+            <h5 class="card-title">ABC Home Inc.</h5>
+            <p class="card-text">Location: Bangkok</p>
+          </div>
+        </div>
+        <!--  -->
+        <div class="card card-info final-card" style="width: 13rem; height: 19.5rem">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/6/69/June_odd-eyed-cat_cropped.jpg" class="card-img-top" alt="Image company">
+          <div class="card-body">
+            <h5 class="card-title">ABC Home Inc.</h5>
+            <p class="card-text">Location: Bangkok</p>
+          </div>
+        </div>
       </div>
-      
     </div>
 
     <div class="electronic">
@@ -58,112 +52,53 @@
         <h3 style="text-align:start">Electronic</h3>
       </div>
       <div class="in-card row" style="height: 325;">
-        <a href="#"> 
-        <b-card
-        title="ABC Home Inc."
-        img-src="https://upload.wikimedia.org/wikipedia/commons/6/69/June_odd-eyed-cat_cropped.jpg"
-        img-alt="name inc."
-        img-top
-        style="max-width: 11.5rem; height: 18.5rem;"
-        class="card-info">
-      <b-card-text>ABC HOME</b-card-text>
-    </b-card>
-          </a>
-    <b-card
-        title="ABC Home Inc."
-        img-src="https://picsum.photos/600/300/?image=25"
-        img-alt="name inc."
-        img-top
-        style="max-width: 11.5rem; height: 18.5rem;"
-        class="mb-2 card-info">
-      <b-card-text>ABC HOME</b-card-text>
-    </b-card><b-card
-        title="ABC Home Inc."
-        img-src="https://picsum.photos/600/300/?image=25"
-        img-alt="name inc."
-        img-top
-        style="max-width: 11.5rem; height: 18.5rem;"
-        class="mb-2 card-info">
-      <b-card-text>ABC HOME</b-card-text>
-    </b-card><b-card
-        title="ABC Home Inc."
-        img-src="https://picsum.photos/600/300/?image=25"
-        img-alt="name inc."
-        img-top
-        style="max-width: 11.5rem; height: 18.5rem;"
-        class="mb-2 card-info">
-      <b-card-text>ABC HOME</b-card-text>
-    </b-card><b-card
-        title="ABC Home Inc."
-        img-src="https://picsum.photos/600/300/?image=25"
-        img-alt="name inc."
-        img-top
-        style="max-width: 11.5rem; height: 18.5rem;"
-        class="mb-2 card-info final-card">
-      <b-card-text>ABC HOME</b-card-text>
-    </b-card>
-      </div>
-      
-    </div>
-
-    <div class="water">
-      <div class="header">
-        <h3 style="text-align:start">Water</h3>
-      </div>
-      <div class="in-card row" style="height: 325;">
-        <a href="#"> 
-        <b-card
-        title="ABC Home Inc."
-        img-src="https://upload.wikimedia.org/wikipedia/commons/6/69/June_odd-eyed-cat_cropped.jpg"
-        img-alt="name inc."
-        img-top
-        style="max-width: 11.5rem; height: 18.5rem;"
-        class="card-info">
-      <b-card-text>ABC HOME</b-card-text>
-    </b-card>
-          </a>
-    <b-card
-        title="ABC Home Inc."
-        img-src="https://picsum.photos/600/300/?image=25"
-        img-alt="name inc."
-        img-top
-        style="max-width: 11.5rem; height: 18.5rem;"
-        class="mb-2 card-info">
-      <b-card-text>ABC HOME</b-card-text>
-    </b-card><b-card
-        title="ABC Home Inc."
-        img-src="https://picsum.photos/600/300/?image=25"
-        img-alt="name inc."
-        img-top
-        style="max-width: 11.5rem; height: 18.5rem;"
-        class="mb-2 card-info">
-      <b-card-text>ABC HOME</b-card-text>
-    </b-card><b-card
-        title="ABC Home Inc."
-        img-src="https://picsum.photos/600/300/?image=25"
-        img-alt="name inc."
-        img-top
-        style="max-width: 11.5rem; height: 18.5rem;"
-        class="mb-2 card-info">
-      <b-card-text>ABC HOME</b-card-text>
-    </b-card><b-card
-        title="ABC Home Inc."
-        img-src="https://picsum.photos/600/300/?image=25"
-        img-alt="name inc."
-        img-top
-        style="max-width: 11.5rem; height: 18.5rem;"
-        class="mb-2 card-info final-card">
-      <b-card-text>ABC HOME</b-card-text>
-    </b-card>
+        <div class="card card-info" style="width: 13rem; height: 19.5rem">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/6/69/June_odd-eyed-cat_cropped.jpg" class="card-img-top" alt="Image company">
+          <div class="card-body">
+            <h5 class="card-title">ABC Home Inc.</h5>
+            <p class="card-text"> Bangkok</p>
+          </div>
+        </div>
+        <!--  -->
+        <div class="card card-info" style="width: 13rem; height: 19.5rem">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/6/69/June_odd-eyed-cat_cropped.jpg" class="card-img-top" alt="Image company">
+          <div class="card-body">
+            <h5 class="card-title">ABC Home Inc.</h5>
+            <p class="card-text">Location: Bangkok</p>
+          </div>
+        </div>
+        <!--  -->
+        <div class="card card-info" style="width: 13rem; height: 19.5rem">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/6/69/June_odd-eyed-cat_cropped.jpg" class="card-img-top" alt="Image company">
+          <div class="card-body">
+            <h5 class="card-title">ABC Home Inc.</h5>
+            <p class="card-text">Location: Bangkok</p>
+          </div>
+        </div>
+        <!--  -->
+        <div class="card card-info" style="width: 13rem; height: 19.5rem">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/6/69/June_odd-eyed-cat_cropped.jpg" class="card-img-top" alt="Image company">
+          <div class="card-body">
+            <h5 class="card-title">ABC Home Inc.</h5>
+            <p class="card-text">Location: Bangkok</p>
+          </div>
+        </div>
+        <!--  -->
+        <div class="card card-info final-card" style="width: 13rem; height: 19.5rem">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/6/69/June_odd-eyed-cat_cropped.jpg" class="card-img-top" alt="Image company">
+          <div class="card-body">
+            <h5 class="card-title">ABC Home Inc.</h5>
+            <p class="card-text">Location: Bangkok</p>
+          </div>
+        </div>
       </div>
     </div>
-
   </div>
 </template>
 
 <script>
 export default {
-  el: '#app',
+  el: '#home',
 }
 </script>
 
@@ -173,11 +108,15 @@ export default {
   }
   .card-info{
     font-size: 16px;
-    margin-right:7px;
+    margin-right:4px;
     margin-left: 15px;
+    margin-bottom: 20px;
     -webkit-border-radius: 6px;
     -moz-border-radius: 6px;
     border-radius: 6px;
+  }
+  .card-info:hover{
+    box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.021)
   }
   .final-card{
     -webkit-box-shadow: inset 0px 0px 4px 200px rgba(0,0,0,0.48);

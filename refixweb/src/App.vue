@@ -23,9 +23,10 @@ export default {
 </script>
 
 <style>
+
 img.imgLogo{
-  width: 10%;
-  height: 10%;
+  width: 12%;
+  height: 12%;
 }
 #navigations{
   background-image: linear-gradient(120deg, #2857D8 0%, #2C92EB 100%);
