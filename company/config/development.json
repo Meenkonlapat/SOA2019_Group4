@@ -1,0 +1,4 @@
+{
+    "name": "Company Service - development",
+    "db": "mongodb://localhost/company"
+}

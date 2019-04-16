@@ -73,4 +73,4 @@ function validateCompany(company)
     return Joi.validate(company, schema);
 }
 
-module.exports = {router, validateCompany};
+module.exports = {router, validateCompany, Company};
