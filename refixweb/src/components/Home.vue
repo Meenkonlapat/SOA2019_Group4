@@ -2,7 +2,7 @@
   <div class="container" id="home">
     <div class="device">
       <div class="header">
-        <h3 style="text-align:start">Device</h3>
+        <h3 style="text-align:start">Appliance</h3>
       </div>
       <div class="in-card row" style="height: 325;">
         <div class="card card-info" style="width: 13rem; height: 19.5rem" v-for="{name, desc, id} in company" :key="id">
@@ -55,7 +55,7 @@
           </div>
         </div>
         <!--  -->
-        <router-link to="/allCompany"><div class="card card-info final-card" style="width: 13rem; height: 19.5rem;">
+        <router-link to="/all"><div class="card card-info final-card" style="width: 13rem; height: 19.5rem;">
           <div class="top" style="position:absolute; top:0; left:0; width:100%; height:100%; background-color:black; z-index:2; opacity:0.3;"> </div>
           <div class="inside" style="position:absolute; top:0; left:0; width:100%; height:100%; z-index:1">
             <img
