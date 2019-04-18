@@ -1,17 +1,34 @@
 <template>
-  <div id="navigations">
-    <div class="imgLogo container">
-      <router-link to="/"><img src="../assets/refixLogo.png" alt="image logo" fluid class="imgLogo" style="padding-top: 7px;"></router-link>
-    </div>
+    <div id="navigations">
+        <router-link to="/">
+            <img src="../assets/refixLogo.png" alt="image logo" fluid class="imgLogo" style="padding-top: 7px;">
+        </router-link>
 
-    <nav class="nav container">
-      <router-link to="/" router-link-active tag="li" class="col"><a class="nav-link">Home</a></router-link>
-      <router-link to="/components" router-link-active tag="li" class="col"><a class="nav-link">Status</a></router-link>
-      <router-link to="/components" router-link-active tag="li" class="col"><a class="nav-link">Message</a></router-link>
-      <router-link to="/components" router-link-active tag="li" class="col"><a class="nav-link">Profile</a></router-link>
-    </nav>
-  </div>
+        <nav class="nav container">
+            <router-link to="/" router-link-active tag="li" class="col">
+                <a class="nav-link">Home</a>
+            </router-link>
+
+            <router-link to="/status" router-link-active tag="li" class="col">
+                <a class="nav-link">Status</a>
+            </router-link>
+
+            <router-link to="/message" router-link-active tag="li" class="col">
+                <a class="nav-link">Message</a>
+            </router-link>
+
+            <router-link to="/profile" router-link-active tag="li" class="col">
+                <a class="nav-link">Profile</a>
+            </router-link>
+        </nav>
+    </div>
 </template>
+
+<script>
+export default {
+    
+}
+</script>
 
 <style>
 .nav-link{
@@ -36,4 +53,12 @@ border-top-right-radius: 4px;
 border-top-left-radius: 4px;
 border-top-right-radius: 4px;
 }
+img.imgLogo{
+  width: 12%;
+  height: 12%;
+}
+#navigations{
+  background-image: linear-gradient(120deg, #2857D8 0%, #2C92EB 100%);
+}
 </style>
+

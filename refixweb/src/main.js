@@ -1,25 +1,21 @@
 import Vue from 'vue'
 import App from './App.vue'
-import BootstrapVue from 'bootstrap-vue'
 
-import 'bootstrap/dist/css/bootstrap.css'
-import 'bootstrap-vue/dist/bootstrap-vue.css'
+import VueRouter from 'vue-router'
+import { routes } from "./routes/route.js";
 
-import Router from 'vue-router'
-import { routes } from './routes/routes'
+import VueResource from 'vue-resource';
 
+Vue.use(VueRouter);
+Vue.use(VueResource);
 
-Vue.use(BootstrapVue)
-Vue.use(Router)
-
-Vue.config.productionTip = false
-
-const router = new Router({
+const router = new VueRouter({
   mode: 'history',
   routes
-})
+});
 
 new Vue({
-  render: h => h(App),
+  el: '#app',
   router,
-}).$mount('#app')
+  render: h => h(App)
+})
