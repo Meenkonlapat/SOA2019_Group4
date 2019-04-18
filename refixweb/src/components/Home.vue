@@ -16,6 +16,25 @@
             <p class="card-text">Bangkok</p>
           </div>
         </div>
+
+        <!--  -->
+        <div class="card card-info final-card" style="width: 13rem; height: 19.5rem;">
+          <div class="top" style="position:absolute; top:0; left:0; width:100%; height:100%; background-color:black; z-index:2; opacity:0.3;"></div>
+          <div style="position:absolute; top:0; left:0; width:100%; height:100%; color:white; z-index:2; font-size: 24px; display: flex; align-items: center; justify-content: center;">
+            <h3>See more +</h3>
+          </div>
+          <div class="inside" style="position:absolute; top:0; left:0; width:100%; height:100%; z-index:1">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/6/69/June_odd-eyed-cat_cropped.jpg"
+              class="card-img-top"
+              alt="Image company"
+            >
+            <div class="card-body">
+              <h5 class="card-title">ABC Home Inc.</h5>
+              <p class="card-text">Location: Bangkok</p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -24,7 +43,7 @@
         <h3 style="text-align:start">Electronic</h3>
       </div>
       <div class="in-card row" style="height: 325;">
-        <div class="card card-info" style="width: 13rem; height: 19.5rem">
+        <div class="card card-info" style="width: 13rem; height: 19.5rem" v-for="{name, desc, id} in company" :key="id">
           <img
             src="https://upload.wikimedia.org/wikipedia/commons/6/69/June_odd-eyed-cat_cropped.jpg"
             class="card-img-top"
@@ -36,53 +55,21 @@
           </div>
         </div>
         <!--  -->
-        <div class="card card-info" style="width: 13rem; height: 19.5rem">
-          <img
-            src="https://upload.wikimedia.org/wikipedia/commons/6/69/June_odd-eyed-cat_cropped.jpg"
-            class="card-img-top"
-            alt="Image company"
-          >
-          <div class="card-body">
-            <h5 class="card-title">ABC Home Inc.</h5>
-            <p class="card-text">Location: Bangkok</p>
+        <router-link to="/allCompany"><div class="card card-info final-card" style="width: 13rem; height: 19.5rem;">
+          <div class="top" style="position:absolute; top:0; left:0; width:100%; height:100%; background-color:black; z-index:2; opacity:0.3;"> </div>
+          <div class="inside" style="position:absolute; top:0; left:0; width:100%; height:100%; z-index:1">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/6/69/June_odd-eyed-cat_cropped.jpg"
+              class="card-img-top"
+              alt="Image company"
+            >
+            <div class="card-body">
+              <h5 class="card-title">ABC Home Inc.</h5>
+              <p class="card-text">Location: Bangkok</p>
+            </div>
           </div>
         </div>
-        <!--  -->
-        <div class="card card-info" style="width: 13rem; height: 19.5rem">
-          <img
-            src="https://upload.wikimedia.org/wikipedia/commons/6/69/June_odd-eyed-cat_cropped.jpg"
-            class="card-img-top"
-            alt="Image company"
-          >
-          <div class="card-body">
-            <h5 class="card-title">ABC Home Inc.</h5>
-            <p class="card-text">Location: Bangkok</p>
-          </div>
-        </div>
-        <!--  -->
-        <div class="card card-info" style="width: 13rem; height: 19.5rem">
-          <img
-            src="https://upload.wikimedia.org/wikipedia/commons/6/69/June_odd-eyed-cat_cropped.jpg"
-            class="card-img-top"
-            alt="Image company"
-          >
-          <div class="card-body">
-            <h5 class="card-title">ABC Home Inc.</h5>
-            <p class="card-text">Location: Bangkok</p>
-          </div>
-        </div>
-        <!--  -->
-        <div class="card card-info final-card" style="width: 13rem; height: 19.5rem">
-          <img
-            src="https://upload.wikimedia.org/wikipedia/commons/6/69/June_odd-eyed-cat_cropped.jpg"
-            class="card-img-top"
-            alt="Image company"
-          >
-          <div class="card-body">
-            <h5 class="card-title">ABC Home Inc.</h5>
-            <p class="card-text">Location: Bangkok</p>
-          </div>
-        </div>
+        </router-link>
       </div>
     </div>
   </div>
@@ -104,6 +91,10 @@ export default {
                 {
                     companyName : "company3",
                     description : "hello i'm company 3"
+                },
+                {
+                    companyName : "company4",
+                    description : "hello i'm company 4"
                 }
             ]
         }
@@ -113,7 +104,7 @@ export default {
 
 <style>
 #home {
-  margin-top: 60px;
+  margin-top: 20px;
 }
 .card-info {
   font-size: 16px;
@@ -124,10 +115,15 @@ export default {
   -moz-border-radius: 6px;
   border-radius: 6px;
 }
-.card-info:hover {
-  box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.021);
-}
+/* .card-info:hover {
+  box-shadow: 0 0px 0px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+} */
 .final-card {
+  -webkit-box-shadow: inset 0px 0px 4px 200px rgba(0, 0, 0, 0.48);
+  -moz-box-shadow: inset 0px 0px 4px 200px rgba(0, 0, 0, 0.48);
+  box-shadow: inset 0px 0px 4px 200px rgba(0, 0, 0, 0.48);
+}
+.card-img-top{
   -webkit-box-shadow: inset 0px 0px 4px 200px rgba(0, 0, 0, 0.48);
   -moz-box-shadow: inset 0px 0px 4px 200px rgba(0, 0, 0, 0.48);
   box-shadow: inset 0px 0px 4px 200px rgba(0, 0, 0, 0.48);
