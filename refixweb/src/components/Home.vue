@@ -5,15 +5,15 @@
         <h3 style="text-align:start">Device</h3>
       </div>
       <div class="in-card row" style="height: 325;">
-        <div class="card card-info" style="width: 13rem; height: 19.5rem" v-for="{name, desc, id} in company" :key="id">
+        <div class="card card-info" style="width: 13rem; height: 19.5rem" v-for="compa in company">
           <img
             src="https://upload.wikimedia.org/wikipedia/commons/6/69/June_odd-eyed-cat_cropped.jpg"
             class="card-img-top"
             alt="Image company"
           >
           <div class="card-body">
-            <h5 class="card-title">ABC Home Inc.</h5>
-            <p class="card-text">Bangkok</p>
+            <h5 class="card-title">{{compa.companyName}}</h5>
+            <p class="card-text">{{compa.description}}</p>
           </div>
         </div>
       </div>
@@ -104,6 +104,14 @@ export default {
                 {
                     companyName : "company3",
                     description : "hello i'm company 3"
+                },
+                {
+                    companyName : "company4",
+                    description : "hello i'm company 4"
+                },
+                {
+                    companyName : "company5",
+                    description : "hello i'm company 5"
                 }
             ]
         }
