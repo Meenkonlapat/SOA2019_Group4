@@ -38,6 +38,54 @@ export default {
                 {
                     companyName : "company4",
                     description : "hello i'm company 4"
+                },
+                {
+                    companyName : "company1",
+                    description : "hello i'm company 1"
+                },
+                {
+                    companyName : "company2",
+                    description : "hello i'm company 2"
+                },
+                {
+                    companyName : "company3",
+                    description : "hello i'm company 3"
+                },
+                {
+                    companyName : "company4",
+                    description : "hello i'm company 4"
+                },
+                {
+                    companyName : "company1",
+                    description : "hello i'm company 1"
+                },
+                {
+                    companyName : "company2",
+                    description : "hello i'm company 2"
+                },
+                {
+                    companyName : "company3",
+                    description : "hello i'm company 3"
+                },
+                {
+                    companyName : "company4",
+                    description : "hello i'm company 4"
+                },
+                {
+                    companyName : "company1",
+                    description : "hello i'm company 1"
+                },
+                {
+                    companyName : "company2",
+                    description : "hello i'm company 2"
+                },
+                {
+                    companyName : "company3",
+                    description : "hello i'm company 3"
+                },
+                {
+                    companyName : "company4",
+                    description : "hello i'm company 4"
                 }
             ]
         }
@@ -46,29 +94,34 @@ export default {
 </script>
 
 <style>
-#home {
-  margin-top: 20px;
+
+#all {
+    margin-top: 20px;
+    font-family: 'Playfair Display', serif;
 }
 .card-info {
-  font-size: 16px;
-  margin-right: 4px;
-  margin-left: 15px;
-  margin-bottom: 20px;
-  -webkit-border-radius: 6px;
-  -moz-border-radius: 6px;
-  border-radius: 6px;
+    color: black;
+    position: relative;
+    display: inline-block;
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+    margin-right: 4px;
+    margin-left: 15px;
+    margin-bottom: 20px;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+    transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+    -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+    -moz-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
-/* .card-info:hover {
-  box-shadow: 0 0px 0px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
-} */
-.final-card {
-  -webkit-box-shadow: inset 0px 0px 4px 200px rgba(0, 0, 0, 0.48);
-  -moz-box-shadow: inset 0px 0px 4px 200px rgba(0, 0, 0, 0.48);
-  box-shadow: inset 0px 0px 4px 200px rgba(0, 0, 0, 0.48);
+.card-info::after {
+    opacity: 0;
 }
-.card-img-top{
-  -webkit-box-shadow: inset 0px 0px 4px 200px rgba(0, 0, 0, 0.48);
-  -moz-box-shadow: inset 0px 0px 4px 200px rgba(0, 0, 0, 0.48);
-  box-shadow: inset 0px 0px 4px 200px rgba(0, 0, 0, 0.48);
+.card-info:hover {
+    box-shadow: 0 4px 6px 0 hsla(0, 0%, 0%, 0.2);
+}
+.card-info:hover::after {
+    opacity: 1;
 }
 </style>
