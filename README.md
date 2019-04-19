@@ -12,7 +12,7 @@ npm install
 
 <h2>Start Server</h2>
 
-npm run start
+npm start
 
 <h2>Start Test</h2>
 
