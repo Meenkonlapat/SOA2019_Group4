@@ -6,10 +6,6 @@
 
 2.MongoDB
 
-<h2>Import ตัวอย่างข้อมูลเข้า MongoDB</h2>
-
-mongoimport --db request --collection requests --file requestData.json
-
 <h2>Download Dependencies</h2>
 
 npm install

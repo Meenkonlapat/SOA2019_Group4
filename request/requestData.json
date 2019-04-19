@@ -1,4 +1,0 @@
-{"_id":{"$oid":"5ca1eed832ef1e24a08069e2"},"requestId":"000004","customerId":"000002","companyId":"000002","category":"electric","status":"accepted","description":"help me2","__v":{"$numberInt":"0"}}
-{"_id":{"$oid":"5ca1f04832ef1e24a08069e3"},"requestId":"000001","customerId":"000001","companyId":"000001","category":"electric","status":"accepted","description":"help me1","__v":{"$numberInt":"0"}}
-{"_id":{"$oid":"5ca1f05232ef1e24a08069e4"},"requestId":"000002","customerId":"000001","companyId":"000001","category":"electric","status":"requested","description":"help me2","__v":{"$numberInt":"0"}}
-{"_id":{"$oid":"5ca1f05932ef1e24a08069e5"},"requestId":"000003","customerId":"000002","companyId":"000002","category":"electric","status":"requested","description":"help me","__v":{"$numberInt":"0"}}
