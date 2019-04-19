@@ -1,0 +1,4 @@
+{
+    "name": "Bill Service - test",
+    "db" : "mongodb+srv://soadbuser:1234@soa2019group4-kpcin.gcp.mongodb.net/billtest"
+}

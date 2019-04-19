@@ -1,5 +1,5 @@
 {
-    "name": "Request Service - development",
+    "name": "Request Service - production",
     // "db": "mongodb://localhost/request"
     "db" : "mongodb+srv://soadbuser:1234@soa2019group4-kpcin.gcp.mongodb.net/request"
 }
