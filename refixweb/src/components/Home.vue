@@ -1,5 +1,9 @@
 <template>
   <div class="container" id="home">
+    <p> temporary code for testing only :3 </p>
+    company category is : {{ companyCategory }}
+    <button @click="setCompanyCategory('ant')">ant</button>
+    <button @click="setCompanyCategory('bird')">bird</button>
     <div class="device">
       <div class="header">
         <h3 style="text-align:start">Appliance</h3>
@@ -126,6 +130,18 @@ export default {
         }
       ]
     };
+  },
+  computed: {
+    companyCategory: {
+      get() {
+        return this.$store.getters["getCompanyCategory"];
+      }
+    }
+  },
+  methods: {
+    setCompanyCategory(value) {
+      this.$store.dispatch("commitCompanyCategory", value);
+    }
   },
   created() {
     this.$http

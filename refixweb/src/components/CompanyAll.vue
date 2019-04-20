@@ -1,5 +1,6 @@
 <template>
     <div class="container" id="all">
+        {{ companyCategory }}
         <div class="header">
             <h3 style="text-align:start">Appliance</h3>
         </div>
@@ -88,6 +89,14 @@ export default {
                     description : "hello i'm company 4"
                 }
             ]
+        }
+    },
+    computed : {
+        companyCategory : {
+            get()
+            {
+                return this.$store.getters['getCompanyCategory'];
+            }
         }
     }
 }
