@@ -15,7 +15,7 @@
         <div id="address">Address: 999/111 SomSak Road London England</div>
         <div id="button-group">
           <a href="#popup1" class="button">Request</a>
-          <button class="btn contact">Contact</button>
+          <a href="#popup1" class="contact">Contact</a>
           <div id="popup1" class="overlay">
             <div class="popup">
               <h3>Detail Request</h3>
@@ -88,9 +88,9 @@
 #imgCompany {
   	max-width: 300px;
   	max-height: 300px;
-    -webkit-border-radius: 2px;
-    -moz-border-radius: 2px;
-	border-radius: 2px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+	border-radius: 3px;
 }
 .port{
 	margin-left: 15px;
@@ -209,18 +209,22 @@
 	color: #fff;
 }
 .contact{
-	margin-left: 1em;
+    margin-left: 2em;
+	color: #ffffff;
 	border: 2px solid #0e79f5;
 	background-color: #0e79f5;
-	color: #ffffff;
-	padding-bottom: 1.8em;
-	outline:none;
-	height: 35px;
-	width: 100px;
+	padding-top: 7px;
+	padding-bottom: 7px;
+	padding-left: 15px;
+	padding-right: 15px;
 	text-align: center;
+	border-radius: 6px;
     -webkit-border-radius: 6px;
     -moz-border-radius: 6px;
-	border-radius: 6px;
 	letter-spacing: 0.012px;
+}
+.contact:hover{
+	color: #fff;
+    text-decoration: none;
 }
 </style>
