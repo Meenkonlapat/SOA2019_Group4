@@ -14,8 +14,8 @@
       <div class="col-8">
         <div id="address">Address: 999/111 SomSak Road London England</div>
         <div id="button-group">
-          <a href="#popup1" class="button">Request</a>
-          <button class="btn contact">Contact</button>
+          <a href="#popup1" class="btn btn-outline-primary">Request</a>
+          <a href="#popup1" class="btn btn-outline-info">Contact</a>
           <div id="popup1" class="overlay">
             <div class="popup">
               <h3>Detail Request</h3>
