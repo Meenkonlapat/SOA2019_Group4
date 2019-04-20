@@ -23,6 +23,7 @@
   "dependencies": {
     "compression": "^1.7.4",
     "config": "^3.0.1",
+    "cors": "^2.8.5",
     "eureka-js-client": "^4.4.2",
     "express": "^4.16.4",
     "express-async-errors": "^3.1.1",

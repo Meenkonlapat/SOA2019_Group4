@@ -3,9 +3,11 @@ const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
 const winston = require("winston");
+const cors = require("cors");
 
 app.use(urlencodeParser = bodyParser.urlencoded ({extended: false}));
 app.use(bodyParser.json());
+app.use(cors());
 
 require("./startup/logging.js")();
 require("./startup/db.js")();

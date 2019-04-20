@@ -102,6 +102,16 @@ export default {
                 }
             ]
         }
+    },
+    created(){
+      console.log("create called");
+      this.$http.get("https://request-dot-soa2019.appspot.com/api/request")
+        .then(response => {
+          return response.json();
+        }).then(data => {
+          // company = data;
+          console.log(data);
+        });
     }
 };
 </script>
