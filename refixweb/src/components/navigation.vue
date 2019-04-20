@@ -31,12 +31,16 @@ export default {
 </script>
 
 <style>
+#navigations{
+  font-family: 'Playfair Display', serif;
+}
 .nav-link{
-  color: black;
+  color: #fff;
   text-align: center;
 }
 .nav-link:hover{
-  background-color: aliceblue;
+  background-color: #fff;
+  color: #2C92EB;
   -webkit-border-top-left-radius: 4px;
 -webkit-border-top-right-radius: 4px;
 -moz-border-radius-topleft: 4px;
