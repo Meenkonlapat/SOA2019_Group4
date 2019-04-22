@@ -16,7 +16,7 @@
         <div id="address">{{company.companyDescription}}</div>
         <div id="button-group">
           <a href="#popup1" class="button">Request</a>
-          <a href="#popup1" class="contact">Contact</a>
+          <router-link to="/message"><a id="contact">Contact</a></router-link>
           <div id="popup1" class="overlay">
             <div class="popup">
               <h3>Detail Request</h3>
@@ -223,23 +223,22 @@ export default {
 	border-color: #fff;
 	color: #fff;
 }
-.contact{
+#contact{
     margin-left: 2em;
-	color: #ffffff;
-	border: 2px solid #0e79f5;
-	background-color: #0e79f5;
-	padding-top: 7px;
-	padding-bottom: 7px;
-	padding-left: 15px;
-	padding-right: 15px;
-	text-align: center;
-	border-radius: 6px;
+	  color: #ffffff;
+	  border: 2px solid #0e79f5;
+	  background-color: #0e79f5;
+	  padding-top: 7px;
+	  padding-bottom: 7px;
+	  padding-left: 15px;
+	  padding-right: 15px;
+	  text-align: center;
+	  border-radius: 6px;
     -webkit-border-radius: 6px;
     -moz-border-radius: 6px;
-	letter-spacing: 0.012px;
+	  letter-spacing: 0.012px;
 }
-.contact:hover{
-	color: #fff;
-    text-decoration: none;
+a:hover{
+  text-decoration: none;
 }
 </style>

@@ -28,11 +28,28 @@
       </div>
       <div class="col-8">
         <div class="row-md-2">
-          <p class="nameContact">ABC Home Inc.</p>
+          <p class="nameContact p-1">ABC Home Inc.</p>
         </div>
-        <div class="row-md-8"></div>
+        <div class="row-md-8 p-2" id="messagerBox" style="border:1px solid black">
+            <div class="col contacter">
+                <img src="../assets/user-2.svg" style="width: 30px;height: 30px;">
+                Hello
+            </div>
+            <div class="col you">
+                Bello
+                <img src="../assets/user-2.svg" style="width: 30px;height: 30px;">
+            </div>
+        </div>
         <div class="row-md-2 align-items-end">
-          <p>sdf</p>
+          <div class="input-group">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Type a message."
+              aria-describedby="button-addon1"
+            >
+            <button class="btn btn-outline-secondary" type="button" id="button-addon1">Button</button>
+          </div>
         </div>
       </div>
     </div>
@@ -56,20 +73,20 @@
     <button @click="targetUser.name = 'company B'">company B</button>
     <hr>
     <div v-if="targetUser.name">
-        <div v-for="(text, index) in chat" :key="index" v-chat-scroll>
-            {{user}} : {{text.user}} : {{text.targetUser.name}}
-            <h1>first condition : {{text.user == user}}</h1>
-            <h1>second condition : {{text.targetUser.name == user}}</h1>
-            <!-- maybe this should be && ====> V change this later -->
-            <template v-if="text.user == user || text.targetUser.name == user">
-                <h3>{{ text.user }}</h3>
-                <p>{{ text.message }}</p>
-            </template>
-        </div>
-        <div>
-            <input type="text" v-model="message">
-            <button @click="sendMessage">send</button>
-        </div>
+      <div v-for="(text, index) in chat" :key="index" v-chat-scroll>
+        {{user}} : {{text.user}} : {{text.targetUser.name}}
+        <h1>first condition : {{text.user == user}}</h1>
+        <h1>second condition : {{text.targetUser.name == user}}</h1>
+        <!-- maybe this should be && ====> V change this later -->
+        <template v-if="text.user == user || text.targetUser.name == user">
+          <h3>{{ text.user }}</h3>
+          <p>{{ text.message }}</p>
+        </template>
+      </div>
+      <div>
+        <input type="text" v-model="message">
+        <button @click="sendMessage">send</button>
+      </div>
     </div>
     <!-- temporary code for getting chat message end here -->
   </div>
@@ -89,9 +106,9 @@ export default {
       message: "",
       chat: [],
       socket: io("https://contact-dot-soa2019.appspot.com"),
-      targetUser : {
-          name: "",
-          id: ""
+      targetUser: {
+        name: "",
+        id: ""
       }
     };
   },
@@ -107,7 +124,7 @@ export default {
   },
   mounted() {
     this.socket.on("message", data => {
-        this.chat.push(data);
+      this.chat.push(data);
     });
   }
 };
@@ -124,9 +141,16 @@ export default {
 }
 .nameContact {
   font-size: 16px;
+  text-align: center;
 }
 .contactMessage {
   font-size: 15px;
   opacity: 0.8;
+}
+.contacter{
+    text-align: start;
+}
+.you{
+    text-align: end;
 }
 </style>

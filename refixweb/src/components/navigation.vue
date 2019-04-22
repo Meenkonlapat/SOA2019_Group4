@@ -17,8 +17,8 @@
                 <a class="nav-link">Message</a>
             </router-link>
 
-            <router-link to="/profile" router-link-active tag="li" class="col">
-                <a class="nav-link">Profile</a>
+            <router-link to="/login" router-link-active tag="li" class="col">
+                <a class="nav-link">Login</a>
             </router-link>
         </nav>
     </div>
@@ -32,6 +32,7 @@ export default {
 
 <style>
 #navigations{
+  background-image: linear-gradient(120deg, #2c92eb 0%, #2857D8 100%);
   font-family: 'Playfair Display', serif;
 }
 .nav-link{
@@ -60,9 +61,6 @@ border-top-right-radius: 4px;
 img.imgLogo{
   width: 12%;
   height: 12%;
-}
-#navigations{
-  background-image: linear-gradient(120deg, #2857D8 0%, #2C92EB 100%);
 }
 </style>
 

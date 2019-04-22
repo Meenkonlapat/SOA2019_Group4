@@ -66,11 +66,6 @@ export default {
 </script>
 
 <style>
-<<<<<<< HEAD
-
-</style>
-
-=======
   
 .overlay {
   position: fixed;
@@ -107,4 +102,3 @@ export default {
   position: relative;
 }
 </style>
->>>>>>> c34edb3723fcb75c68ffc17ab53872381aa3e2e5
