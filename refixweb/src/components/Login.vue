@@ -1,7 +1,7 @@
 <template>
   <div id="login">
     <div class="container p-5 loginBox">
-        <p class="text-center h2" style="letter-spacing: 0.012px;">Welcome to refix</p>
+        <p class="text-center h2" style="letter-spacing: 0.012px;">Welcome to Refix</p>
         <div class="form-group mt-4" style="margin-bottom: 1.5em;">
             <input type="text" class="form-control" id="usr" placeholder="Email address or username">
         </div>
@@ -19,7 +19,7 @@
 
         <hr style="background-color: #d9dadc;">
         <p class="textAcc"><b>Don't have an account?</b></p>
-        <button type="button" class="btn btn-outline-primary btn-block"><b>SIGN UP FOR REFIX</b></button>
+        <button type="button" class="btn sign-upBtn btn-block"><b>SIGN UP FOR REFIX</b></button>
       </div>
     </div>
   </div>
@@ -31,6 +31,10 @@
   background-image: linear-gradient(120deg, #2c92eb 0%, #2857d8 100%);
 }
 .loginBox {
+    border-radius: 6px;
+    -webkit-border-radius: 6px;
+    box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.2);
+    -moz-border-radius: 6px;
   width: 40%;
   height: 60%;
   background-color: #ffffff;
@@ -47,8 +51,8 @@ b{
 .login {
     width: 233px;
     color: #ffffff;
-    border: 2px solid #0e79f5;
-    background-color: #0e79f5;
+    border: 2px solid #48B2FF;
+    background-color: #48B2FF;
     text-align: center;
     border-radius: 6px;
     -webkit-border-radius: 6px;
@@ -58,9 +62,50 @@ b{
     margin-bottom: 3em;
     text-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.2);
     box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.2);
+    transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+    -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+    -moz-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.login::after{
+    opacity: 0;
+}
+.login:hover{
+    border: 2px solid rgb(34, 163, 255);
+    background-color: rgb(34, 163, 255);
+}
+.login:hover::after{
+    opacity: 1;
 }
 #rememberme{
     margin-right: 11px;
+}
+.sign-upBtn{
+    color: #48B2FF;
+    border: 2px solid #48B2FF;
+    background-color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    letter-spacing: 0.012px;
+    margin-top: 1em;
+    margin-bottom: 3em;
+    text-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.2);
+    transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+    -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+    -moz-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.sign-upBtn::after{
+    opacity: 0;
+}
+.sign-upBtn:hover{
+    background-color: #48B2FF;
+    border: 2px solid #48B2FF;
+    color: #fff;
+}
+.sign-upBtn:hover::after{
+    opacity: 1;
 }
 a{
     color: #0e79f5;
