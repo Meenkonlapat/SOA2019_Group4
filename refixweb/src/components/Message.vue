@@ -28,7 +28,7 @@
       </div>
       <div class="col-8">
         <div class="row-md-2">
-          <p class="nameContact p-1">ABC Home Inc.</p>
+          <p class="nameContact mb-0 p-1">ABC Home Inc.</p>
         </div>
         <div class="row-md-8 p-2" id="messagerBox" style="border:1px solid black">
             <div class="col contacter">
