@@ -9,7 +9,8 @@ import actions from "./action.js";
 
 export const store = new Vuex.Store({
     state : {
-        companyCategory: "eieiza55+"
+        companyCategory: "",
+        company: null
     },
     getters,
     mutations,

@@ -1,11 +1,11 @@
 {
-  "name": "contact",
+  "name": "company",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node contact.js"
+    "start": "node company.js"
   },
   "engines": {
     "node": "10.15.3"
@@ -20,7 +20,6 @@
     "helmet": "^3.16.0",
     "joi": "^14.3.1",
     "mongoose": "^5.5.0",
-    "nodemon": "^1.18.11",
-    "socket.io": "^2.2.0"
+    "nodemon": "^1.18.11"
   }
 }

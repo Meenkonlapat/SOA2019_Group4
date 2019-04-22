@@ -12,7 +12,18 @@ const Company = mongoose.model("Company", new mongoose.Schema({
 }))
 
 router.get("/", async(req, res) => {
-    const companys = await Company.find().sort("CompanyId");
+    let companys;
+    const category = req.query.category;
+    const limit = req.query.limit;
+    if (limit && category){
+        companys = await Company.find({companyCategory: category}).sort("CompanyId").limit(5);
+    }
+    else if (category){
+        companys = await Company.find({companyCategory: category}).sort("CompanyId");
+    }
+    else{
+        companys = await Company.find().sort("CompanyId");
+    }
     res.send(companys);
 })
 

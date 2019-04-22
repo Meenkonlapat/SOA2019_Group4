@@ -10,12 +10,14 @@
 import Home from "./components/Home.vue";
 import Navigation from "./components/Navigation.vue";
 import Status from "./components/Status.vue"
+import Message from "./components/Message.vue"
 
 export default {
     components : {
         Home,
         Navigation,
-        Status
+        Status,
+        Message
     }
 };
 </script>
