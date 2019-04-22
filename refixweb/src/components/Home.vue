@@ -1,107 +1,104 @@
 <template>
   <div class="container" id="home">
-    <p> temporary code for testing only :3 </p>
-    company category is : {{ companyCategory }}
-    <button @click="setCompanyCategory('ant')">ant</button>
-    <button @click="setCompanyCategory('bird')">bird</button>
     <div class="device">
       <div class="header">
         <h3 style="text-align:start">Appliance</h3>
       </div>
       <div class="in-card row" style="height: 325;">
-        <router-link to="/company">
-          <div
-            class="card card-info"
-            style="width: 13rem; height: 19.5rem"
-            v-for="compa in company"
-          >
-            <img
-              src="https://upload.wikimedia.org/wikipedia/commons/6/69/June_odd-eyed-cat_cropped.jpg"
-              class="card-img-top"
-              alt="Image company"
-            >
-            <div class="card-body">
-              <h5 class="card-title">{{compa.companyName}}</h5>
-              <p class="card-text">{{compa.description}}</p>
-            </div>
-          </div>
-        </router-link>
-
-        <!--  -->
-        <router-link to="/all">
-          <div class="card card-info final-card" style="width: 13rem; height: 19.5rem;">
-            <div
-              class="top"
-              style="position:absolute; top:0; left:0; width:100%; height:100%; background-color:black; z-index:2; opacity:0.3;"
-            ></div>
-            <div
-              style="position:absolute; top:0; left:0; width:100%; height:100%; color:white; z-index:2; font-size: 24px; display: flex; align-items: center; justify-content: center;"
-            >
-              <h3>See more +</h3>
-            </div>
-            <div
-              class="inside"
-              style="position:absolute; top:0; left:0; width:100%; height:100%; z-index:1"
-            >
+        <template v-for="(compa, index) in applianceCompany">
+          <router-link to="/company" :key="index" v-if="index < 4">
+            <div class="card card-info" style="width: 13rem; height: 19.5rem" @click="setCompany(compa)">
               <img
                 src="https://upload.wikimedia.org/wikipedia/commons/6/69/June_odd-eyed-cat_cropped.jpg"
                 class="card-img-top"
                 alt="Image company"
               >
               <div class="card-body">
-                <h5 class="card-title">ABC Home Inc.</h5>
-                <p class="card-text">Location: Bangkok</p>
+                <h5 class="card-title">{{compa.companyName}}</h5>
+                <p class="card-text">{{compa.description}}</p>
               </div>
             </div>
-          </div>
-        </router-link>
+          </router-link>
+
+          <router-link to="/all" :key="index" v-if="index == 4">
+            <div class="card card-info final-card" style="width: 13rem; height: 19.5rem;" @click="setCompanyCategory('appliance')">
+              <div
+                class="top"
+                style="position:absolute; top:0; left:0; width:100%; height:100%; background-color:black; z-index:2; opacity:0.3;"
+              ></div>
+              <div
+                style="position:absolute; top:0; left:0; width:100%; height:100%; color:white; z-index:2; font-size: 24px; display: flex; align-items: center; justify-content: center;"
+              >
+                <h3>See more +</h3>
+              </div>
+              <div
+                class="inside"
+                style="position:absolute; top:0; left:0; width:100%; height:100%; z-index:1"
+              >
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/6/69/June_odd-eyed-cat_cropped.jpg"
+                  class="card-img-top"
+                  alt="Image company"
+                >
+                <div class="card-body">
+                  <h5 class="card-title">{{ compa.companyName }}</h5>
+                  <p class="card-text">{{ compa.description }}</p>
+                </div>
+              </div>
+            </div>
+          </router-link>
+        </template>
       </div>
     </div>
 
-    <div class="electronic">
+    <div class="electric">
       <div class="header">
-        <h3 style="text-align:start">Electronic</h3>
+        <h3 style="text-align:start">Electric</h3>
       </div>
       <div class="in-card row" style="height: 325;">
-        <div
-          class="card card-info"
-          style="width: 13rem; height: 19.5rem"
-          v-for="{name, desc, id} in company"
-          :key="id"
-        >
-          <img
-            src="https://upload.wikimedia.org/wikipedia/commons/6/69/June_odd-eyed-cat_cropped.jpg"
-            class="card-img-top"
-            alt="Image company"
-          >
-          <div class="card-body">
-            <h5 class="card-title">ABC Home Inc.</h5>
-            <p class="card-text">Bangkok</p>
-          </div>
-        </div>
-        <!--  -->
-        <router-link to="/all">
-          <div class="card card-info final-card" style="width: 13rem; height: 19.5rem;">
-            <div
-              class="top"
-              style="position:absolute; top:0; left:0; width:100%; height:100%; background-color:black; z-index:2; opacity:0.3;"
-            ></div>
-            <div
-              class="inside"
-              style="position:absolute; top:0; left:0; width:100%; height:100%; z-index:1"
-            >
+        <template v-for="(compa, index) in electricCompany">
+          <router-link to="/company" :key="index" v-if="index < 4">
+            <div class="card card-info" style="width: 13rem; height: 19.5rem">
               <img
                 src="https://upload.wikimedia.org/wikipedia/commons/6/69/June_odd-eyed-cat_cropped.jpg"
                 class="card-img-top"
                 alt="Image company"
               >
               <div class="card-body">
-                <h5 class="card-title">ABC Home Inc.</h5>
-                <p class="card-text">Location: Bangkok</p>
+                <h5 class="card-title">{{compa.companyName}}</h5>
+                <p class="card-text">{{compa.description}}</p>
               </div>
             </div>
-          </div>
-        </router-link>
+          </router-link>
+
+          <router-link to="/all" :key="index" v-if="index == 4">
+            <div class="card card-info final-card" style="width: 13rem; height: 19.5rem;" @click="setCompanyCategory('electric')">
+              <div
+                class="top"
+                style="position:absolute; top:0; left:0; width:100%; height:100%; background-color:black; z-index:2; opacity:0.3;"
+              ></div>
+              <div
+                style="position:absolute; top:0; left:0; width:100%; height:100%; color:white; z-index:2; font-size: 24px; display: flex; align-items: center; justify-content: center;"
+              >
+                <h3>See more +</h3>
+              </div>
+              <div
+                class="inside"
+                style="position:absolute; top:0; left:0; width:100%; height:100%; z-index:1"
+              >
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/6/69/June_odd-eyed-cat_cropped.jpg"
+                  class="card-img-top"
+                  alt="Image company"
+                >
+                <div class="card-body">
+                  <h5 class="card-title">{{ compa.companyName }}</h5>
+                  <p class="card-text">{{ compa.description }}</p>
+                </div>
+              </div>
+            </div>
+          </router-link>
+        </template>
       </div>
     </div>
   </div>
@@ -111,7 +108,7 @@
 export default {
   data() {
     return {
-      company: [
+      applianceCompany: [
         {
           companyName: "company1",
           description: "hello i'm company 1"
@@ -128,7 +125,8 @@ export default {
           companyName: "company4",
           description: "hello i'm company 4"
         }
-      ]
+      ],
+      electricCompany: []
     };
   },
   computed: {
@@ -136,21 +134,56 @@ export default {
       get() {
         return this.$store.getters["getCompanyCategory"];
       }
+    },
+    company: {
+      get() {
+        return this.$store.getters["getCompany"];
+      }
     }
   },
   methods: {
     setCompanyCategory(value) {
+      console.log("set company called");
       this.$store.dispatch("commitCompanyCategory", value);
+    },
+    setCompany(obj) {
+      this.$store.dispatch("commitCompany", obj);
     }
   },
   created() {
+    // this.$http
+    //   .get("https://request-dot-soa2019.appspot.com/api/request")
+    //   .then(response => {
+    //     return response.json();
+    //   })
+    //   .then(data => {
+    //     console.log(data);
+    //   });
     this.$http
-      .get("https://request-dot-soa2019.appspot.com/api/request")
+      .get("https://company-dot-soa2019.appspot.com/api/company", {
+        // params: {limit: 5, category: this.$store.getters["getCompanyCategory"]}
+      })
       .then(response => {
         return response.json();
       })
       .then(data => {
-        console.log(data);
+        const applianceArray = [];
+        const electricArray = [];
+        for (let key in data) {
+          if (
+            data[key].companyCategory == "appliance" &&
+            applianceArray.length < 5
+          ) {
+            applianceArray.push(data[key]);
+          } else if (
+            data[key].companyCategory == "electric" &&
+            electricArray.length < 5
+          ) {
+            electricArray.push(data[key]);
+          }
+          this.applianceCompany = applianceArray;
+          this.electricCompany = electricArray;
+        }
       });
   }
 };

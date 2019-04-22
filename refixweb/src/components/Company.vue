@@ -1,7 +1,8 @@
 <template>
   <div class="container" id="company">
+    <!-- {{company}} -->
     <div class="header">
-      <h3 style="text-align:start; margin-bottom: 1em;">Air Conditioner Legendary</h3>
+      <h3 style="text-align:start; margin-bottom: 1em;">{{company.companyName}}</h3>
     </div>
     <div class="row">
       <div class="col-4">
@@ -12,7 +13,7 @@
         >
       </div>
       <div class="col-8">
-        <div id="address">Address: 999/111 SomSak Road London England</div>
+        <div id="address">{{company.companyDescription}}</div>
         <div id="button-group">
           <a href="#popup1" class="button">Request</a>
           <a href="#popup1" class="contact">Contact</a>
@@ -80,6 +81,19 @@
     
   </div>
 </template>
+
+<script>
+export default {
+  computed: {
+    company: {
+      get() {
+        return this.$store.getters["getCompany"];
+      }
+    }
+  }
+}
+</script>
+
 
 <style>
 #company {
