@@ -5,5 +5,11 @@ export default {
     },
     mutateCompany : (state, payload) => {
         state.company = payload;
+    },
+    mutateCurrentUser : (state, payload) => {
+        state.currentUser = payload;
+    },
+    mutateInLoginPage : (state, payload) => {
+        state.inLoginPage = payload;
     }
 }

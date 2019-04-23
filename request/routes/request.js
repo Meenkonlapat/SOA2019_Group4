@@ -7,10 +7,18 @@ const validateObjectId = require("../middleware/validateObjectId")
 
 const Request = mongoose.model("Request", new mongoose.Schema({
     requestId: String,
-    customerId: String,
-    companyId: String,
+    customer: {
+        customerId : String,
+        customerName : String
+    },
+    company:
+    {
+        companyId: String,
+        companyName: String
+    },
     category: String,
     status: String,
+    title: String,
     description: String
 }))
 
@@ -20,15 +28,16 @@ router.get("/", async (req, res) => {
 });
 
 router.post("/", async (req, res) => {
-    const {error} = validateRequest(req.body);
-    if (error) return res.status(400).send(error);
+    // const {error} = validateRequest(req.body);
+    // if (error) return res.status(400).send(error);
 
     let request = new Request({
         requestId: req.body.requestId,
-        customerId: req.body.customerId,
-        companyId: req.body.companyId,
+        customer: req.body.customer,
+        company: req.body.company,
         category: req.body.category,
         status: req.body.status,
+        title: req.body.title,
         description: req.body.description
     })
     request = await request.save();

@@ -10,7 +10,12 @@ import actions from "./action.js";
 export const store = new Vuex.Store({
     state : {
         companyCategory: "",
-        company: null
+        company: null,
+        currentUser: {
+            name : "",
+            ID : ""
+        },
+        inLoginPage: false
     },
     getters,
     mutations,

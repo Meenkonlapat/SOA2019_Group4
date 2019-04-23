@@ -12,31 +12,13 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
+          <tr v-for="(req, index) in requests" :key="index">
+            <th scope="row">{{index+1}}</th>
+            <td>{{req.company.companyName}}</td>
+            <td>{{req.title}}</td>
+            <td>{{req.status}}</td>
             <td class="p-2">
               <a class="btn btn-outline-success btn-sm" href="#popup1">Click</a>
-            </td>
-          </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-            <td class="p-2">
-              <a class="btn btn-outline-success btn-sm">Click</a>
-            </td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-            <td class="p-2">
-              <a class="btn btn-outline-success btn-sm">Click</a>
             </td>
           </tr>
         </tbody>
@@ -44,12 +26,12 @@
     </div>
     <!--  -->
     <div>
-    <b-button id="show-btn" @click="showModal">Open Modal</b-button>
-    <b-modal ref="my-modal" hide-footer title="your bill">
-      <div class="d-block text-center">
-        <h3>Hello From My Modal!</h3>
-      </div>
-    </b-modal>
+      <b-button id="show-btn" @click="showModal">Open Modal</b-button>
+      <b-modal ref="my-modal" hide-footer title="your bill">
+        <div class="d-block text-center">
+          <h3>Hello From My Modal!</h3>
+        </div>
+      </b-modal>
     </div>
     <!--  -->
   </div>
@@ -57,16 +39,44 @@
 
 <script>
 export default {
-   methods:{
-     showModal(){
-       this.$refs['my-modal'].show();
-     }
-   }
+  data(){
+    return{
+      requests:[]
+    }
+  },
+  computed:{
+    currentUser : {
+      get(){
+        return this.$store.getters["getCurrentUser"];
+      }
+    }
+  },
+  methods: {
+    showModal() {
+      this.$refs["my-modal"].show();
+    }
+  },
+  created() {
+    this.$http
+      .get("https://request-dot-soa2019.appspot.com/api/request")
+      .then(response => {
+        return response.json();
+      })
+      .then(data => {
+        const result = [];
+        for(let key in data){
+          if (data[key].customer.customerId == this.currentUser.ID)
+          {
+            result.push(data[key]);
+          }
+        }
+        this.requests = result;
+      });
+  }
 };
 </script>
 
 <style>
-  
 .overlay {
   position: fixed;
   top: 0;
