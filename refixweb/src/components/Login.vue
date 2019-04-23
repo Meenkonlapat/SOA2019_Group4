@@ -19,7 +19,7 @@
 
         <hr style="background-color: #d9dadc;">
         <p class="textAcc"><b>Don't have an account?</b></p>
-        <button type="button" class="btn sign-upBtn btn-block"><b>SIGN UP FOR REFIX</b></button>
+        <router-link to="/register"><button type="button" class="btn sign-upBtn btn-block"><b>SIGN UP FOR REFIX</b></button></router-link>
       </div>
     </div>
   </div>

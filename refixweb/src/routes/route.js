@@ -5,6 +5,7 @@ import Company from '../components/Company.vue'
 import Message from '../components/Message.vue'
 import Login from '../components/Login.vue'
 import ForgotPassword from '../components/ForgotPassword.vue'
+import Register from '../components/Register.vue'
 
 export const routes = [
     {path : '', component: Home},
@@ -13,5 +14,6 @@ export const routes = [
     {path : '/company', component: Company},
     {path : '/message', component: Message},
     {path : '/login', component: Login},
-    {path : '/forgotpassword', component: ForgotPassword}
+    {path : '/forgotpassword', component: ForgotPassword},
+    {path : '/register', component: Register}
 ]
