@@ -14,7 +14,7 @@
             </router-link>
 
             <router-link to="/message" router-link-active tag="li" class="col">
-                <a class="nav-link">Message</a>
+                <a class="nav-link">Messenger</a>
             </router-link>
 
             <router-link to="/login" router-link-active tag="li" class="col">
