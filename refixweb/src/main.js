@@ -9,6 +9,7 @@ import BootstrapVue from 'bootstrap-vue'
 
 import { store } from './store/store.js';
 
+
 Vue.use(VueRouter);
 Vue.use(VueResource);
 Vue.use(BootstrapVue);

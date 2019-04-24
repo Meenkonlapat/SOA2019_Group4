@@ -124,6 +124,72 @@
             <div class="msg">
               <div class="pointer"></div>
               <div class="inner-msg">
+                <p>I'm so hungry!</p>
+              </div>
+            </div>
+          </article>
+          <article class="right">
+            <div class="avatar">
+              <img src="../assets/user-2.svg" alt="">
+            </div>
+            <div class="msg">
+              <div class="pointer"></div>
+              <div class="inner-msg">
+                <p>Me too. I need to eat somthing now</p>
+              </div>
+            </div>
+          </article>
+          <article>
+            <div class="avatar">
+              <img src="../assets/user-2.svg" alt="">
+            </div>
+            <div class="msg">
+              <div class="pointer"></div>
+              <div class="inner-msg">
+                <p>I'm so hungry!</p>
+              </div>
+            </div>
+          </article>
+          <article class="right">
+            <div class="avatar">
+              <img src="../assets/user-2.svg" alt="">
+            </div>
+            <div class="msg">
+              <div class="pointer"></div>
+              <div class="inner-msg">
+                <p>Me too. I need to eat somthing now</p>
+              </div>
+            </div>
+          </article>
+          <article>
+            <div class="avatar">
+              <img src="../assets/user-2.svg" alt="">
+            </div>
+            <div class="msg">
+              <div class="pointer"></div>
+              <div class="inner-msg">
+                <p>I'm so hungry!</p>
+              </div>
+            </div>
+          </article>
+          <article class="right">
+            <div class="avatar">
+              <img src="../assets/user-2.svg" alt="">
+            </div>
+            <div class="msg">
+              <div class="pointer"></div>
+              <div class="inner-msg">
+                <p>Me too. I need to eat somthing now</p>
+              </div>
+            </div>
+          </article>
+          <article>
+            <div class="avatar">
+              <img src="../assets/user-2.svg" alt="">
+            </div>
+            <div class="msg">
+              <div class="pointer"></div>
+              <div class="inner-msg">
                 <p>But it time 12 PM</p>
               </div>
             </div>
@@ -326,6 +392,7 @@ export default {
 }
 
 .user{
+  font-size: 1.2rem;
   background-color: #ffffff;
 }
 
@@ -342,6 +409,7 @@ export default {
   justify-content: center
 }
 .user ul{
+  height: 500px;
   list-style-type: none;
   overflow: scroll;
 }
@@ -420,6 +488,7 @@ export default {
   height: 1.7rem;
 }
 #message{
+  height: 500px;
   overflow: scroll;
   flex-grow: 2;
   padding: 1rem;

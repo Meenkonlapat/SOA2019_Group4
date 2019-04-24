@@ -83,6 +83,8 @@ export default {
 
 <style>
 #login {
+  height: 100vh;
+  padding-top: 11%;
   font-family: "Playfair Display", serif;
   background-image: linear-gradient(120deg, #2c92eb 0%, #2857d8 100%);
 }
@@ -91,8 +93,7 @@ export default {
   -webkit-border-radius: 6px;
   box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.2);
   -moz-border-radius: 6px;
-  width: 40%;
-  height: 60%;
+  width: 45%;
   background-color: #ffffff;
 }
 .from-control {
@@ -145,7 +146,6 @@ b {
   -moz-border-radius: 6px;
   letter-spacing: 0.012px;
   margin-top: 1em;
-  margin-bottom: 3em;
   text-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.2);
   box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.2);
   transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
