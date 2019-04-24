@@ -6,14 +6,34 @@ import Message from '../components/Message.vue'
 import Login from '../components/Login.vue'
 import ForgotPassword from '../components/ForgotPassword.vue'
 import Register from '../components/Register.vue'
+import { store } from '../store/store.js';
 
 export const routes = [
-    {path : '', component: Home},
-    {path : '/status', component: Status},
-    {path : '/all', component: CompanyAll},
-    {path : '/company', component: Company},
-    {path : '/message', component: Message},
-    {path : '/login', component: Login},
-    {path : '/forgotpassword', component: ForgotPassword},
-    {path : '/register', component: Register}
+    { path: '', component: Home },
+    { path: '/status', component: Status, beforeEnter: (to, from, next)=>{
+        if (!store.getters['getCurrentUser'].name) {
+            next('/login');
+        }
+        else {
+            next();
+        }
+    }},
+    { path: '/all', component: CompanyAll },
+    { path: '/company', component: Company },
+    { path: '/message', component: Message, beforeEnter: (to, from, next)=>{
+        if (!store.getters['getCurrentUser'].name) {
+            next('/login');
+        }
+        else {
+            next();
+        }
+    }},
+    {
+        path: '/login', component: Login, beforeEnter: (to, from, next) => {
+            store.dispatch("commitInLoginPage", true);
+            next();
+        }
+    },
+    { path: '/forgotpassword', component: ForgotPassword },
+    { path: '/register', component: Register }
 ]

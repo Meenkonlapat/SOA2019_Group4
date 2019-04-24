@@ -5,5 +5,11 @@ export default {
     },
     getCompany : state => {
         return state.company;
+    },
+    getCurrentUser : state => {
+        return state.currentUser;
+    },
+    getInLoginPage : state => {
+        return state.inLoginPage;
     }
 }
