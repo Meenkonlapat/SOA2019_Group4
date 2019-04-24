@@ -78,4 +78,4 @@ function validateContact(contact){
     return joi.validate(contact, schema)
 }
 
-module.exports = {router}
+module.exports = {router, Contact}

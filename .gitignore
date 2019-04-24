@@ -2,6 +2,7 @@ HELP.md
 /target/
 !.mvn/wrapper/maven-wrapper.jar
 node_modules
+coverage
 
 ### STS ###
 .apt_generated

@@ -3,12 +3,14 @@ const Joi = require("joi");
 const mongoose = require("mongoose");
 const express = require("express");
 const router = express.Router();
+const validateObjectId = require("../middleware/validateObjectId")
 
 const Company = mongoose.model("Company", new mongoose.Schema({
     companyId : String,
     companyName : String,
     companyDescription : String,
     companyCategory : String,
+    companyAddress: String
 }))
 
 router.get("/", async(req, res) => {
@@ -37,13 +39,14 @@ router.post("/", async (req, res) => {
         companyName: req.body.companyName,
         companyDescription: req.body.companyDescription,
         companyCategory: req.body.companyCategory,
+        companyAddress: req.body.companyAddress
     })
     company = await company.save();
 
     res.send(company);
 })
 
-router.put("/:id", async(req, res) => {
+router.put("/:id", validateObjectId, async(req, res) => {
     const result = await Company.findOneAndUpdate({
         _id: req.params.id
     },
@@ -53,6 +56,7 @@ router.put("/:id", async(req, res) => {
             companyName: req.body.companyName,
             companyDescription: req.body.companyDescription,
             companyCategory: req.body.companyCategory,
+            companyAddress: req.body.companyAddress
         }
     },
     {new : true});
@@ -60,15 +64,15 @@ router.put("/:id", async(req, res) => {
     res.send(result);
 })
 
-router.delete("/:id", async (req, res) => {
+router.delete("/:id", validateObjectId, async (req, res) => {
     const result = await Company.findOneAndDelete({_id: req.params.id});
     if(!result) return res.status(404).send("company not found")
     res.send(result);
 })
 
-router.get("/:id", async (req, res) => {
+router.get("/:id", validateObjectId, async (req, res) => {
     const company = await Company.findOne({_id: req.params.id});
-    if(!request) return res.status(404).send("company not found")
+    if(!company) return res.status(404).send("company not found")
     res.send(company);
 })
 
@@ -78,7 +82,8 @@ function validateCompany(company)
         companyId: Joi.string(),
         companyName: Joi.string(),
         companyDescription: Joi.string(),
-        companyCategory: Joi.string()
+        companyCategory: Joi.string(),
+        companyAddress: Joi.string()
     }
 
     return Joi.validate(company, schema);

@@ -1,12 +1,12 @@
 const mongoose = require("mongoose");
 const company = require("supertest");
-const {Company} = require("../../routes/company.js");
+const {Company} = require("../routes/companyRequest.js");
 
 let server;
 
-describe("/api/company", () => {
+describe("API test : /api/company", () => {
     beforeEach(() => {
-        server = require("../../index.js");
+        server = require("../company.js");
     });
     afterEach(async () => {
         server.close();
@@ -20,13 +20,15 @@ describe("/api/company", () => {
                 companyId: "000001",
                 companyName: "White Company",
                 companyDescription: "This Company has good quility",
-                companyCategory: "fire"
+                companyCategory: "appliance",
+                companyAddress: "111/111 Bangkok"
             },
             {
                 companyId: "000002",
                 companyName: "Black Company",
                 companyDescription: "This Company has many Diversity ",
-                companyCategory: "electric"
+                companyCategory: "electric",
+                companyAddress: "222/222 Bangkok"
             }
             ])
 
@@ -44,7 +46,8 @@ describe("/api/company", () => {
                 companyId: "000001",
                 companyName: "White Company",
                 companyDescription: "This Company almost good quility",
-                companyCategory: "fire"
+                companyCategory: "appliance",
+                companyAddress: "111/111 Bangkok"
             });
             await data.save();
             const res = await company(server).get("/api/company/" + data._id);
@@ -73,7 +76,8 @@ describe("/api/company", () => {
                 companyId: "000001",
                 companyName: "White Company",
                 companyDescription: "This Company almost good quility",
-                companyCategory: "fire"
+                companyCategory: "appliance",
+                companyAddress: "111/111 Bangkok"
             });
             await data.save();
             const res = await company(server).delete("/api/company/" + data._id);
@@ -102,13 +106,14 @@ describe("/api/company", () => {
                 companyId: "000001",
                 companyName: "White Company",
                 companyDescription: "This Company almost good quility",
-                companyCategory: "fire"
+                companyCategory: "appliance",
+                companyAddress: "111/111 Bangkok"
             });
             await data.save();
-            const res = await company(server).put("/api/company/" + data._id).send({status: "rejected"});
+            const res = await company(server).put("/api/company/" + data._id).send({companyName: "black company"});
 
             expect(res.status).toBe(200);
-            expect(res.body).toHaveProperty("status", "rejected");
+            expect(res.body).toHaveProperty("companyName", "black company");
         });
 
         it("should return 404 when given invalid id", async() => {

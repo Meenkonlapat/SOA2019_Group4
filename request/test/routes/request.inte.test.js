@@ -5,7 +5,7 @@ const {Request} = require("../../routes/request.js");
 
 let server;
 
-describe("/api/request", () => {
+describe("API test : /api/request", () => {
     beforeEach(() => {
         server = require("../../index.js");
     });
@@ -18,20 +18,38 @@ describe("/api/request", () => {
         it("should return all request", async() => {
             await Request.collection.insertMany([
             {
-                requestId: "000001",
-                customerId: "000001",
-                companyId: "000001",
-                category: "electric",
-                status: "accepted",
-                description: "help me"
+                requestId: '000001',
+                customer: {
+                    id:'000001',
+                    name:"Somchai"
+                },
+                company: {
+                    id:'000001',
+                    name:'Somboon company',
+                    address:'09/876 Bangkok'
+                },
+                category: 'electric',
+                status: 'accepted',
+                title: 'fix tv',
+                description: 'help me',
+                bill: []
             },
             {
-                requestId: "000002",
-                customerId: "000002",
-                companyId: "000001",
-                category: "plumbling",
-                status: "waiting",
-                description: "toilet"
+                requestId: '000002',
+                customer: {
+                    id:'000001',
+                    name:"Somchai"
+                },
+                company: {
+                    id:'000001',
+                    name:'Somboon company',
+                    address:'09/876 Bangkok'
+                },
+                category: 'plumbling',
+                status: 'accepted',
+                title: 'fix toilet',
+                description: 'help me',
+                bill: []
             }
             ])
 
@@ -46,12 +64,21 @@ describe("/api/request", () => {
     describe("GET /:id", () => {
         it("should return request with given id",async () => {
             const data = new Request({
-                requestId: "000001",
-                customerId: "000001",
-                companyId: "000001",
-                category: "electric",
-                status: "accepted",
-                description: "help me"
+                requestId: '000004',
+                customer: {
+                    id:'000001',
+                    name:"Somchai"
+                },
+                company: {
+                    id:'000001',
+                    name:'Somboon company',
+                    address:'09/876 Bangkok'
+                },
+                category: 'electric',
+                status: 'accepted',
+                title: 'fix tv',
+                description: 'help me',
+                bill: []
             });
             await data.save();
             const res = await request(server).get("/api/request/" + data._id);
@@ -77,12 +104,21 @@ describe("/api/request", () => {
     describe("DELETE /:id", () => {
         it("should delete and return request with given id", async () => {
             const data = new Request({
-                requestId: "000001",
-                customerId: "000001",
-                companyId: "000001",
-                category: "electric",
-                status: "accepted",
-                description: "help me"
+                requestId: '000004',
+                customer: {
+                    id:'000001',
+                    name:"Somchai"
+                },
+                company: {
+                    id:'000001',
+                    name:'Somboon company',
+                    address:'09/876 Bangkok'
+                },
+                category: 'electric',
+                status: 'accepted',
+                title: 'fix tv',
+                description: 'help me',
+                bill: []
             });
             await data.save();
             const res = await request(server).delete("/api/request/" + data._id);
@@ -108,12 +144,21 @@ describe("/api/request", () => {
     describe("PUT /:id", () => {
         it("should return updated document", async() => {
             const data = new Request({
-                requestId: "000001",
-                customerId: "000001",
-                companyId: "000001",
-                category: "electric",
-                status: "accepted",
-                description: "help me"
+                requestId: '000004',
+                customer: {
+                    id:'000001',
+                    name:"Somchai"
+                },
+                company: {
+                    id:'000001',
+                    name:'Somboon company',
+                    address:'09/876 Bangkok'
+                },
+                category: 'electric',
+                status: 'accepted',
+                title: 'fix tv',
+                description: 'help me',
+                bill: []
             });
             await data.save();
             const res = await request(server).put("/api/request/" + data._id).send({status: "rejected"});

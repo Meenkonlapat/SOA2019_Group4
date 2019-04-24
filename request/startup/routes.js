@@ -1,8 +1,8 @@
 
-const request = require("../routes/request.js").router;
+const company = require('./routes/companyRequest.js');.router;
 const error = require("../middleware/error.js");
 
 module.exports = function(app)
 {
-    app.use("/api/request", request);
+    app.use("/api/company", company);
 }

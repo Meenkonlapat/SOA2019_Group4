@@ -1,7 +1,7 @@
 
 const validateRequest = require("../../routes/request.js").validateRequest
 
-describe("validateRequest", () => {
+describe("Unit test : validateRequest", () => {
     it("error should not be null when request is invalid", () => {
         expect(validateRequest({requestId: 123}).error).toBeTruthy();
     });
@@ -10,11 +10,20 @@ describe("validateRequest", () => {
         expect(validateRequest(
         { 
             requestId: '000004',
-            customerId: '000001',
-            companyId: '000001',
+            customer: {
+                id:'000001',
+                name:"Somchai"
+            },
+            company: {
+                id:'000001',
+                name:'Somboon company',
+                address:'09/876 Bangkok'
+            },
             category: 'electric',
             status: 'accepted',
-            description: 'help me4'
+            title: 'fix tv',
+            description: 'help me',
+            bill: []
         }
         ).error).toBeFalsy();
     });

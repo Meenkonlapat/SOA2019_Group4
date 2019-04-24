@@ -8,28 +8,46 @@ const validateObjectId = require("../middleware/validateObjectId")
 const Request = mongoose.model("Request", new mongoose.Schema({
     requestId: String,
     customer: {
-        customerId : String,
-        customerName : String
+        id : String,
+        name : String
     },
     company:
     {
-        companyId: String,
-        companyName: String
+        id: String,
+        name: String,
+        address: String
     },
     category: String,
     status: String,
     title: String,
-    description: String
+    description: String,
+    bill: [{
+        title: String,
+        detail: String,
+        price: Number
+    }]
 }))
 
 router.get("/", async (req, res) => {
     const requests = await Request.find().sort("requestId");
     res.send(requests);
+    // use this for pagination if needed
+    // get pageNumber and pageSize from param
+    // .skip((pageNumber - 1) * pageSize)
+    // .limit(pageSize)
 });
 
+router.get("/count", async (req, res) => {
+    const request = await Request.countDocuments();
+    const result = {
+        count: request
+    }
+    res.send(result);
+})
+
 router.post("/", async (req, res) => {
-    // const {error} = validateRequest(req.body);
-    // if (error) return res.status(400).send(error);
+    const {error} = validateRequest(req.body);
+    if (error) return res.status(400).send(error);
 
     let request = new Request({
         requestId: req.body.requestId,
@@ -38,7 +56,8 @@ router.post("/", async (req, res) => {
         category: req.body.category,
         status: req.body.status,
         title: req.body.title,
-        description: req.body.description
+        description: req.body.description,
+        bill: req.body.bill
     })
     request = await request.save();
 
@@ -53,9 +72,8 @@ router.put("/:id", validateObjectId, async (req, res) => {
     {
         $set:
         {
-            companyId: req.body.companyId,
             status: req.body.status,
-            description: req.body.description
+            bill: req.body.bill
         }
     },
     {new : true});
@@ -79,11 +97,24 @@ function validateRequest(request)
 {
     const schema = {
         requestId: Joi.string(),
-        customerId: Joi.string(),
-        companyId: Joi.string(),
+        customer: Joi.object({
+            id: Joi.string(),
+            name: Joi.string()
+        }),
+        company: Joi.object({
+            id: Joi.string(),
+            name: Joi.string(),
+            address: Joi.string()
+        }),
         category: Joi.string(),
         status: Joi.string(),
-        description: Joi.string()
+        title: Joi.string(),
+        description: Joi.string(),
+        bill: Joi.array().items(Joi.object({
+            title: Joi.string(),
+            detail: Joi.string(),
+            price: Joi.number()
+        }))
     }
 
     return Joi.validate(request, schema);

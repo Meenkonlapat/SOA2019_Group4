@@ -1,7 +1,7 @@
 
-const validateCompany = require("../../routes/request.js").validateRequest
+const validateCompany = require("../routes/companyRequest.js").validateCompany
 
-describe("validateCompany", () => {
+describe("Unit test : validateCompany", () => {
     it("error should not be null when company is invalid", () => {
         expect(validateCompany({companyId: 123}).error).toBeTruthy();
     });
@@ -12,7 +12,8 @@ describe("validateCompany", () => {
             companyId: "000001",
             companyName: "White Company",
             companyDescription: "This Company has good quility",
-            companyCategory: "fire"
+            companyCategory: "fire",
+            companyAddress: "111/111 Bangkok"
         }
         ).error).toBeFalsy();
     });

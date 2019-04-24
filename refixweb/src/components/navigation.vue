@@ -42,7 +42,10 @@
 export default {
   methods: {
     setCurrentUser(){
-      this.$store.dispatch("commitCurrentUser", {name:"", ID:""});
+      if (alert("Do you want to logout?"))
+      {
+        this.$store.dispatch("commitCurrentUser", {name:"", ID:""});
+      }
     }
   },
   computed:{
