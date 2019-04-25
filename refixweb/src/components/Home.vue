@@ -58,7 +58,7 @@
       <div class="in-card row" style="height: 325;">
         <template v-for="(compa, index) in electricCompany">
           <router-link to="/company" :key="index" v-if="index < 4">
-            <div class="card card-info" style="width: 13rem; height: 19.5rem">
+            <div class="card card-info" style="width: 13rem; height: 19.5rem" @click="setCompany(compa)">
               <img
                 src="https://upload.wikimedia.org/wikipedia/commons/6/69/June_odd-eyed-cat_cropped.jpg"
                 class="card-img-top"
@@ -110,20 +110,8 @@ export default {
     return {
       applianceCompany: [
         {
-          companyName: "company1",
-          description: "hello i'm company 1"
-        },
-        {
-          companyName: "company2",
-          description: "hello i'm company 2"
-        },
-        {
-          companyName: "company3",
-          description: "hello i'm company 3"
-        },
-        {
-          companyName: "company4",
-          description: "hello i'm company 4"
+          companyName: "service unavailable",
+          description: "please try again later"
         }
       ],
       electricCompany: []
@@ -151,16 +139,8 @@ export default {
     }
   },
   created() {
-    // this.$http
-    //   .get("https://request-dot-soa2019.appspot.com/api/request")
-    //   .then(response => {
-    //     return response.json();
-    //   })
-    //   .then(data => {
-    //     console.log(data);
-    //   });
     this.$http
-      .get("https://company-dot-soa2019.appspot.com/api/company", {
+      .get("https://refixsoa.appspot.com/api/company", {
         // params: {limit: 5, category: this.$store.getters["getCompanyCategory"]}
       })
       .then(response => {

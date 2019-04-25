@@ -22,7 +22,6 @@ const Request = mongoose.model("Request", new mongoose.Schema({
     title: String,
     description: String,
     bill: [{
-        title: String,
         detail: String,
         price: Number
     }]
@@ -55,7 +54,6 @@ router.post("/", async (req, res) => {
         company: req.body.company,
         category: req.body.category,
         status: req.body.status,
-        title: req.body.title,
         description: req.body.description,
         bill: req.body.bill
     })
@@ -111,7 +109,6 @@ function validateRequest(request)
         title: Joi.string(),
         description: Joi.string(),
         bill: Joi.array().items(Joi.object({
-            title: Joi.string(),
             detail: Joi.string(),
             price: Joi.number()
         }))
