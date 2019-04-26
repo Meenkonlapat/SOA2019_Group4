@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20190426 20:08:54.754" generator="Robot 3.1.1 (Python 3.5.2 on win32)" rpa="false">
+<suite id="s1" source="C:\Users\chintawee\Desktop\UI test by Robotframework\test1_robot.robot" name="Test1 Robot">
+<test id="s1-t1" name="ทำอะไรสักอย่าง">
+<kw name="ไปยังหน้าเว็บ">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>localhost:8080/</arg>
+<arg>browser=chrome</arg>
+</arguments>
+<msg timestamp="20190426 20:09:00.970" level="INFO">Opening browser 'chrome' to base url 'localhost:8080/'.</msg>
+<status endtime="20190426 20:09:13.126" starttime="20190426 20:09:00.970" status="PASS"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status endtime="20190426 20:09:14.299" starttime="20190426 20:09:13.126" status="PASS"></status>
+</kw>
+<status endtime="20190426 20:09:14.299" starttime="20190426 20:09:00.964" status="PASS"></status>
+</kw>
+<kw name="ทำการล็อคอิน">
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath://*[@id="navigations"]/nav/li[4]/a</arg>
+</arguments>
+<msg timestamp="20190426 20:09:14.300" level="INFO">Clicking element 'xpath://*[@id="navigations"]/nav/li[4]/a'.</msg>
+<status endtime="20190426 20:09:14.577" starttime="20190426 20:09:14.300" status="PASS"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>xpath://*[@id="usr"]</arg>
+<arg>asd</arg>
+</arguments>
+<msg timestamp="20190426 20:09:14.578" level="INFO">Typing text 'asd' into text field 'xpath://*[@id="usr"]'.</msg>
+<status endtime="20190426 20:09:14.793" starttime="20190426 20:09:14.577" status="PASS"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath://*[@id="login"]/div/div[4]/button</arg>
+</arguments>
+<msg timestamp="20190426 20:09:14.794" level="INFO">Clicking element 'xpath://*[@id="login"]/div/div[4]/button'.</msg>
+<status endtime="20190426 20:09:14.896" starttime="20190426 20:09:14.793" status="PASS"></status>
+</kw>
+<status endtime="20190426 20:09:14.896" starttime="20190426 20:09:14.300" status="PASS"></status>
+</kw>
+<status endtime="20190426 20:09:14.897" critical="yes" starttime="20190426 20:09:00.963" status="PASS"></status>
+</test>
+<status endtime="20190426 20:09:14.918" starttime="20190426 20:08:54.756" status="PASS"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0">Critical Tests</stat>
+<stat pass="1" fail="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" id="s1" fail="0" name="Test1 Robot">Test1 Robot</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
