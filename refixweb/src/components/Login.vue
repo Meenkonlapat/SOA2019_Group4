@@ -69,6 +69,14 @@ export default {
               ID: "000001"
           }
       }
+      else if (this.username == "companya")
+      {
+        user = {
+          name : "companya",
+          ID: "000001"
+        }
+        this.$store.dispatch("commitIsCompany", true);
+      }
       this.$store.dispatch("commitCurrentUser", user);
       this.$router.push("/");
     }

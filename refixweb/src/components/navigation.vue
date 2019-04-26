@@ -31,7 +31,7 @@
 
       <template v-else>
         <router-link to="/" router-link-active tag="li" class="col">
-          <div @click="setCurrentUser()"><a class="nav-link">LogOut</a></div>
+          <div @click="logOut()"><a class="nav-link">LogOut</a></div>
         </router-link>
       </template>
     </nav>
@@ -41,10 +41,11 @@
 <script>
 export default {
   methods: {
-    setCurrentUser(){
+    logOut(){
       if (confirm("Do you want to logout?"))
       {
         this.$store.dispatch("commitCurrentUser", {name:"", ID:""});
+        this.$store.dispatch("commitIsCompany", false);
       }
     }
   },

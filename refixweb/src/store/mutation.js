@@ -11,5 +11,8 @@ export default {
     },
     mutateInLoginPage : (state, payload) => {
         state.inLoginPage = payload;
+    },
+    mutateIsCompany : (state, payload) => {
+        state.isCompany = payload;
     }
 }

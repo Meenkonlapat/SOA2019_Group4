@@ -11,5 +11,8 @@ export default {
     },
     getInLoginPage : state => {
         return state.inLoginPage;
+    },
+    getIsCompany : state => {
+        return state.isCompany;
     }
 }
