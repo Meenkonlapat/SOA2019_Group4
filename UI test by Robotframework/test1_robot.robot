@@ -7,8 +7,19 @@ library  SeleniumLibrary
 ทำอะไรสักอย่าง
     ไปยังหน้าเว็บ
     ทำการล็อคอิน
+    เลือกบริษัท
+    เลือกหน้าสเตตัส
 
 *** Keyword ***
+เลือกหน้าสเตตัส
+    Click Element    xpath://*[@id="navigations"]/nav/li[2]/a
+    Click Element    xpath://*[@id="navigations"]/nav/li[1]/a
+
+เลือกบริษัท
+    Click Element    xpath://*[@id="home"]/div[1]/div[2]/a/div/div
+    Click Element    xpath://*[@id="button-group"]/a[1]
+    Click Element    xpath://*[@id="popup1"]/div/a
+
 ทำการล็อคอิน
     Click Element    xpath://*[@id="navigations"]/nav/li[4]/a
     Input Text    xpath://*[@id="usr"]    asd
