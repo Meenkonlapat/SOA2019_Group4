@@ -13,12 +13,20 @@
         </thead>
         <tbody>
           <tr v-for="(req, index) in requests" :key="index">
-            <th scope="row">{{index+1}}</th>
-            <td>{{req.company.companyName}}</td>
+            <th scope="row">{{req.requestId}}</th>
+            <td>{{req.company.name}}</td>
             <td>{{req.title}}</td>
             <td>{{req.status}}</td>
             <td class="p-2">
-              <a class="btn btn-outline-success btn-sm" href="#popup1">Click</a>
+              <template v-if="req.bill.length > 0">
+              <a class="btn btn-outline-success btn-sm"
+              href="#popup1"
+              @click="openBill(req.bill)"
+              >download</a>
+              </template>
+              <template v-else>
+                -
+                </template>
             </td>
           </tr>
         </tbody>
@@ -38,6 +46,8 @@
 </template>
 
 <script>
+import jsPDF from 'jspdf';
+
 export default {
   data(){
     return{
@@ -54,18 +64,23 @@ export default {
   methods: {
     showModal() {
       this.$refs["my-modal"].show();
+    },
+    openBill(bill){
+      var pdf = new jsPDF('p', 'mm', 'a4');
+      pdf.text(10, 20, "hello world!");
+      pdf.save("eiei.pdf");
     }
   },
   created() {
     this.$http
-      .get("https://request-dot-soa2019.appspot.com/api/request")
+      .get("https://request-dot-refixsoa.appspot.com/api/request")
       .then(response => {
         return response.json();
       })
       .then(data => {
         const result = [];
         for(let key in data){
-          if (data[key].customer.customerId == this.currentUser.ID)
+          if (data[key].customer.id == this.currentUser.ID)
           {
             result.push(data[key]);
           }

@@ -15,7 +15,8 @@ export const store = new Vuex.Store({
             name : "",
             ID : ""
         },
-        inLoginPage: false
+        inLoginPage: false,
+        isCompany: false
     },
     getters,
     mutations,

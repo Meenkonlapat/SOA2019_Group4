@@ -5,7 +5,9 @@ const router = express.Router();
 
 const Contact = mongoose.model("Contact", new mongoose.Schema({
     companyId: String,
+    companyName: String,
     customerId: String,
+    customerName: String,
     chat: [{
         sender: String,
         message: String,
@@ -34,7 +36,9 @@ router.post('/', async(req, res) =>{
 
         let contact = new Contact({
             companyId: req.body.companyId,
+            companyName: req.body.companyName,
             customerId: req.body.customerId,
+            customerName: req.body.customerName,
             chat: req.body.chat
         })
     contact = await contact.save()
@@ -65,10 +69,18 @@ router.put('/', async(req, res) => {
     res.send(result);
 })
 
+router.delete("/:id", async (req, res) => {
+    const result = await Contact.findOneAndDelete({_id: req.params.id});
+    if(!result) return res.status(404).send("contact not found")
+    res.send(result);
+})
+
 function validateContact(contact){
     const schema = {
         companyId: joi.string(),
+        companyName: joi.string(),
         customerId: joi.string(),
+        customerName: joi.string(),
         chat : joi.array().items(joi.object({
             sender : joi.string(),
             message : joi.string(),

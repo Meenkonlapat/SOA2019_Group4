@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.1.1 (Python 3.5.2 on win32)" rpa="false" generated="20190430 00:33:13.820">
+<suite name="Test1 Robot" source="C:\Users\chintawee\Desktop\Node.js Project\SOA2019_Group4\UI test by Robotframework\test1_robot.robot" id="s1">
+<test name="ทำอะไรสักอย่าง" id="s1-t1">
+<kw name="ไปยังหน้าเว็บ">
+<kw library="SeleniumLibrary" name="Open Browser">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>localhost:8080/</arg>
+<arg>browser=chrome</arg>
+</arguments>
+<msg level="INFO" timestamp="20190430 00:33:20.484">Opening browser 'chrome' to base url 'localhost:8080/'.</msg>
+<status status="PASS" endtime="20190430 00:33:36.448" starttime="20190430 00:33:20.484"></status>
+</kw>
+<kw library="SeleniumLibrary" name="Maximize Browser Window">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" endtime="20190430 00:33:38.066" starttime="20190430 00:33:36.448"></status>
+</kw>
+<status status="PASS" endtime="20190430 00:33:38.067" starttime="20190430 00:33:20.484"></status>
+</kw>
+<kw name="ทำการล็อคอิน">
+<kw library="SeleniumLibrary" name="Click Element">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath://*[@id="navigations"]/nav/li[4]/a</arg>
+</arguments>
+<msg level="INFO" timestamp="20190430 00:33:38.068">Clicking element 'xpath://*[@id="navigations"]/nav/li[4]/a'.</msg>
+<status status="PASS" endtime="20190430 00:33:46.635" starttime="20190430 00:33:38.068"></status>
+</kw>
+<kw library="SeleniumLibrary" name="Input Text">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>xpath://*[@id="usr"]</arg>
+<arg>asd</arg>
+</arguments>
+<msg level="INFO" timestamp="20190430 00:33:46.636">Typing text 'asd' into text field 'xpath://*[@id="usr"]'.</msg>
+<status status="PASS" endtime="20190430 00:33:47.332" starttime="20190430 00:33:46.635"></status>
+</kw>
+<kw library="SeleniumLibrary" name="Click Element">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath://*[@id="login"]/div/div[4]/button</arg>
+</arguments>
+<msg level="INFO" timestamp="20190430 00:33:47.332">Clicking element 'xpath://*[@id="login"]/div/div[4]/button'.</msg>
+<status status="PASS" endtime="20190430 00:33:47.430" starttime="20190430 00:33:47.332"></status>
+</kw>
+<status status="PASS" endtime="20190430 00:33:47.430" starttime="20190430 00:33:38.067"></status>
+</kw>
+<kw name="เลือกบริษัท">
+<kw library="SeleniumLibrary" name="Click Element">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath://*[@id="home"]/div[1]/div[2]/a/div/div</arg>
+</arguments>
+<msg level="INFO" timestamp="20190430 00:33:47.434">Clicking element 'xpath://*[@id="home"]/div[1]/div[2]/a/div/div'.</msg>
+<status status="PASS" endtime="20190430 00:33:47.523" starttime="20190430 00:33:47.433"></status>
+</kw>
+<kw library="SeleniumLibrary" name="Click Element">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath://*[@id="button-group"]/a[1]</arg>
+</arguments>
+<msg level="INFO" timestamp="20190430 00:33:47.524">Clicking element 'xpath://*[@id="button-group"]/a[1]'.</msg>
+<status status="PASS" endtime="20190430 00:33:47.620" starttime="20190430 00:33:47.523"></status>
+</kw>
+<kw library="SeleniumLibrary" name="Click Element">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath://*[@id="popup1"]/div/a</arg>
+</arguments>
+<msg level="INFO" timestamp="20190430 00:33:47.622">Clicking element 'xpath://*[@id="popup1"]/div/a'.</msg>
+<status status="PASS" endtime="20190430 00:33:47.725" starttime="20190430 00:33:47.621"></status>
+</kw>
+<status status="PASS" endtime="20190430 00:33:47.725" starttime="20190430 00:33:47.432"></status>
+</kw>
+<kw name="เลือกหน้าสเตตัส">
+<kw library="SeleniumLibrary" name="Click Element">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath://*[@id="navigations"]/nav/li[2]/a</arg>
+</arguments>
+<msg level="INFO" timestamp="20190430 00:33:47.727">Clicking element 'xpath://*[@id="navigations"]/nav/li[2]/a'.</msg>
+<status status="PASS" endtime="20190430 00:33:49.663" starttime="20190430 00:33:47.727"></status>
+</kw>
+<kw library="SeleniumLibrary" name="Click Element">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath://*[@id="navigations"]/nav/li[1]/a</arg>
+</arguments>
+<msg level="INFO" timestamp="20190430 00:33:49.664">Clicking element 'xpath://*[@id="navigations"]/nav/li[1]/a'.</msg>
+<status status="PASS" endtime="20190430 00:33:49.763" starttime="20190430 00:33:49.664"></status>
+</kw>
+<status status="PASS" endtime="20190430 00:33:49.763" starttime="20190430 00:33:47.726"></status>
+</kw>
+<status critical="yes" status="PASS" endtime="20190430 00:33:49.765" starttime="20190430 00:33:20.484"></status>
+</test>
+<status status="PASS" endtime="20190430 00:33:49.883" starttime="20190430 00:33:13.835"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0">Critical Tests</stat>
+<stat pass="1" fail="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat id="s1" name="Test1 Robot" pass="1" fail="0">Test1 Robot</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

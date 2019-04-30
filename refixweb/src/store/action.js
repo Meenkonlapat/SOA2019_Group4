@@ -11,5 +11,8 @@ export default {
     },
     commitInLoginPage : ({commit}, payload) => {
         commit('mutateInLoginPage', payload);
+    },
+    commitIsCompany : ({commit}, payload) => {
+        commit('mutateIsCompany', payload);
     }
 }

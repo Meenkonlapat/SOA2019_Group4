@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Navigation v-if="!inLoginPage"/>
+    <Navigation v-if="!inLoginPage && !isCompany"/>
     <!-- {{currentUser.name}} -->
     <router-view></router-view>
   </div>
@@ -21,10 +21,15 @@ export default {
         return this.$store.getters["getInLoginPage"];
       }
     },
-    currentUser:{
-        get(){
-            return this.$store.getters["getCurrentUser"];
-        }
+    currentUser: {
+      get() {
+        return this.$store.getters["getCurrentUser"];
+      }
+    },
+    isCompany: {
+      get() {
+        return this.$store.getters["getIsCompany"];
+      }
     }
   }
 };

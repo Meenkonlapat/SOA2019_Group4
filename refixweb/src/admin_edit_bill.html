@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <title>Admin create bill</title>
+  </head>
+  <body>
+        <div class="container mt-5">
+                <div class="d-flex justify-content-center mb-3 h3">Add repair detail</div>
+                <form class="mb-3">
+                        <div class="form-row">
+                          <div class="col-10">
+                            <input type="text" class="form-control" placeholder="Detail">
+                          </div>
+                          <div class="col">
+                            <input type="text" class="form-control" placeholder="Price">
+                          </div>
+                          <button type="button" class="btn btn-success btn-sm">Comfirm</button>
+                        </div>
+                      </form>
+                      <div class="d-flex justify-content-center mb-3 h3">List bill</div>
+                <table class="table table-borderless border table-light text-center">
+                  <thead>
+                    <tr class="table-bordered">
+                      <th scope="col">Detail</th>
+                      <th scope="col">Price</th>
+                      <th scope="col" class="float-right pr-5">Edit</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr v-for="(req, index) in requests" :key="index">
+                      <th scope="row">Air</th>
+                      <td scope="row">$500</td>
+                      <td scope="row" class="float-right">
+                        <button type="button" class="btn btn-secondary btn-sm">Edit</button>
+                        <button type="button" class="btn btn-danger btn-sm">Delete</button>
+                       </td>
+                      </td>
+                    </tr>
+                    <tr v-for="(req, index) in requests" :key="index">
+                            <th scope="row">Air </th>
+                            <td scope="row">$500</td>
+                            <td scope="row" class="float-right">
+                              <button type="button" class="btn btn-secondary btn-sm">Edit</button>
+                              <button type="button" class="btn btn-danger btn-sm">Delete</button>
+                             </td>
+                            </td>
+                          </tr>
+                          <tr class="border-top" v-for="(req, index) in requests" :key="index">
+                                <th scope="row">Total</th>
+                                <td scope="row">$500</td>
+                                <td scope="row" class="float-right">
+                                 </td>
+                                </td>
+                              </tr>
+                  </tbody>
+                </table>
+                
+              </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  </body>
+</html>
