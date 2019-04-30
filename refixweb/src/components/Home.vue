@@ -168,7 +168,6 @@ export default {
       // logo
       pdf.setFillColor(0, 0, 0);
       pdf.setDrawColor(0, 0, 0);
-      pdf.rect(130, 25, 50, 20, "FD");
       pdf.addImage(img, "png", 130, 25, 50, 20);
       // company name
       pdf.setFontStyle("bold");
