@@ -6,6 +6,7 @@ import Message from '../components/Message.vue'
 import Login from '../components/Login.vue'
 import ForgotPassword from '../components/ForgotPassword.vue'
 import Register from '../components/Register.vue'
+import Request from '../components/Request.vue'
 import { store } from '../store/store.js';
 
 export const routes = [
@@ -35,5 +36,6 @@ export const routes = [
         }
     },
     { path: '/forgotpassword', component: ForgotPassword },
-    { path: '/register', component: Register }
+    { path: '/register', component: Register },
+    { path: '/request', component: Request }
 ]
