@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 3.1.1 (Python 3.5.2 on win32)" rpa="false" generated="20190430 00:33:13.820">
-<suite name="Test1 Robot" source="C:\Users\chintawee\Desktop\Node.js Project\SOA2019_Group4\UI test by Robotframework\test1_robot.robot" id="s1">
-<test name="ทำอะไรสักอย่าง" id="s1-t1">
+<robot generator="Robot 3.1.1 (Python 3.5.2 on win32)" rpa="false" generated="20190501 17:27:30.024">
+<suite source="C:\Users\chintawee\Desktop\Node.js Project\SOA2019_Group4\UI test by Robotframework\test1_robot.robot" id="s1" name="Test1 Robot">
+<test id="s1-t1" name="ทำอะไรสักอย่าง">
 <kw name="ไปยังหน้าเว็บ">
 <kw library="SeleniumLibrary" name="Open Browser">
 <doc>Opens a new browser instance to the given ``url``.</doc>
@@ -9,14 +9,22 @@
 <arg>localhost:8080/</arg>
 <arg>browser=chrome</arg>
 </arguments>
-<msg level="INFO" timestamp="20190430 00:33:20.484">Opening browser 'chrome' to base url 'localhost:8080/'.</msg>
-<status status="PASS" endtime="20190430 00:33:36.448" starttime="20190430 00:33:20.484"></status>
+<msg level="INFO" timestamp="20190501 17:27:32.587">Opening browser 'chrome' to base url 'localhost:8080/'.</msg>
+<status endtime="20190501 17:27:43.815" starttime="20190501 17:27:32.587" status="PASS"></status>
 </kw>
 <kw library="SeleniumLibrary" name="Maximize Browser Window">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" endtime="20190430 00:33:38.066" starttime="20190430 00:33:36.448"></status>
+<status endtime="20190501 17:27:44.938" starttime="20190501 17:27:43.815" status="PASS"></status>
 </kw>
-<status status="PASS" endtime="20190430 00:33:38.067" starttime="20190430 00:33:20.484"></status>
+<kw library="BuiltIn" name="Sleep">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg level="INFO" timestamp="20190501 17:27:46.940">Slept 2 seconds</msg>
+<status endtime="20190501 17:27:46.940" starttime="20190501 17:27:44.939" status="PASS"></status>
+</kw>
+<status endtime="20190501 17:27:46.940" starttime="20190501 17:27:32.586" status="PASS"></status>
 </kw>
 <kw name="ทำการล็อคอิน">
 <kw library="SeleniumLibrary" name="Click Element">
@@ -24,8 +32,16 @@
 <arguments>
 <arg>xpath://*[@id="navigations"]/nav/li[4]/a</arg>
 </arguments>
-<msg level="INFO" timestamp="20190430 00:33:38.068">Clicking element 'xpath://*[@id="navigations"]/nav/li[4]/a'.</msg>
-<status status="PASS" endtime="20190430 00:33:46.635" starttime="20190430 00:33:38.068"></status>
+<msg level="INFO" timestamp="20190501 17:27:46.941">Clicking element 'xpath://*[@id="navigations"]/nav/li[4]/a'.</msg>
+<status endtime="20190501 17:27:47.074" starttime="20190501 17:27:46.941" status="PASS"></status>
+</kw>
+<kw library="BuiltIn" name="Sleep">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg level="INFO" timestamp="20190501 17:27:49.076">Slept 2 seconds</msg>
+<status endtime="20190501 17:27:49.076" starttime="20190501 17:27:47.074" status="PASS"></status>
 </kw>
 <kw library="SeleniumLibrary" name="Input Text">
 <doc>Types the given ``text`` into text field identified by ``locator``.</doc>
@@ -33,18 +49,34 @@
 <arg>xpath://*[@id="usr"]</arg>
 <arg>asd</arg>
 </arguments>
-<msg level="INFO" timestamp="20190430 00:33:46.636">Typing text 'asd' into text field 'xpath://*[@id="usr"]'.</msg>
-<status status="PASS" endtime="20190430 00:33:47.332" starttime="20190430 00:33:46.635"></status>
+<msg level="INFO" timestamp="20190501 17:27:49.077">Typing text 'asd' into text field 'xpath://*[@id="usr"]'.</msg>
+<status endtime="20190501 17:27:49.193" starttime="20190501 17:27:49.076" status="PASS"></status>
+</kw>
+<kw library="BuiltIn" name="Sleep">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg level="INFO" timestamp="20190501 17:27:51.195">Slept 2 seconds</msg>
+<status endtime="20190501 17:27:51.195" starttime="20190501 17:27:49.194" status="PASS"></status>
 </kw>
 <kw library="SeleniumLibrary" name="Click Element">
 <doc>Click element identified by ``locator``.</doc>
 <arguments>
 <arg>xpath://*[@id="login"]/div/div[4]/button</arg>
 </arguments>
-<msg level="INFO" timestamp="20190430 00:33:47.332">Clicking element 'xpath://*[@id="login"]/div/div[4]/button'.</msg>
-<status status="PASS" endtime="20190430 00:33:47.430" starttime="20190430 00:33:47.332"></status>
+<msg level="INFO" timestamp="20190501 17:27:51.195">Clicking element 'xpath://*[@id="login"]/div/div[4]/button'.</msg>
+<status endtime="20190501 17:27:51.285" starttime="20190501 17:27:51.195" status="PASS"></status>
 </kw>
-<status status="PASS" endtime="20190430 00:33:47.430" starttime="20190430 00:33:38.067"></status>
+<kw library="BuiltIn" name="Sleep">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg level="INFO" timestamp="20190501 17:27:53.288">Slept 2 seconds</msg>
+<status endtime="20190501 17:27:53.288" starttime="20190501 17:27:51.286" status="PASS"></status>
+</kw>
+<status endtime="20190501 17:27:53.288" starttime="20190501 17:27:46.941" status="PASS"></status>
 </kw>
 <kw name="เลือกบริษัท">
 <kw library="SeleniumLibrary" name="Click Element">
@@ -52,26 +84,50 @@
 <arguments>
 <arg>xpath://*[@id="home"]/div[1]/div[2]/a/div/div</arg>
 </arguments>
-<msg level="INFO" timestamp="20190430 00:33:47.434">Clicking element 'xpath://*[@id="home"]/div[1]/div[2]/a/div/div'.</msg>
-<status status="PASS" endtime="20190430 00:33:47.523" starttime="20190430 00:33:47.433"></status>
+<msg level="INFO" timestamp="20190501 17:27:53.289">Clicking element 'xpath://*[@id="home"]/div[1]/div[2]/a/div/div'.</msg>
+<status endtime="20190501 17:27:53.382" starttime="20190501 17:27:53.289" status="PASS"></status>
+</kw>
+<kw library="BuiltIn" name="Sleep">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg level="INFO" timestamp="20190501 17:27:55.385">Slept 2 seconds</msg>
+<status endtime="20190501 17:27:55.385" starttime="20190501 17:27:53.382" status="PASS"></status>
 </kw>
 <kw library="SeleniumLibrary" name="Click Element">
 <doc>Click element identified by ``locator``.</doc>
 <arguments>
-<arg>xpath://*[@id="button-group"]/a[1]</arg>
+<arg>xpath://*[@id="request"]</arg>
 </arguments>
-<msg level="INFO" timestamp="20190430 00:33:47.524">Clicking element 'xpath://*[@id="button-group"]/a[1]'.</msg>
-<status status="PASS" endtime="20190430 00:33:47.620" starttime="20190430 00:33:47.523"></status>
+<msg level="INFO" timestamp="20190501 17:27:55.385">Clicking element 'xpath://*[@id="request"]'.</msg>
+<status endtime="20190501 17:27:55.466" starttime="20190501 17:27:55.385" status="PASS"></status>
+</kw>
+<kw library="BuiltIn" name="Sleep">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg level="INFO" timestamp="20190501 17:27:57.469">Slept 2 seconds</msg>
+<status endtime="20190501 17:27:57.469" starttime="20190501 17:27:55.467" status="PASS"></status>
 </kw>
 <kw library="SeleniumLibrary" name="Click Element">
 <doc>Click element identified by ``locator``.</doc>
 <arguments>
-<arg>xpath://*[@id="popup1"]/div/a</arg>
+<arg>xpath://*[@id="request"]/div/button[2]</arg>
 </arguments>
-<msg level="INFO" timestamp="20190430 00:33:47.622">Clicking element 'xpath://*[@id="popup1"]/div/a'.</msg>
-<status status="PASS" endtime="20190430 00:33:47.725" starttime="20190430 00:33:47.621"></status>
+<msg level="INFO" timestamp="20190501 17:27:57.469">Clicking element 'xpath://*[@id="request"]/div/button[2]'.</msg>
+<status endtime="20190501 17:27:57.536" starttime="20190501 17:27:57.469" status="PASS"></status>
 </kw>
-<status status="PASS" endtime="20190430 00:33:47.725" starttime="20190430 00:33:47.432"></status>
+<kw library="BuiltIn" name="Sleep">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg level="INFO" timestamp="20190501 17:27:59.537">Slept 2 seconds</msg>
+<status endtime="20190501 17:27:59.537" starttime="20190501 17:27:57.536" status="PASS"></status>
+</kw>
+<status endtime="20190501 17:27:59.537" starttime="20190501 17:27:53.289" status="PASS"></status>
 </kw>
 <kw name="เลือกหน้าสเตตัส">
 <kw library="SeleniumLibrary" name="Click Element">
@@ -79,22 +135,82 @@
 <arguments>
 <arg>xpath://*[@id="navigations"]/nav/li[2]/a</arg>
 </arguments>
-<msg level="INFO" timestamp="20190430 00:33:47.727">Clicking element 'xpath://*[@id="navigations"]/nav/li[2]/a'.</msg>
-<status status="PASS" endtime="20190430 00:33:49.663" starttime="20190430 00:33:47.727"></status>
+<msg level="INFO" timestamp="20190501 17:27:59.538">Clicking element 'xpath://*[@id="navigations"]/nav/li[2]/a'.</msg>
+<status endtime="20190501 17:27:59.833" starttime="20190501 17:27:59.538" status="PASS"></status>
+</kw>
+<kw library="BuiltIn" name="Sleep">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5s</arg>
+</arguments>
+<msg level="INFO" timestamp="20190501 17:28:04.836">Slept 5 seconds</msg>
+<status endtime="20190501 17:28:04.836" starttime="20190501 17:27:59.833" status="PASS"></status>
 </kw>
 <kw library="SeleniumLibrary" name="Click Element">
 <doc>Click element identified by ``locator``.</doc>
 <arguments>
 <arg>xpath://*[@id="navigations"]/nav/li[1]/a</arg>
 </arguments>
-<msg level="INFO" timestamp="20190430 00:33:49.664">Clicking element 'xpath://*[@id="navigations"]/nav/li[1]/a'.</msg>
-<status status="PASS" endtime="20190430 00:33:49.763" starttime="20190430 00:33:49.664"></status>
+<msg level="INFO" timestamp="20190501 17:28:04.836">Clicking element 'xpath://*[@id="navigations"]/nav/li[1]/a'.</msg>
+<status endtime="20190501 17:28:04.925" starttime="20190501 17:28:04.836" status="PASS"></status>
 </kw>
-<status status="PASS" endtime="20190430 00:33:49.763" starttime="20190430 00:33:47.726"></status>
+<kw library="BuiltIn" name="Sleep">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1s</arg>
+</arguments>
+<msg level="INFO" timestamp="20190501 17:28:05.926">Slept 1 second</msg>
+<status endtime="20190501 17:28:05.926" starttime="20190501 17:28:04.926" status="PASS"></status>
 </kw>
-<status critical="yes" status="PASS" endtime="20190430 00:33:49.765" starttime="20190430 00:33:20.484"></status>
+<status endtime="20190501 17:28:05.926" starttime="20190501 17:27:59.538" status="PASS"></status>
+</kw>
+<kw name="logout">
+<kw library="SeleniumLibrary" name="Choose Ok On Next Confirmation">
+<doc>*DEPRECATED in SeleniumLibrary 3.2.* Use `Handle Alert` directly instead.</doc>
+<msg level="WARN" timestamp="20190501 17:28:05.927">Keyword 'SeleniumLibrary.Choose Ok On Next Confirmation' is deprecated. Use `Handle Alert` directly instead.</msg>
+<status endtime="20190501 17:28:05.929" starttime="20190501 17:28:05.927" status="PASS"></status>
+</kw>
+<kw library="SeleniumLibrary" name="Click Element">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath://*[@id="navigations"]/nav/li[4]/div/a</arg>
+</arguments>
+<msg level="INFO" timestamp="20190501 17:28:05.929">Clicking element 'xpath://*[@id="navigations"]/nav/li[4]/div/a'.</msg>
+<status endtime="20190501 17:28:06.011" starttime="20190501 17:28:05.929" status="PASS"></status>
+</kw>
+<kw library="BuiltIn" name="Sleep">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg level="INFO" timestamp="20190501 17:28:08.013">Slept 2 seconds</msg>
+<status endtime="20190501 17:28:08.013" starttime="20190501 17:28:06.011" status="PASS"></status>
+</kw>
+<kw library="SeleniumLibrary" name="Confirm Action">
+<doc>*DEPRECATED in SeleniumLibrary 3.2.* Use `Handle Alert` instead.</doc>
+<msg level="WARN" timestamp="20190501 17:28:08.014">Keyword 'SeleniumLibrary.Confirm Action' is deprecated. Use `Handle Alert` instead.</msg>
+<status endtime="20190501 17:28:08.022" starttime="20190501 17:28:08.014" status="PASS"></status>
+</kw>
+<kw library="BuiltIn" name="Sleep">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5s</arg>
+</arguments>
+<msg level="INFO" timestamp="20190501 17:28:13.024">Slept 5 seconds</msg>
+<status endtime="20190501 17:28:13.024" starttime="20190501 17:28:08.023" status="PASS"></status>
+</kw>
+<status endtime="20190501 17:28:13.024" starttime="20190501 17:28:05.927" status="PASS"></status>
+</kw>
+<kw name="ปิด">
+<kw library="SeleniumLibrary" name="Close Browser">
+<doc>Closes the current browser.</doc>
+<status endtime="20190501 17:28:15.272" starttime="20190501 17:28:13.025" status="PASS"></status>
+</kw>
+<status endtime="20190501 17:28:15.272" starttime="20190501 17:28:13.025" status="PASS"></status>
+</kw>
+<status endtime="20190501 17:28:15.273" critical="yes" starttime="20190501 17:27:32.585" status="PASS"></status>
 </test>
-<status status="PASS" endtime="20190430 00:33:49.883" starttime="20190430 00:33:13.835"></status>
+<status endtime="20190501 17:28:15.276" starttime="20190501 17:27:30.027" status="PASS"></status>
 </suite>
 <statistics>
 <total>
@@ -108,5 +224,7 @@
 </suite>
 </statistics>
 <errors>
+<msg level="WARN" timestamp="20190501 17:28:05.927">Keyword 'SeleniumLibrary.Choose Ok On Next Confirmation' is deprecated. Use `Handle Alert` directly instead.</msg>
+<msg level="WARN" timestamp="20190501 17:28:08.014">Keyword 'SeleniumLibrary.Confirm Action' is deprecated. Use `Handle Alert` instead.</msg>
 </errors>
 </robot>
