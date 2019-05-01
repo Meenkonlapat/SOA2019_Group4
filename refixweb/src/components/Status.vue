@@ -19,14 +19,24 @@
             <td>{{req.status}}</td>
             <td class="p-2">
               <template v-if="req.bill.length > 0">
-              <a class="btn btn-outline-success btn-sm"
-              href="#popup1"
-              @click="openBill(req.bill)"
-              >download</a>
+                <a
+                  class="btn btn-outline-success btn-sm"
+                  href="#popup1"
+                  @click="openBill(req, req.status)"
+                >download</a>
+
+                <!-- button to accept bill should be around here somewhere-->
+                <!-- if you move or create accept button somewhere else -->
+                <!-- PLEASE COPY @click from this temporary button -->
+                <!-- and add @click to your new button -->
+                <!-- but this button need service in google cloud to work -->
+                <!-- so this can't be tested right now... -->
+
+                <button @click="confirmBill(req)">accept</button>
+
+
               </template>
-              <template v-else>
-                -
-                </template>
+              <template v-else>-</template>
             </td>
           </tr>
         </tbody>
@@ -41,22 +51,74 @@
         </div>
       </b-modal>
     </div>
-    <!--  -->   
+    <!--  -->
   </div>
 </template>
 
 <script>
-import jsPDF from 'jspdf';
+import jsPDF from "jspdf";
+import refixLogo from "./refixLogo.js";
+import waterMark from "./exampleWaterMark.js";
 
 export default {
-  data(){
-    return{
-      requests:[]
-    }
+  data() {
+    return {
+      requests: [
+        {
+          customer: {
+            id: "000001",
+            name: "asd",
+            address: "999/999 Bangkok"
+          },
+          company: {
+            id: "000001",
+            name: "Appliance A Company",
+            address: "12/345 Bangkok"
+          },
+          _id: "5cc063b6bf003c20506ef5db",
+          requestId: "000001",
+          category: "appliance",
+          status: "completed",
+          title: "fix electric fan",
+          description: "fix hatari fan",
+          bill: [
+            {
+              _id: "5cc9aa2efe561d2ffcc2bd28",
+              detail: "change fan motor",
+              price: 10
+            },
+            {
+              detail: "mechanic cost",
+              price: 20
+            }
+          ],
+          __v: 0
+        },
+        {
+          customer: {
+            id: "000001",
+            name: "asd"
+          },
+          company: {
+            id: "000001",
+            name: "Appliance A Company",
+            address: "12/345 Bangkok"
+          },
+          _id: "5cc06471bf003c20506ef5de",
+          requestId: "000002",
+          category: "appliance",
+          status: "waiting",
+          title: "fix TV",
+          description: "fix left speaker",
+          bill: [],
+          __v: 0
+        }
+      ]
+    };
   },
-  computed:{
-    currentUser : {
-      get(){
+  computed: {
+    currentUser: {
+      get() {
         return this.$store.getters["getCurrentUser"];
       }
     }
@@ -65,10 +127,87 @@ export default {
     showModal() {
       this.$refs["my-modal"].show();
     },
-    openBill(bill){
-      var pdf = new jsPDF('p', 'mm', 'a4');
-      pdf.text(10, 20, "hello world!");
-      pdf.save("eiei.pdf");
+    openBill(req, status) {
+      var img = refixLogo;
+      var waterMarkImg = waterMark;
+      var pdf = new jsPDF("p", "mm", "a4");
+      pdf.setFont("helvetica", "normal");
+      // background box
+      pdf.setFillColor(248, 249, 250);
+      pdf.setDrawColor(0, 0, 0);
+      pdf.rect(20, 20, 170, 260, "FD");
+      // logo
+      pdf.setFillColor(0, 0, 0);
+      pdf.setDrawColor(0, 0, 0);
+      pdf.addImage(img, "png", 130, 25, 50, 20);
+      // company name
+      pdf.setFontStyle("bold");
+      pdf.setFontSize(20);
+      pdf.text(30, 35, req.company.name);
+      pdf.setFontStyle("normal");
+      pdf.setFontSize(14);
+      pdf.text(30, 45, "Invoice Number : " + req.requestId);
+      pdf.line(20, 50, 190, 50);
+      // second row
+      pdf.setFontStyle("bold");
+      pdf.text(25, 60, "Company Info");
+      pdf.setFontStyle("normal");
+      pdf.setFontSize(12);
+      pdf.text(25, 70, req.company.address);
+
+      pdf.line(105, 50, 105, 85);
+
+      pdf.setFontStyle("bold");
+      pdf.setFontSize(14);
+      pdf.text(110, 60, "Bill to");
+      pdf.setFontStyle("normal");
+      pdf.setFontSize(12);
+      pdf.text(110, 70, req.customer.name);
+      pdf.text(110, 80, req.customer.address);
+      pdf.line(20, 85, 190, 85);
+      //start detail table
+      pdf.setDrawColor(100, 100, 100);
+      pdf.line(25, 90, 185, 90);
+      pdf.setFontStyle("bold");
+      pdf.text(30, 96, "Detail");
+      pdf.text(170, 96, "Price");
+      pdf.line(25, 100, 185, 100);
+
+      pdf.setFontStyle("normal");
+      let y_pos = 106;
+      let total = 0;
+      for (let index in req.bill) {
+        pdf.text(30, y_pos, req.bill[index].detail);
+        pdf.text(170, y_pos, req.bill[index].price.toString());
+        y_pos += 4;
+        pdf.line(25, y_pos, 185, y_pos);
+        y_pos += 6;
+        total += req.bill[index].price;
+      }
+      y_pos -= 5;
+      pdf.setDrawColor(0, 0, 0);
+      pdf.line(25, y_pos, 185, y_pos);
+      y_pos += 7;
+      pdf.setFontStyle("bold");
+      pdf.text(150, y_pos, "Total");
+      pdf.text(170, y_pos, total.toString());
+
+      if(status != "completed")
+      {
+        pdf.addImage(waterMarkImg, "png", 0, 0, 210, 300);
+      }
+
+      pdf.save("ztest.pdf");
+    },
+    confirmBill(req) {
+      if (confirm("Do you want to accept this bill")) {
+        this.$http.put(
+          "https://request-dot-refixsoa.appspot.com/api/request/" +
+            req._id +
+            "/status",
+          { status: "complete" }
+        );
+      }
     }
   },
   created() {
@@ -79,9 +218,8 @@ export default {
       })
       .then(data => {
         const result = [];
-        for(let key in data){
-          if (data[key].customer.id == this.currentUser.ID)
-          {
+        for (let key in data) {
+          if (data[key].customer.id == this.currentUser.ID) {
             result.push(data[key]);
           }
         }

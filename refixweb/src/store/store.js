@@ -13,7 +13,8 @@ export const store = new Vuex.Store({
         company: null,
         currentUser: {
             name : "",
-            ID : ""
+            ID : "",
+            address: ""
         },
         inLoginPage: false,
         isCompany: false

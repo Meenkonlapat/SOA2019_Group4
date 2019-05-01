@@ -16,7 +16,7 @@
         <div id="address">{{company.companyDescription}}</div>
         <div id="button-group">
           <router-link to="/request">
-            <a id="request">Requjest</a>
+            <a id="request">Request</a>
           </router-link>
           <router-link to="/message">
             <a id="contact">Contact</a>
@@ -67,7 +67,6 @@ export default {
   }
 };
 </script>
-
 
 <style>
 #company {

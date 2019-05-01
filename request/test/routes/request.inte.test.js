@@ -21,7 +21,8 @@ describe("API test : /api/request", () => {
                 requestId: '000001',
                 customer: {
                     id:'000001',
-                    name:"Somchai"
+                    name:"Somchai",
+                    address:"123/456 Bangkok"
                 },
                 company: {
                     id:'000001',
@@ -38,7 +39,8 @@ describe("API test : /api/request", () => {
                 requestId: '000002',
                 customer: {
                     id:'000001',
-                    name:"Somchai"
+                    name:"Somchai",
+                    address:"123/456 Bangkok"
                 },
                 company: {
                     id:'000001',
@@ -67,7 +69,8 @@ describe("API test : /api/request", () => {
                 requestId: '000004',
                 customer: {
                     id:'000001',
-                    name:"Somchai"
+                    name:"Somchai",
+                    address:"123/456 Bangkok"
                 },
                 company: {
                     id:'000001',
@@ -107,7 +110,8 @@ describe("API test : /api/request", () => {
                 requestId: '000004',
                 customer: {
                     id:'000001',
-                    name:"Somchai"
+                    name:"Somchai",
+                    address:"123/456 Bangkok"
                 },
                 company: {
                     id:'000001',
@@ -141,13 +145,14 @@ describe("API test : /api/request", () => {
         });
     });
 
-    describe("PUT /:id", () => {
+    describe("PUT /:id/status", () => {
         it("should return updated document", async() => {
             const data = new Request({
                 requestId: '000004',
                 customer: {
                     id:'000001',
-                    name:"Somchai"
+                    name:"Somchai",
+                    address:"123/456 Bangkok"
                 },
                 company: {
                     id:'000001',
@@ -161,7 +166,7 @@ describe("API test : /api/request", () => {
                 bill: []
             });
             await data.save();
-            const res = await request(server).put("/api/request/" + data._id).send({status: "rejected"});
+            const res = await request(server).put("/api/request/" + data._id+"/status").send({status: "rejected"});
 
             expect(res.status).toBe(200);
             expect(res.body).toHaveProperty("status", "rejected");

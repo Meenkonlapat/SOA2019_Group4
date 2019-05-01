@@ -34,7 +34,63 @@
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      requestObject : {
+        requestId : "000000",
+        customer : {
+          id : "",
+          name : "",
+          address : ""
+        },
+        company : {
+          id : "",
+          name : "",
+          address : ""
+        },
+        category : "",
+        status : "",
+        title : "",
+        description : "",
+        bill : []
+      }
+    }
+  },
+  computed:{
+    currentUser : {
+      get(){
+        return this.$store.getters["getCurrentUser"];
+      }
+    },
+    company: {
+      get() {
+        return this.$store.getters["getCompany"];
+      }
+    }
+  },
+  created(){
+    let user = this.$store.getters["getCurrentUser"];
+    let compa = this.$store.getters["getCompany"];
+    this.requestObject.customer.id = user.ID;
+    this.requestObject.customer.name = user.name;
+    this.requestObject.customer.address = user.address;
+    this.requestObject.company.id = compa.companyId;
+    this.requestObject.company.name = compa.companyName;
+    this.requestObject.company.address = compa.companyAddress;
+    this.$http.get("https://request-dot-refixsoa.appspot.com/api/request/count")
+    // try turning on service and test this
+    .then(response => {
+      return response.json();
+    }).then(data => {
+      // this.requestObject.requestId = "000000" + 
+      console.log("data is ");
+      console.log(data);
+    });
+    console.log("request object is");
+    console.log(requestObject);
+  }
+};
 </script>
 
 <style>
