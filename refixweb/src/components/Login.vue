@@ -135,6 +135,7 @@ b {
   opacity: 0;
 }
 .login:hover {
+  color: #fff;
   border: 2px solid rgb(34, 163, 255);
   background-color: rgb(34, 163, 255);
 }
