@@ -12,7 +12,8 @@ describe("Unit test : validateRequest", () => {
             requestId: '000004',
             customer: {
                 id:'000001',
-                name:"Somchai"
+                name:"Somchai",
+                address:"123/123 Bangkok"
             },
             company: {
                 id:'000001',

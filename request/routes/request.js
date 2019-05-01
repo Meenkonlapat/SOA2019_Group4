@@ -9,7 +9,8 @@ const Request = mongoose.model("Request", new mongoose.Schema({
     requestId: String,
     customer: {
         id : String,
-        name : String
+        name : String,
+        address : String
     },
     company:
     {
@@ -62,6 +63,38 @@ router.post("/", async (req, res) => {
     res.send(request);
 })
 
+router.put("/:id/status", validateObjectId, async (req, res) => {
+    const result = await Request.findOneAndUpdate(
+    {
+        _id: req.params.id
+    }, 
+    {
+        $set:
+        {
+            status: req.body.status
+        }
+    },
+    {new : true});
+    if(!result) return res.status(404).send("request not found");
+    res.send(result);
+})
+
+router.put("/:id/bill", validateObjectId, async (req, res) => {
+    const result = await Request.findOneAndUpdate(
+    {
+        _id: req.params.id
+    }, 
+    {
+        $set:
+        {
+            bill: req.body.bill
+        }
+    },
+    {new : true});
+    if(!result) return res.status(404).send("request not found");
+    res.send(result);
+})
+
 router.put("/:id", validateObjectId, async (req, res) => {
     const result = await Request.findOneAndUpdate(
     {
@@ -70,8 +103,7 @@ router.put("/:id", validateObjectId, async (req, res) => {
     {
         $set:
         {
-            status: req.body.status,
-            bill: req.body.bill
+            customer: req.body.customer
         }
     },
     {new : true});
@@ -97,7 +129,8 @@ function validateRequest(request)
         requestId: Joi.string(),
         customer: Joi.object({
             id: Joi.string(),
-            name: Joi.string()
+            name: Joi.string(),
+            address: Joi.string()
         }),
         company: Joi.object({
             id: Joi.string(),
