@@ -9,6 +9,7 @@
           id="usr"
           placeholder="Email address or username"
           v-model="username"
+          @keydown.enter="setCurrentUser()"
         >
       </div>
       <div class="form-group">
@@ -69,7 +70,7 @@ export default {
               ID: "000001",
               address: "123/123 Bangkok"
           }
-          this.$router.push("/Home")
+          this.$router.push("/")
       }
       else if (this.username == "companya")
       {
@@ -82,7 +83,7 @@ export default {
         this.$router.push("/admin")
       }
       this.$store.dispatch("commitCurrentUser", user);
-    }
+    },
   },
   beforeRouteLeave(to, from, next) {
     this.$store.dispatch("commitInLoginPage", false);
