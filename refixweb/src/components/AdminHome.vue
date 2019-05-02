@@ -15,7 +15,7 @@
                 </router-link>
             </div>
             <div class="col-4">
-                <a href="#">
+                <router-link to="/message">
                     <div class="card bg-white card-admin i-am-centerd center">
                         <img src="https://upload.wikimedia.org/wikipedia/commons/6/69/June_odd-eyed-cat_cropped.jpg"
                             class="card-img image-admin" alt="messenger">
@@ -23,9 +23,8 @@
                             <h1>Messager</h1>
                         </div>
                     </div>
-                </a>
+                </router-link>
             </div>
-            
         </div>
     </div>
     </div>
