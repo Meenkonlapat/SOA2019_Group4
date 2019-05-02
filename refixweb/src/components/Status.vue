@@ -24,24 +24,19 @@
                   class="btn btn-outline-success btn-sm"
                   href="#popup1"
                   @click="openBill(req, req.status)"
-                >download</a>
+                >Download</a>
               </template>
-              <template v-else>-</template>
+              <template v-else><button type="button" class="btn btn-secondary btn-sm" disabled>
+                In progress</button></template>
             </td>
             <td id="confirmBill">
-              <template v-if="req.bill.length > 0">
+              <template v-if="req.bill.length > 0 && req.status != 'completed'">
                 <button
                   type="button"
                   class="btn"
                   id="btnBill"
                   @click="confirmBill(req)"
                 >Confirm bill</button>
-                <!-- button to accept bill should be around here somewhere-->
-                <!-- if you move or create accept button somewhere else -->
-                <!-- PLEASE COPY @click from this temporary button -->
-                <!-- and add @click to your new button -->
-                <!-- but this button need service in google cloud to work -->
-                <!-- so this can't be tested right now... -->
               </template>
               <template v-else>-</template>
             </td>

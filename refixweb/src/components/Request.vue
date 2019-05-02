@@ -84,10 +84,14 @@ export default {
         this.requestObject.title = this.repairTitle;
         this.requestObject.description = this.repairDetail;
         console.log(this.requestObject);
-        this.$http.post(
-          "https://request-dot-refixsoa2019.appspot.com/api/request",
-          this.requestObject
-        ).then(this.$router.push("/status"));
+        this.$http
+          .post(
+            "https://request-dot-refixsoa2019.appspot.com/api/request",
+            this.requestObject
+          )
+          .then(() => {
+            this.$router.push("/status");
+          });
       }
     }
   },
@@ -107,7 +111,7 @@ export default {
         return response.json();
       })
       .then(data => {
-        this.requestObject.requestId = ("000000" + (data.count+1)).substr(-6);
+        this.requestObject.requestId = ("000000" + (data.count + 1)).substr(-6);
       });
     console.log("request object is");
     console.log(this.requestObject);

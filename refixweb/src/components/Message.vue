@@ -46,7 +46,7 @@
         </section>
         <div class="msg-compose">
           <textarea placeholder="Say something..." v-model="message" @keydown.enter="sendMessage()" />
-          <font-awesome-icon icon="paper-plane" class="icon" @click="sendMessage()"></font-awesome-icon>
+          <div id="sendButton" @click="sendMessage()"><font-awesome-icon icon="paper-plane" class="icon"/></div>
         </div>
       </section>
     </div>
@@ -119,6 +119,30 @@ export default {
     this.socket.on("message", data => {
       this.chats.push(data);
     });
+    // setTimeout(()=>{
+    //   this.$http
+    //   .get("https://contact-dot-refixsoa2019.appspot.com/api/contact")
+    //   .then(response => {
+    //     return response.json();
+    //   })
+    //   .then(data => {
+    //     const result = [];
+    //     for (let key in data) {
+    //       if (this.isCompany) {
+    //         if (data[key].companyId == this.currentUser.ID){
+    //           result.push(data[key]);
+    //         }
+    //       } else {
+    //         if (data[key].customerId == this.currentUser.ID) {
+    //           result.push(data[key]);
+    //         }
+    //       }
+    //     }
+    //     this.contacts = result;
+    //     console.log("in mounted settimeout");
+    //     console.log(this.contacts);
+    //   });
+    // }, 2000)
   },
   created() {
     this.$http
@@ -140,6 +164,8 @@ export default {
           }
         }
         this.contacts = result;
+        console.log("in created");
+        console.log(this.contacts);
       });
   }
 };

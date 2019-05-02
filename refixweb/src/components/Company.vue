@@ -16,12 +16,9 @@
         <div id="address">{{company.companyDescription}}</div>
         <div id="button-group">
           <router-link to="/request">
-            <a id="request">Request</a>
+          <div class="btn btn-outline-primary">Request</div>
           </router-link>
-          <router-link to="/message">
-            <a id="contact">Contact</a>
-          </router-link>
-          
+          <div class="btn btn-outline-info ml-3" @click="addContact(company)">Contact</div>
         </div>
       </div>
       <div class="portfolio">
@@ -63,6 +60,52 @@ export default {
       get() {
         return this.$store.getters["getCompany"];
       }
+    },
+    currentUser: {
+      get() {
+        return this.$store.getters["getCurrentUser"];
+      }
+    }
+  },
+  methods: {
+    addContact(compa) {
+      this.$http
+        .get("https://contact-dot-refixsoa2019.appspot.com/api/contact")
+        .then(response => {
+          return response.json();
+        })
+        .then(data => {
+          let isRoomExisted = false;
+          for (let key in data) {
+            if (
+              data[key].customerId == this.currentUser.ID &&
+              data[key].companyId == compa.companyId
+            ) {
+              isRoomExisted = true;
+            }
+          }
+          if (!isRoomExisted) {
+            let contactObject = {
+              companyId: compa.companyId,
+              companyName: compa.companyName,
+              customerId: this.currentUser.ID,
+              customerName: this.currentUser.name,
+              chat: []
+            };
+            this.$http
+              .post(
+                "https://contact-dot-refixsoa2019.appspot.com/api/contact",
+                contactObject
+              )
+              .then(() => {
+                console.log("created room");
+                console.log(contactObject);
+                this.$router.push("/message");
+              });
+          } else {
+            this.$router.push("/message");
+          }
+        });
     }
   }
 };
