@@ -15,13 +15,8 @@
       <div class="col-8">
         <div id="address">{{company.companyDescription}}</div>
         <div id="button-group">
-          <router-link to="/request">
-            <a id="request">Request</a>
-          </router-link>
-
-          <!-- add style for cursor to change into hand here-->
-          <a id="contact" @click="addContact(company)">Contact</a>
-
+          <div class="btn btn-outline-primary">Request</div>
+          <div class="btn btn-outline-info ml-3">Contact</div>
         </div>
       </div>
       <div class="portfolio">
