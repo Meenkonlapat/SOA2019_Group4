@@ -75,7 +75,7 @@ export default {
       },
       message: "",
       contacts: [],
-      socket: io("https://contact-dot-refixsoa.appspot.com"),
+      socket: io("https://contact-dot-refixsoa2019.appspot.com"),
       targetUser: {
         name: "",
         id: ""
@@ -97,7 +97,7 @@ export default {
         sender: this.user.name,
         message: this.message,
       });
-      this.$http.put("https://contact-dot-refixsoa.appspot.com/api/contact"
+      this.$http.put("https://contact-dot-refixsoa2019.appspot.com/api/contact"
       , {sender: this.user.name, message: this.message}
       , {params : {companyId: this.targetUser.id, customerId: this.user.ID}});
       this.message = "";
@@ -114,7 +114,7 @@ export default {
     });
   },
   created(){
-    this.$http.get("https://contact-dot-refixsoa.appspot.com/api/contact")
+    this.$http.get("https://contact-dot-refixsoa2019.appspot.com/api/contact")
     .then(response => {
         return response.json();
       })

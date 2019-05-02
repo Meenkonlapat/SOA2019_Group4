@@ -29,13 +29,8 @@
               <template v-else>-</template>
             </td>
             <td id="confirmBill">
+              <template v-if="req.bill.length > 0">
               <button type="button" class="btn" id="btnBill" @click="confirmBill(req)">Confirm bill</button>
-                <!-- button to accept bill should be around here somewhere-->
-                <!-- if you move or create accept button somewhere else -->
-                <!-- PLEASE COPY @click from this temporary button -->
-                <!-- and add @click to your new button -->
-                <!-- but this button need service in google cloud to work -->
-                <!-- so this can't be tested right now... -->
               </template>
               <template v-else>-</template>
             </td>
@@ -193,7 +188,7 @@ export default {
     confirmBill(req) {
       if (confirm("Do you want to accept this bill")) {
         this.$http.put(
-          "https://request-dot-refixsoa.appspot.com/api/request/" +
+          "https://request-dot-refixsoa2019.appspot.com/api/request/" +
             req._id +
             "/status",
           { status: "complete" }
@@ -203,7 +198,7 @@ export default {
   },
   created() {
     this.$http
-      .get("https://request-dot-refixsoa.appspot.com/api/request")
+      .get("https://request-dot-refixsoa2019.appspot.com/api/request")
       .then(response => {
         return response.json();
       })

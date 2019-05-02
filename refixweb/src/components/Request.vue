@@ -4,31 +4,33 @@
       <div class="form-group row">
         <label for="staticEmail" class="col-sm-2 col-form-label">Username:</label>
         <div class="col-sm-10">
-          <input type="text" readonly class="form-control" value="email@example.com">
+          <input type="text" readonly class="form-control" :value="currentUser.name">
         </div>
       </div>
       <div class="form-group row">
         <label for="text" class="col-sm-2 col-form-label">Repair:</label>
         <div class="col-sm-10">
-          <input type="text" class="form-control">
+          <input type="text" class="form-control" v-model="repairTitle">
         </div>
       </div>
       <div class="form-group row">
         <label for="text" class="col-sm-2 col-form-label">Detail:</label>
         <div class="col-sm-10">
-          <input type="text" class="form-control">
+          <input type="text" class="form-control" v-model="repairDetail">
         </div>
       </div>
       <div class="form-group row">
         <label for="text" class="col-sm-2 col-form-label">Location:</label>
         <div class="col-sm-10">
-          <input type="text" class="form-control">
+          <input type="text" class="form-control" readonly :value="currentUser.address">
         </div>
       </div>
     </form>
     <div class="wrapper">
-      <button class="btn confirm-button">Confirm</button>
-      <button class="btn cancel-button">Cancel</button>
+      <button class="btn confirm-button" @click="confirmRequest()">Confirm</button>
+      <router-link to="/all">
+        <button class="btn cancel-button" @click="setCompanyCategory(company.companyCategory)">Cancel</button>
+      </router-link>
     </div>
   </div>
 </template>
@@ -49,12 +51,13 @@ export default {
           name : "",
           address : ""
         },
-        category : "",
         status : "",
         title : "",
         description : "",
         bill : []
-      }
+      },
+      repairTitle: "",
+      repairDetail: ""
     }
   },
   computed:{
@@ -69,6 +72,17 @@ export default {
       }
     }
   },
+  methods:{
+    setCompanyCategory(){
+      this.$store.dispatch("commitCompanyCategory", value);
+    },
+    confirmRequest(){
+      this.requestObject.title = this.repairTitle;
+      this.requestObject.description = this.repairDetail;
+      console.log(this.requestObject);
+      // sent to db here
+    }
+  },
   created(){
     let user = this.$store.getters["getCurrentUser"];
     let compa = this.$store.getters["getCompany"];
@@ -78,17 +92,17 @@ export default {
     this.requestObject.company.id = compa.companyId;
     this.requestObject.company.name = compa.companyName;
     this.requestObject.company.address = compa.companyAddress;
-    this.$http.get("https://request-dot-refixsoa.appspot.com/api/request/count")
-    // try turning on service and test this
-    .then(response => {
-      return response.json();
-    }).then(data => {
-      // this.requestObject.requestId = "000000" + 
-      console.log("data is ");
-      console.log(data);
-    });
+    this.requestObject.status = "waiting";
+    // this.$http.get("https://request-dot-refixsoa2019.appspot.com/api/request/count")
+    // .then(response => {
+    //   return response.json();
+    // }).then(data => {
+    //   this.requestObject.requestId = "000000" + 
+    //   console.log("data is ");
+    //   console.log(this.data);
+    // });
     console.log("request object is");
-    console.log(requestObject);
+    console.log(this.requestObject);
   }
 };
 </script>

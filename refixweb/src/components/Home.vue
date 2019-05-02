@@ -156,7 +156,6 @@ export default {
   },
   methods: {
     setCompanyCategory(value) {
-      console.log("set company called");
       this.$store.dispatch("commitCompanyCategory", value);
     },
     setCompany(obj) {
@@ -165,7 +164,7 @@ export default {
   },
   created() {
     this.$http
-      .get("https://refixsoa.appspot.com/api/company", {
+      .get("https://refixsoa2019.appspot.com/api/company", {
         // params: {limit: 5, category: this.$store.getters["getCompanyCategory"]}
       })
       .then(response => {

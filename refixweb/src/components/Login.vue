@@ -66,14 +66,16 @@ export default {
       {
           user = {
               name: "asd",
-              ID: "000001"
+              ID: "000001",
+              address: "123/123 Bangkok"
           }
       }
       else if (this.username == "companya")
       {
         user = {
           name : "companya",
-          ID: "000001"
+          ID: "000001",
+          address: "44/444 Bangkok"
         }
         this.$store.dispatch("commitIsCompany", true);
       }

@@ -18,7 +18,6 @@ const Request = mongoose.model("Request", new mongoose.Schema({
         name: String,
         address: String
     },
-    category: String,
     status: String,
     title: String,
     description: String,
@@ -137,7 +136,6 @@ function validateRequest(request)
             name: Joi.string(),
             address: Joi.string()
         }),
-        category: Joi.string(),
         status: Joi.string(),
         title: Joi.string(),
         description: Joi.string(),

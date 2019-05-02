@@ -37,5 +37,12 @@ export const routes = [
     },
     { path: '/forgotpassword', component: ForgotPassword },
     { path: '/register', component: Register },
-    { path: '/request', component: Request }
+    { path: '/request', component: Request, beforeEnter: (to, from, next)=>{
+        if (!store.getters['getCurrentUser'].name) {
+            next('/login');
+        }
+        else {
+            next();
+        }
+    } }
 ]
