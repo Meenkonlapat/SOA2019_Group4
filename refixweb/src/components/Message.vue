@@ -45,7 +45,7 @@
           </article>
         </section>
         <div class="msg-compose">
-          <textarea placeholder="Say something..." v-model="message"></textarea>
+          <textarea placeholder="Say something..." v-model="message" @keydown.enter="sendMessage()" />
           <font-awesome-icon icon="paper-plane" class="icon" @click="sendMessage()"></font-awesome-icon>
         </div>
       </section>
@@ -311,7 +311,7 @@ export default {
 .inner-msg {
   background-color: #fff;
   width: 100%;
-  padding: 1.5rem 1rem;
+  padding: 1.5rem 1rem 1.5rem 1rem;
   border-radius: 0 4px 4px 4px;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
   text-align: left;

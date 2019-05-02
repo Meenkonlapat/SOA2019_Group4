@@ -18,11 +18,11 @@
             <td class="p-2">
               <!-- link this to edit bill page later -->
               <template v-if="req.status != 'completed'">
-                <button type="button" class="btn" id="btnView">Edit</button>
+                <router-link to="/admin/addDetail">
+                  <button type="button" class="btn" id="btnView">Edit</button>
+                </router-link>
               </template>
-              <template v-else>
-                -
-              </template>
+              <template v-else>-</template>
             </td>
           </tr>
         </tbody>
@@ -33,10 +33,10 @@
 
 <script>
 export default {
-  data(){
+  data() {
     return {
-      requests:[]
-    }
+      requests: []
+    };
   },
   computed: {
     currentUser: {
@@ -61,7 +61,7 @@ export default {
         this.requests = result;
       });
   }
-}
+};
 </script>
 
 

@@ -14,15 +14,15 @@
         </div>
       </div>
       <div class="form-group row">
-        <label for="text" class="col-sm-2 col-form-label">Detail:</label>
-        <div class="col-sm-10">
-          <textarea type="text" class="form-control" v-model="repairDetail"/>
-        </div>
-      </div>
-      <div class="form-group row">
         <label for="text" class="col-sm-2 col-form-label">Location:</label>
         <div class="col-sm-10">
           <input type="text" class="form-control" readonly :value="currentUser.address">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="text" class="col-sm-2 col-form-label">Detail:</label>
+        <div class="col-sm-10">
+          <textarea type="text" class="form-control" v-model="repairDetail" rows="10"/>
         </div>
       </div>
     </form>
@@ -169,5 +169,9 @@ label {
   background-color: red;
   border-color: #fff;
   color: #fff;
+}
+textarea{
+  resize: none;
+  width:100%;
 }
 </style>

@@ -9,6 +9,7 @@ import Register from '../components/Register.vue'
 import Request from '../components/Request.vue'
 import AdminHome from '../components/AdminHome.vue'
 import AdminReequestAll from '../components/AdminRequest.vue'
+import addExtensionBill from '../components/AddExtensionBill.vue'
 import { store } from '../store/store.js'
 
 export const routes = [
@@ -41,6 +42,7 @@ export const routes = [
     { path: '/register', component: Register },
     { path: '/admin', component: AdminHome},
     { path: '/admin/request', component: AdminReequestAll},
+    { path: '/admin/addDetail', component: addExtensionBill},
     { path: '/request', component: Request, beforeEnter: (to, from, next)=>{
         if (!store.getters['getCurrentUser'].name) {
             next('/login');
