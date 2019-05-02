@@ -24,9 +24,10 @@
                   class="btn btn-outline-success btn-sm"
                   href="#popup1"
                   @click="openBill(req, req.status)"
-                >download</a>
+                >Download</a>
               </template>
-              <template v-else>-</template>
+              <template v-else><button type="button" class="btn btn-secondary btn-sm" disabled>
+                In progress</button></template>
             </td>
             <td id="confirmBill">
               <template v-if="req.bill.length > 0 && req.status != 'completed'">
