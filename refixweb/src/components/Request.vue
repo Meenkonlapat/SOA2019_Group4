@@ -87,7 +87,7 @@ export default {
         this.$http.post(
           "https://request-dot-refixsoa2019.appspot.com/api/request",
           this.requestObject
-        ).then(this.$router.push("/status"));
+        ).then(this.$router.go(-1));
       }
     }
   },

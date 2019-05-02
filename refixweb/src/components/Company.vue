@@ -18,10 +18,10 @@
           <router-link to="/request">
             <a id="request">Request</a>
           </router-link>
-          <router-link to="/message">
-            <a id="contact">Contact</a>
-          </router-link>
-          
+
+          <!-- add style for cursor to change into hand here-->
+          <a id="contact" @click="addContact(company)">Contact</a>
+
         </div>
       </div>
       <div class="portfolio">
@@ -63,6 +63,52 @@ export default {
       get() {
         return this.$store.getters["getCompany"];
       }
+    },
+    currentUser: {
+      get() {
+        return this.$store.getters["getCurrentUser"];
+      }
+    }
+  },
+  methods: {
+    addContact(compa) {
+      this.$http
+        .get("https://contact-dot-refixsoa2019.appspot.com/api/contact")
+        .then(response => {
+          return response.json();
+        })
+        .then(data => {
+          let isRoomExisted = false;
+          for (let key in data) {
+            if (
+              data[key].customerId == this.currentUser.ID &&
+              data[key].companyId == compa.companyId
+            ) {
+              isRoomExisted = true;
+            }
+          }
+          if (!isRoomExisted) {
+            let contactObject = {
+              companyId: compa.companyId,
+              companyName: compa.companyName,
+              customerId: this.currentUser.ID,
+              customerName: this.currentUser.name,
+              chat: []
+            };
+            this.$http
+              .post(
+                "https://contact-dot-refixsoa2019.appspot.com/api/contact",
+                contactObject
+              )
+              .then(() => {
+                console.log("created room");
+                console.log(contactObject);
+                this.$router.push("/message");
+              });
+          } else {
+            this.$router.push("/message");
+          }
+        });
     }
   }
 };
