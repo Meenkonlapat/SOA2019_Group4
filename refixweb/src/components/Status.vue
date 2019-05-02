@@ -9,7 +9,7 @@
             <th scope="col">Repair</th>
             <th scope="col">Status</th>
             <th scope="col">Bill</th>
-            <th></th>
+            <th scope="col">Acception</th>
           </tr>
         </thead>
         <tbody>
@@ -17,16 +17,23 @@
             <th scope="row">{{req.requestId}}</th>
             <td>{{req.company.name}}</td>
             <td>{{req.title}}</td>
-            <td>{{req.status}}</td>
+            <td>
+              <template v-if="req.status == 'completed'">
+                <a href="#" class="badge badge-success p-1">Completed</a>
+              </template>
+              <template v-else>
+                <a href="#" class="badge badge-dark p-1">Waiting</a>
+              </template>
+              </td>
             <td class="p-2">
-              <template v-if="req.bill.length > 0">
+              <template v-if="req.bill.length > 0 && req.status == 'completed'">
                 <a
                   class="btn btn-outline-success btn-sm"
                   href="#popup1"
                   @click="openBill(req, req.status)"
                 >Download</a>
               </template>
-              <template v-else><button type="button" class="btn btn-secondary btn-sm" disabled>
+              <template v-else><button type="button" class="btn btn-dark btn-sm" disabled>
                 In progress</button></template>
             </td>
             <td id="confirmBill">
