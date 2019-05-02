@@ -7,16 +7,22 @@
             <th scope="col">ID</th>
             <th scope="col">Repair</th>
             <th scope="col">Status</th>
-            <th scope="col">Detail</th>
+            <th scope="col">Bill</th>
           </tr>
         </thead>
         <tbody>
           <tr v-for="(req, index) in requests" :key="index">
-            <th scope="row">{{index+1}}</th>
+            <th scope="row">{{req.requestId}}</th>
             <td>{{req.title}}</td>
             <td>{{req.status}}</td>
             <td class="p-2">
-              <button type="button" class="btn" id="btnView" @click="confirmBill(req)">View</button>
+              <!-- link this to edit bill page later -->
+              <template v-if="req.status != 'completed'">
+                <button type="button" class="btn" id="btnView">Edit</button>
+              </template>
+              <template v-else>
+                -
+              </template>
             </td>
           </tr>
         </tbody>
@@ -24,8 +30,42 @@
     </div>
   </div>
 </template>
-<style>
 
+<script>
+export default {
+  data(){
+    return {
+      requests:[]
+    }
+  },
+  computed: {
+    currentUser: {
+      get() {
+        return this.$store.getters["getCurrentUser"];
+      }
+    }
+  },
+  created() {
+    this.$http
+      .get("https://request-dot-refixsoa2019.appspot.com/api/request")
+      .then(response => {
+        return response.json();
+      })
+      .then(data => {
+        const result = [];
+        for (let key in data) {
+          if (data[key].company.id == this.currentUser.ID) {
+            result.push(data[key]);
+          }
+        }
+        this.requests = result;
+      });
+  }
+}
+</script>
+
+
+<style>
 #btnView {
   margin-top: -0.5em;
   color: #ffffff;

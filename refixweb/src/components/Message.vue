@@ -13,7 +13,8 @@
             </div>
             <div class="user-list">
               <div class="user">
-                <p>{{ contact.companyName }}</p>
+                <p v-if="isCompany">{{ contact.customerName }}</p>
+                <p v-else>{{ contact.companyName }}</p>
               </div>
               <div class="text">
                 <!-- <p>{{ contact.chat[contact.chat.length-1].message}}</p> -->
@@ -56,22 +57,21 @@
 import Vue from "vue";
 import io from "socket.io-client";
 
-
-import { library } from '@fortawesome/fontawesome-svg-core';
-import { faPaperclip, faPaperPlane } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { faPaperclip, faPaperPlane } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 
 library.add(faPaperclip);
 library.add(faPaperPlane);
 
-Vue.component('font-awesome-icon', FontAwesomeIcon)
+Vue.component("font-awesome-icon", FontAwesomeIcon);
 
 export default {
   data() {
     return {
       user: {
         name: "",
-        ID: "",
+        ID: ""
       },
       message: "",
       contacts: [],
@@ -83,10 +83,15 @@ export default {
       chats: []
     };
   },
-  computed:{
-    currentUser : {
-      get(){
+  computed: {
+    currentUser: {
+      get() {
         return this.$store.getters["getCurrentUser"];
+      }
+    },
+    isCompany: {
+      get() {
+        return this.$store.getters["getIsCompany"];
       }
     }
   },
@@ -95,14 +100,16 @@ export default {
       this.user = this.currentUser;
       this.socket.emit("sendMessage", {
         sender: this.user.name,
-        message: this.message,
+        message: this.message
       });
-      this.$http.put("https://contact-dot-refixsoa2019.appspot.com/api/contact"
-      , {sender: this.user.name, message: this.message}
-      , {params : {companyId: this.targetUser.id, customerId: this.user.ID}});
+      this.$http.put(
+        "https://contact-dot-refixsoa2019.appspot.com/api/contact",
+        { sender: this.user.name, message: this.message },
+        { params: { companyId: this.targetUser.id, customerId: this.user.ID } }
+      );
       this.message = "";
     },
-    setTargetUser(contact){
+    setTargetUser(contact) {
       this.targetUser.id = contact.companyId;
       this.targetUser.name = contact.companyName;
       this.chats = contact.chat;
@@ -113,17 +120,23 @@ export default {
       this.chats.push(data);
     });
   },
-  created(){
-    this.$http.get("https://contact-dot-refixsoa2019.appspot.com/api/contact")
-    .then(response => {
+  created() {
+    this.$http
+      .get("https://contact-dot-refixsoa2019.appspot.com/api/contact")
+      .then(response => {
         return response.json();
       })
       .then(data => {
         const result = [];
-        for(let key in data){
-          if (data[key].customerId == this.currentUser.ID)
-          {
-            result.push(data[key]);
+        for (let key in data) {
+          if (this.isCompany) {
+            if (data[key].companyId == this.currentUser.ID){
+              result.push(data[key]);
+            }
+          } else {
+            if (data[key].customerId == this.currentUser.ID) {
+              result.push(data[key]);
+            }
           }
         }
         this.contacts = result;

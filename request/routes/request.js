@@ -52,8 +52,8 @@ router.post("/", async (req, res) => {
         requestId: req.body.requestId,
         customer: req.body.customer,
         company: req.body.company,
-        category: req.body.category,
         status: req.body.status,
+        title: req.body.title,
         description: req.body.description,
         bill: req.body.bill
     })

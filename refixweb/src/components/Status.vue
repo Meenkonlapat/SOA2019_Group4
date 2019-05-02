@@ -30,7 +30,12 @@
             </td>
             <td id="confirmBill">
               <template v-if="req.bill.length > 0">
-              <button type="button" class="btn" id="btnBill" @click="confirmBill(req)">Confirm bill</button>
+                <button
+                  type="button"
+                  class="btn"
+                  id="btnBill"
+                  @click="confirmBill(req)"
+                >Confirm bill</button>
                 <!-- button to accept bill should be around here somewhere-->
                 <!-- if you move or create accept button somewhere else -->
                 <!-- PLEASE COPY @click from this temporary button -->
@@ -184,21 +189,25 @@ export default {
       pdf.text(150, y_pos, "Total");
       pdf.text(170, y_pos, total.toString());
 
-      if(status != "completed")
-      {
+      if (status != "completed") {
         pdf.addImage(waterMarkImg, "png", 0, 0, 210, 300);
       }
 
-      pdf.save("ztest.pdf");
+      pdf.save("Bill Id " + req.requestId + ".pdf");
     },
     confirmBill(req) {
       if (confirm("Do you want to accept this bill")) {
-        this.$http.put(
-          "https://request-dot-refixsoa2019.appspot.com/api/request/" +
-            req._id +
-            "/status",
-          { status: "complete" }
-        );
+        this.$http
+          .put(
+            "https://request-dot-refixsoa2019.appspot.com/api/request/" +
+              req._id +
+              "/status",
+            { status: "completed" }
+          )
+          .then(() => {
+            alert("update complete !!");
+            req.status = "completed";
+          });
       }
     }
   },
@@ -222,7 +231,7 @@ export default {
 </script>
 
 <style>
-#status{
+#status {
   font-family: "Playfair Display", serif;
   margin-top: 20px;
 }

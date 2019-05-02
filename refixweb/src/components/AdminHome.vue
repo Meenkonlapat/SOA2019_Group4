@@ -1,41 +1,65 @@
 <template>
-    <div id="adminHome">
-        <div class="container text-center mt-5">
-        <h1 class="mb-4">Admin menu</h1>
-        <div class="row justify-content-around">
-            <div class="col-4">
-                <router-link to="/admin/request">
-                    <div class="card bg-white card-admin">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/6/69/June_odd-eyed-cat_cropped.jpg"
-                            class="card-img image-admin" alt="request all">
-                        <div class="card-img-overlay">
-                            <h1 class="card-title">Repair request</h1>
-                        </div>
-                    </div>
-                </router-link>
+  <div id="adminHome">
+    <router-link to="/">
+      <button @click="logOut()">LogOut</button>
+    </router-link>
+    <div class="container text-center mt-5">
+      <h1 class="mb-4">Admin menu</h1>
+      <div class="row justify-content-around">
+        <div class="col-4">
+          <router-link to="/admin/request">
+            <div class="card bg-white card-admin">
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/6/69/June_odd-eyed-cat_cropped.jpg"
+                class="card-img image-admin"
+                alt="request all"
+              >
+              <div class="card-img-overlay">
+                <h1 class="card-title">Repair request</h1>
+              </div>
             </div>
-            <div class="col-4">
-                <router-link to="/message">
-                    <div class="card bg-white card-admin i-am-centerd center">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/6/69/June_odd-eyed-cat_cropped.jpg"
-                            class="card-img image-admin" alt="messenger">
-                        <div class="card-img-overlay center align-items-center">
-                            <h1>Messager</h1>
-                        </div>
-                    </div>
-                </router-link>
-            </div>
+          </router-link>
         </div>
+        <div class="col-4">
+          <router-link to="/message">
+            <div class="card bg-white card-admin i-am-centerd center">
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/6/69/June_odd-eyed-cat_cropped.jpg"
+                class="card-img image-admin"
+                alt="messenger"
+              >
+              <div class="card-img-overlay center align-items-center">
+                <h1>Messager</h1>
+              </div>
+            </div>
+          </router-link>
+        </div>
+      </div>
     </div>
-    </div>
+  </div>
 </template>
+
+<script>
+export default {
+  methods: {
+    logOut() {
+      if (confirm("Do you want to logout?")) {
+        this.$store.dispatch("commitCurrentUser", { name: "", ID: "" });
+        this.$store.dispatch("commitIsCompany", false);
+      }
+    }
+  }
+};
+</script>
+
+
 <style>
-#adminHome{
-    font-family: "Playfair Display", serif;
-    margin-top: 20px;
+#adminHome {
+  font-family: "Playfair Display", serif;
+  margin-top: 20px;
 }
-.image-admin{
-    opacity: .7;
+.image-admin {
+  opacity: 0.7;
 }
 .card-admin {
   color: #fff;
