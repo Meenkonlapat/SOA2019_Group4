@@ -46,7 +46,7 @@
         </section>
         <div class="msg-compose">
           <textarea placeholder="Say something..." v-model="message"></textarea>
-          <font-awesome-icon icon="paper-plane" class="icon" @click="sendMessage()"></font-awesome-icon>
+          <div id="sendButton" @click="sendMessage()"><font-awesome-icon icon="paper-plane" class="icon"/></div>
         </div>
       </section>
     </div>
