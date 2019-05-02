@@ -29,7 +29,6 @@ describe("API test : /api/request", () => {
                     name:'Somboon company',
                     address:'09/876 Bangkok'
                 },
-                category: 'electric',
                 status: 'accepted',
                 title: 'fix tv',
                 description: 'help me',
@@ -47,7 +46,6 @@ describe("API test : /api/request", () => {
                     name:'Somboon company',
                     address:'09/876 Bangkok'
                 },
-                category: 'plumbling',
                 status: 'accepted',
                 title: 'fix toilet',
                 description: 'help me',
@@ -77,7 +75,6 @@ describe("API test : /api/request", () => {
                     name:'Somboon company',
                     address:'09/876 Bangkok'
                 },
-                category: 'electric',
                 status: 'accepted',
                 title: 'fix tv',
                 description: 'help me',
@@ -118,7 +115,6 @@ describe("API test : /api/request", () => {
                     name:'Somboon company',
                     address:'09/876 Bangkok'
                 },
-                category: 'electric',
                 status: 'accepted',
                 title: 'fix tv',
                 description: 'help me',
@@ -159,7 +155,6 @@ describe("API test : /api/request", () => {
                     name:'Somboon company',
                     address:'09/876 Bangkok'
                 },
-                category: 'electric',
                 status: 'accepted',
                 title: 'fix tv',
                 description: 'help me',

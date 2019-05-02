@@ -20,7 +20,6 @@ describe("Unit test : validateRequest", () => {
                 name:'Somboon company',
                 address:'09/876 Bangkok'
             },
-            category: 'electric',
             status: 'accepted',
             title: 'fix tv',
             description: 'help me',

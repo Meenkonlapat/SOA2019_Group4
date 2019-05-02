@@ -66,7 +66,8 @@ export default {
       {
           user = {
               name: "asd",
-              ID: "000001"
+              ID: "000001",
+              address: "123/123 Bangkok"
           }
           this.$router.push("/Home")
       }
@@ -74,7 +75,8 @@ export default {
       {
         user = {
           name : "companya",
-          ID: "000001"
+          ID: "000001",
+          address: "44/444 Bangkok"
         }
         this.$store.dispatch("commitIsCompany", true);
         this.$router.push("/admin")
