@@ -15,8 +15,10 @@
       <div class="col-8">
         <div id="address">{{company.companyDescription}}</div>
         <div id="button-group">
+          <router-link to="/request">
           <div class="btn btn-outline-primary">Request</div>
-          <div class="btn btn-outline-info ml-3">Contact</div>
+          </router-link>
+          <div class="btn btn-outline-info ml-3" @click="addContact(company)">Contact</div>
         </div>
       </div>
       <div class="portfolio">
