@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="status">
     <div class="container">
       <table class="table table-borderless mt-5 border table-light text-center">
         <thead>
@@ -36,8 +36,6 @@
                 <!-- and add @click to your new button -->
                 <!-- but this button need service in google cloud to work -->
                 <!-- so this can't be tested right now... -->
-              </template>
-              <template v-else>-</template>
             </td>
           </tr>
         </tbody>
@@ -221,6 +219,10 @@ export default {
 </script>
 
 <style>
+#status{
+  font-family: "Playfair Display", serif;
+  margin-top: 20px;
+}
 .overlay {
   position: fixed;
   top: 0;

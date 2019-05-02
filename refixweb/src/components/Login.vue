@@ -68,6 +68,7 @@ export default {
               name: "asd",
               ID: "000001"
           }
+          this.$router.push("/Home")
       }
       else if (this.username == "companya")
       {
@@ -76,9 +77,9 @@ export default {
           ID: "000001"
         }
         this.$store.dispatch("commitIsCompany", true);
+        this.$router.push("/admin")
       }
       this.$store.dispatch("commitCurrentUser", user);
-      this.$router.push("/");
     }
   },
   beforeRouteLeave(to, from, next) {

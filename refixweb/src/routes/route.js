@@ -7,7 +7,9 @@ import Login from '../components/Login.vue'
 import ForgotPassword from '../components/ForgotPassword.vue'
 import Register from '../components/Register.vue'
 import Request from '../components/Request.vue'
-import { store } from '../store/store.js';
+import AdminHome from '../components/AdminHome.vue'
+import AdminReequestAll from '../components/AdminRequest.vue'
+import { store } from '../store/store.js'
 
 export const routes = [
     { path: '', component: Home },
@@ -37,5 +39,7 @@ export const routes = [
     },
     { path: '/forgotpassword', component: ForgotPassword },
     { path: '/register', component: Register },
-    { path: '/request', component: Request }
+    { path: '/request', component: Request },
+    { path: '/admin', component: AdminHome},
+    { path: '/admin/request', component: AdminReequestAll}
 ]
