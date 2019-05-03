@@ -116,7 +116,7 @@ export default {
   border-radius: 2px;
 }
 #button-group {
-  margin-top: 3em;
+  margin-top: 5em;
 }
 .button {
   color: #0e79f5;
