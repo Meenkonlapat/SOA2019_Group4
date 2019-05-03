@@ -13,23 +13,55 @@ import addExtensionBill from '../components/AddExtensionBill.vue'
 import { store } from '../store/store.js'
 
 export const routes = [
-    { path: '', component: Home },
-    { path: '/status', component: Status, beforeEnter: (to, from, next)=>{
-        if (!store.getters['getCurrentUser'].name) {
-            next('/login');
-        }
-        else {
+    { path: '', component: Home , beforeEnter: (to, from, next)=>{
+        if (!store.getters["getIsCompany"])// if user is not company user go normally
+        {
             next();
         }
+        else{// if user is company go to admin page
+            next('/admin');
+        }
     }},
-    { path: '/all', component: CompanyAll },
-    { path: '/company', component: Company },
+    { path: '/status', component: Status, beforeEnter: (to, from, next)=>{
+        if (!store.getters['getCurrentUser'].name) {// if not logged in go to login
+            next('/login');
+        }
+        else if (!store.getters["getIsCompany"])// if user is not company user go normally
+        {
+            next();
+        }
+        else {// if user is company go to admin page
+            next('/admin');
+        }
+    }},
+    { path: '/all', component: CompanyAll, beforeEnter: (to, from, next)=>{
+        if (!store.getters["getIsCompany"])
+        {
+            next();
+        }
+        else{
+            next('/admin');
+        }
+    } },
+    { path: '/company', component: Company , beforeEnter: (to, from, next)=>{
+        if (!store.getters["getIsCompany"])
+        {
+            next();
+        }
+        else{
+            next('/admin');
+        }
+    }},
     { path: '/message', component: Message, beforeEnter: (to, from, next)=>{
         if (!store.getters['getCurrentUser'].name) {
             next('/login');
         }
-        else {
+        else if (!store.getters["getIsCompany"])
+        {
             next();
+        }
+        else {
+            next('/admin');
         }
     }},
     {
@@ -40,15 +72,40 @@ export const routes = [
     },
     { path: '/forgotpassword', component: ForgotPassword },
     { path: '/register', component: Register },
-    { path: '/admin', component: AdminHome},
-    { path: '/admin/request', component: AdminReequestAll},
-    { path: '/admin/addDetail', component: addExtensionBill},
+    { path: '/admin', component: AdminHome, beforeEnter: (to, from, next)=>{
+        if (!store.getters["getIsCompany"]){// if user is not company go to home
+            next('/');
+        }
+        else{// if user is company go normally
+            next();
+        }
+    }},
+    { path: '/admin/request', component: AdminReequestAll, beforeEnter: (to, from, next)=>{
+        if (!store.getters["getIsCompany"]){
+            next('/');
+        }
+        else{
+            next();
+        }
+    }},
+    { path: '/admin/addDetail', component: addExtensionBill, beforeEnter: (to, from, next)=>{
+        if (!store.getters["getIsCompany"]){
+            next('/');
+        }
+        else{
+            next();
+        }
+    }},
     { path: '/request', component: Request, beforeEnter: (to, from, next)=>{
         if (!store.getters['getCurrentUser'].name) {
             next('/login');
         }
-        else {
+        else if (!store.getters["getIsCompany"])
+        {
             next();
+        }
+        else {
+            next('/admin');
         }
     } }
 ]
