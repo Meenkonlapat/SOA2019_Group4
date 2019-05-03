@@ -19,36 +19,43 @@
             <td>{{req.title}}</td>
             <td>
               <template v-if="req.status == 'completed'">
-                <a href="#" class="badge badge-success p-1">Completed</a>
+                <a href="#" class="badge badge-success p-1">Done</a>
               </template>
               <template v-else-if="req.status == 'offered'">
-                <a href="#" class="badge badge-dark p-1">offered</a>
+                <a href="#" class="badge badge-primary p-1">Offered</a>
               </template>
               <template v-else-if="req.status == 'waiting'">
                 <a href="#" class="badge badge-dark p-1">Waiting</a>
               </template>
-              </td>
+            </td>
             <td class="p-2">
-              <template v-if="req.bill.length > 0 && (req.status == 'completed' || req.status == 'offered')">
+              <template
+                v-if="req.bill.length > 0 && (req.status == 'completed' || req.status == 'offered')"
+              >
                 <a
                   class="btn btn-outline-success btn-sm"
                   href="#popup1"
                   @click="openBill(req, req.status)"
                 >Download</a>
               </template>
-              <template v-else><button type="button" class="btn btn-dark btn-sm" disabled>
-                In progress</button></template>
-            </td>
-            <td id="confirmBill">
-              <template v-if="req.bill.length > 0 && req.status != 'completed'">
-                <button
-                  type="button"
-                  class="btn"
-                  id="btnBill"
-                  @click="confirmBill(req)"
-                >Confirm bill</button>
+              <template v-else>
+                <button type="button" class="btn btn-dark btn-sm" disabled>In progress</button>
               </template>
-              <template v-else>-</template>
+            </td>
+            <td class="p-2">
+              <template v-if="req.status == 'offered'">
+                <a
+                  class="btn btn-outline-primary btn-sm"
+                  href="#popup1"
+                  @click="openBill(req, req.status)"
+                >Cinfirm</a>
+              </template>
+              <template v-if="req.status == 'waiting'">
+                <button type="button" class="btn btn-dark btn-sm" disabled>Waiting</button>
+              </template>
+              <template v-if="req.status == 'completed'">
+                <button id="btnCompleted" type="button" class="btn btn-sm">Completed</button>
+              </template>
             </td>
           </tr>
         </tbody>
@@ -289,6 +296,20 @@ export default {
   letter-spacing: 0.012px;
   text-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.2);
   box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.2);
+  transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+  -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+  -moz-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+#btnCompleted{
+  color: #ffffff;
+  border: 2px solid #48b2ff;
+  background-color: #48b2ff;
+  text-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.2);
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
   transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
   -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
   -moz-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
