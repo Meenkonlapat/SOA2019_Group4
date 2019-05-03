@@ -120,7 +120,7 @@
 
     <div class="plumbling">
       <div class="header">
-        <h3 style="text-align:start">plumbling</h3>
+        <h3 style="text-align:start">Plumbling</h3>
       </div>
       <div class="in-card row" style="height: 325;">
         <template v-for="(compa, index) in plumblingCompany">

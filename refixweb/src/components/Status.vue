@@ -47,8 +47,8 @@
                 <a
                   class="btn btn-outline-primary btn-sm"
                   href="#popup1"
-                  @click="openBill(req, req.status)"
-                >Cinfirm</a>
+                  @click="confirmBill(req)"
+                >Confirm</a>
               </template>
               <template v-if="req.status == 'waiting'">
                 <button type="button" class="btn btn-dark btn-sm" disabled>Waiting</button>
