@@ -1,0 +1,5 @@
+service: eureka
+env: flex
+runtime: java
+runtime_config:
+  jdk: openjdk8

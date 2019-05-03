@@ -10,6 +10,7 @@ app.use(cors());
 require("express-async-errors");
 require('./startup/db.js')();
 require('./startup/routes.js')(app);
+require("./startup/eureka.js")();
 require("./startup/prod.js")(app);
 
 const port = process.env.PORT || 3002;

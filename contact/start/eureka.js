@@ -4,7 +4,7 @@ module.exports = function()
 {
   const client = new Eureka({
     instance: {
-      app: 'requestService',
+      app: 'contactService',
       hostName: 'localhost',
       ipAddr: '127.0.0.1',
       statusPageUrl: 'http://localhost:8080/info',
