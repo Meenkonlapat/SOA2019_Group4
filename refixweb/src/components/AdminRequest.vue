@@ -19,7 +19,7 @@
               <!-- link this to edit bill page later -->
               <template v-if="req.status != 'completed'">
                 <router-link to="/admin/addDetail">
-                  <button type="button" class="btn" id="btnView">Edit</button>
+                  <button type="button" class="btn" id="btnView" @click="setRequest(req)">Edit</button>
                 </router-link>
               </template>
               <template v-else>-</template>
@@ -43,6 +43,11 @@ export default {
       get() {
         return this.$store.getters["getCurrentUser"];
       }
+    }
+  },
+  methods:{
+    setRequest(req){
+      this.$store.dispatch("commitRequest", req);
     }
   },
   created() {

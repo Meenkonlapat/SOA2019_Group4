@@ -5,12 +5,12 @@
       <form class="mb-3">
         <div class="form-row">
           <div class="col-10">
-            <input type="text" class="form-control" placeholder="Detail">
+            <input type="text" class="form-control" placeholder="Detail" v-model="detail">
           </div>
           <div class="col">
-            <input type="text" class="form-control" placeholder="Price">
+            <input type="text" class="form-control" placeholder="Price" v-model="price">
           </div>
-          <button type="button" class="btn btn-success btn-sm">Comfirm</button>
+          <button type="button" class="btn btn-success btn-sm" @click="addBill()">Confirm</button>
         </div>
       </form>
       <div class="d-flex justify-content-center mb-3 h3">List bill</div>
@@ -23,25 +23,16 @@
           </tr>
         </thead>
         <tbody>
-          <tr v-for="(req, index) in requests" :key="index">
-            <th scope="row">Air</th>
-            <td scope="row">$500</td>
+          <tr v-for="(bill, index) in request.bill" :key="index">
+            <th scope="row">{{ bill.detail }}</th>
+            <td scope="row">{{ bill.price }}</td>
             <td scope="row" class="float-right">
-              <button type="button" class="btn btn-secondary btn-sm">Edit</button>
-              <button type="button" class="btn btn-danger btn-sm">Delete</button>
+              <button type="button" class="btn btn-danger btn-sm" @click="deleteBill(index)">Delete</button>
             </td>
           </tr>
-          <tr v-for="(req, index) in requests" :key="index">
-            <th scope="row">Air</th>
-            <td scope="row">$500</td>
-            <td scope="row" class="float-right">
-              <button type="button" class="btn btn-secondary btn-sm">Edit</button>
-              <button type="button" class="btn btn-danger btn-sm">Delete</button>
-            </td>
-          </tr>
-          <tr class="border-top" v-for="(req, index) in requests" :key="index">
+          <tr class="border-top">
             <th scope="row">Total</th>
-            <td scope="row">$500</td>
+            <td scope="row">{{ sum }}</td>
             <td scope="row" class="float-right"></td>
           </tr>
         </tbody>
@@ -49,3 +40,90 @@
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      sum: 0,
+      detail: "",
+      price: 0
+    };
+  },
+  methods: {
+    calculateSum() {
+      this.sum = 0;
+      for (let index in this.request.bill) {
+        this.sum += this.request.bill[index].price;
+      }
+    },
+    addBill() {
+      let newBill = {
+        detail: this.detail,
+        price: parseInt(this.price, 10)
+      };
+      this.request.bill.push(newBill);
+      this.calculateSum();
+      this.$http
+        .put(
+          "https://request-dot-refixsoa2019.appspot.com/api/request/" +
+            this.request._id +
+            "/bill",
+          {bill: this.request.bill}
+        )
+        .then((response) => {
+          console.log("add bill complete");
+          this.setRequestStatus();
+        });
+    },
+    deleteBill(index){
+      this.request.bill.splice(index, 1);
+      this.calculateSum();
+      this.$http
+        .put(
+          "https://request-dot-refixsoa2019.appspot.com/api/request/" +
+            this.request._id +
+            "/bill",
+          {bill: this.request.bill}
+        )
+        .then((response) => {
+          console.log("remove bill complete");
+          this.setRequestStatus();
+        });
+    },
+    setRequestStatus(){
+      if (this.request.bill.length > 0){
+        this.request.status = "offered";
+      }
+      else if (this.request.bill.length == 0){
+        this.request.status = "waiting";
+      }
+      this.$http
+        .put(
+          "https://request-dot-refixsoa2019.appspot.com/api/request/" +
+            this.request._id +
+            "/status",
+          {status: this.request.status}
+        )
+        .then((response) => {
+          console.log("remove update status complete");
+        });
+    }
+  },
+  computed: {
+    currentUser: {
+      get() {
+        return this.$store.getters["getCurrentUser"];
+      }
+    },
+    request: {
+      get() {
+        return this.$store.getters["getRequest"];
+      }
+    }
+  },
+  mounted(){
+    this.calculateSum();
+  }
+};
+</script>

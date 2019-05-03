@@ -21,12 +21,15 @@
               <template v-if="req.status == 'completed'">
                 <a href="#" class="badge badge-success p-1">Completed</a>
               </template>
-              <template v-else>
+              <template v-else-if="req.status == 'offered'">
+                <a href="#" class="badge badge-dark p-1">offered</a>
+              </template>
+              <template v-else-if="req.status == 'waiting'">
                 <a href="#" class="badge badge-dark p-1">Waiting</a>
               </template>
               </td>
             <td class="p-2">
-              <template v-if="req.bill.length > 0 && req.status == 'completed'">
+              <template v-if="req.bill.length > 0 && (req.status == 'completed' || req.status == 'offered')">
                 <a
                   class="btn btn-outline-success btn-sm"
                   href="#popup1"

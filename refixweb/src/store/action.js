@@ -14,5 +14,8 @@ export default {
     },
     commitIsCompany : ({commit}, payload) => {
         commit('mutateIsCompany', payload);
+    },
+    commitRequest : ({commit}, payload) => {
+        commit('mutateRequest', payload);
     }
 }

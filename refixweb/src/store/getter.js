@@ -14,5 +14,8 @@ export default {
     },
     getIsCompany : state => {
         return state.isCompany;
+    },
+    getRequest : state => {
+        return state.request;
     }
 }

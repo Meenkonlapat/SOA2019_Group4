@@ -14,5 +14,8 @@ export default {
     },
     mutateIsCompany : (state, payload) => {
         state.isCompany = payload;
+    },
+    mutateRequest : (state, payload) => {
+        state.request = payload;
     }
 }
