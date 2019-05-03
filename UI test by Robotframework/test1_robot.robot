@@ -7,17 +7,29 @@ library  SeleniumLibrary
 *** Test cases ***
 UItest
     เปิดเว็บ
-    ล็อคอิน
-    เลือกบริษัทแล้วส่งแจ้งซ่อม
-    เปิดหน้าข้อความ
+    ล็อคอินลูกค้า
+    เลือกบริษัท
+    แจ้งซ่อม
+    ไปหน้าโฮม
+    เลือกบริษัท
+    ติดต่อหาช่าง
     ล็อคเอ้าลูกค้า
     ล็อคอินช่าง
-    ดูการแจ้งซ่อม
+    ติดต่อหาลูกค้า
     ปิด
     เปิดเว็บ
     ล็อคอินช่าง
-    เปิดข้อความช่าง
+    ดูการแจ้งซ่อม
+    แก้บิล
     ปิด
+    เปิดเว็บ
+    ล็อคอินลูกค้า
+    ไปสเตตัส
+    #โหลด
+    คอนเฟริม
+    #โหลด
+    ล็อคเอ้าลูกค้า
+    #ปิด
 
 *** Keyword ***
 เปิดเว็บ
@@ -25,37 +37,13 @@ UItest
     Maximize Browser Window
     Sleep    2s
 
-ล็อคอิน
+ล็อคอินลูกค้า
     Click Element    xpath://*[@id="navigations"]/nav/li[4]/a
     Sleep    2s
     Input Text    xpath://*[@id="usr"]    asd
     Sleep    2s
     Press Keys    None    ENTER  
     Sleep    2s
-
-เลือกบริษัทแล้วส่งแจ้งซ่อม
-    Click Element    xpath://*[@id="home"]/div[1]/div[2]/a/div/div
-    Sleep    2s
-    Click Element    xpath://*[@id="request"]
-    Sleep    2s
-    Input Text    xpath://*[@id="request"]/form/div[2]/div/input    ท่อแตก
-    Input Text    xpath://*[@id="request"]/form/div[3]/div/textarea    หลังบ้านตรงซิ้งมีน้ำไหลจากท่อ
-    Sleep    2s
-    choose Ok on Next Confirmation
-    Click Element    xpath://*[@id="request"]/div/button
-    sleep    3s
-    Confirm Action
-    Sleep    5s
-
-เปิดหน้าข้อความ
-    Click Element    xpath://*[@id="navigations"]/nav/li[3]/a
-    Sleep    2s
-    Click Element    xpath://*[@id="messager"]/div/aside/ul/li[1]/div[2]
-    Sleep    2s
-    Input Text    xpath://*[@id="chat-screen"]/div/textarea    หลังบ้านตรงนั้น
-    Sleep    2s
-    Click Element    xpath://*[@id="sendButton"]
-    sleep    3s
 
 ล็อคเอ้าลูกค้า
     choose Ok on Next Confirmation
@@ -75,26 +63,73 @@ UItest
 ดูการแจ้งซ่อม
     Click Element    xpath://*[@id="adminHome"]/div/div/div[1]/a/div/div
     Sleep    2s
+
 ปิด
     close browser
     Sleep    2s
 
-เปิดข้อความช่าง
-    Click Element    xpath://*[@id="adminHome"]/div/div/div[2]/a/div/div
+เลือกบริษัท
+    Click Element    xpath://*[@id="home"]/div[2]/div[2]/a[1]/div
+    Sleep    2s
+
+แจ้งซ่อม
+    Click Element    xpath://*[@id="button-group"]/a/div
+    Sleep    2s
+    Input Text    xpath://*[@id="request"]/form/div[2]/div/input    ไฟดับ
+    Input Text    xpath://*[@id="request"]/form/div[4]/div/textarea    หลอดไฟขาด
+    Sleep    2s
+    choose Ok on Next Confirmation
+    Click Element    xpath://*[@id="request"]/div/button
+    Sleep    2s
+    Confirm Action
+    Sleep    3s
+
+ไปหน้าโฮม
+    Click Element    xpath://*[@id="navigations"]/nav/li[1]/a
+    Sleep    2s
+
+ติดต่อหาช่าง
+    Click Element    xpath://*[@id="button-group"]/div
     Sleep    2s
     Click Element    xpath://*[@id="messager"]/div/aside/ul/li
     Sleep    2s
-    Input Text    xpath://*[@id="chat-screen"]/div/textarea    หลังบ้านตรงนั้น
+    Input Text    xpath://*[@id="chat-screen"]/div/textarea    ไปดับต้องซ่อมไง
+    Sleep    2s
+    Click Element    xpath://*[@id="sendButton"]
+    Sleep   2s
+
+ติดต่อหาลูกค้า
+    Click Element    xpath://*[@id="adminHome"]/div/div/div[2]
+    Sleep    2s
+    Click Element    xpath://*[@id="messager"]/div/aside/ul/li
+    Sleep    2s
+    Input Text    xpath://*[@id="chat-screen"]/div/textarea    เปลี่ยนหลอด
     Sleep    2s
     Click Element    xpath://*[@id="sendButton"]
     Sleep    2s
 
-ล็อคเอ้าช่าง
-    Click Element    xpath://*[@id="adminHome"]/a/button
-    Sleep    5s
+แก้บิล
+    Click Element    xpath://*[@id="btnView"]
+    Sleep    2s
+    Input Text    xpath://*[@id="addExtension"]/div/form/div/div[1]/input    ค่าหลอดไฟ
+    Sleep    2s
+    Input Text    xpath://*[@id="addExtension"]/div/form/div/div[2]/input    200
+    Sleep    2s
+    Click Element    xpath://*[@id="addExtension"]/div/form/div/button
+    Sleep    2s
 
+ไปสเตตัส
+    Click Element    xpath://*[@id="navigations"]/nav/li[2]/a
+    Sleep    2s
 
-
+คอนเฟริม
+    choose Ok on Next Confirmation
+    Click Element    xpath://*[@id="status"]/div/table/tbody/tr[3]/td[5]/a
+    Sleep    2s
+    Confirm Action
+    Sleep    3s
+    Press Keys    None    ENTER  
+    Sleep    2s
 
 
 
