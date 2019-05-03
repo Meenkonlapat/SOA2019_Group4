@@ -7,7 +7,7 @@
     <div class="row">
       <div class="col-4">
         <img
-          src="https://upload.wikimedia.org/wikipedia/commons/6/69/June_odd-eyed-cat_cropped.jpg"
+          :src="company.companyLogo"
           alt="Image Company"
           id="imgCompany"
         >
@@ -22,31 +22,14 @@
         </div>
       </div>
       <div class="portfolio">
-        <img
-          src="https://upload.wikimedia.org/wikipedia/commons/6/69/June_odd-eyed-cat_cropped.jpg"
+        <template v-for="(pict, index) in company.companyPictures">
+          <img
+          :src="pict"
           alt="img port"
           class="port"
+          :key="index"
         >
-        <img
-          src="https://upload.wikimedia.org/wikipedia/commons/6/69/June_odd-eyed-cat_cropped.jpg"
-          alt="img port"
-          class="port"
-        >
-        <img
-          src="https://upload.wikimedia.org/wikipedia/commons/6/69/June_odd-eyed-cat_cropped.jpg"
-          alt="img port"
-          class="port"
-        >
-        <img
-          src="https://upload.wikimedia.org/wikipedia/commons/6/69/June_odd-eyed-cat_cropped.jpg"
-          alt="img port"
-          class="port"
-        >
-        <img
-          src="https://upload.wikimedia.org/wikipedia/commons/6/69/June_odd-eyed-cat_cropped.jpg"
-          alt="img port"
-          class="port"
-        >
+        </template>
       </div>
     </div>
   </div>

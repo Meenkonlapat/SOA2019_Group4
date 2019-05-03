@@ -13,7 +13,7 @@
               @click="setCompany(compa)"
             >
               <img
-                src="https://upload.wikimedia.org/wikipedia/commons/6/69/June_odd-eyed-cat_cropped.jpg"
+                :src="compa.companyLogo"
                 class="card-img-top"
                 alt="Image company"
               >
@@ -44,7 +44,7 @@
                 style="position:absolute; top:0; left:0; width:100%; height:100%; z-index:1"
               >
                 <img
-                  src="https://upload.wikimedia.org/wikipedia/commons/6/69/June_odd-eyed-cat_cropped.jpg"
+                  :src="compa.companyLogo"
                   class="card-img-top"
                   alt="Image company"
                 >
@@ -72,7 +72,7 @@
               @click="setCompany(compa)"
             >
               <img
-                src="https://upload.wikimedia.org/wikipedia/commons/6/69/June_odd-eyed-cat_cropped.jpg"
+                :src="compa.companyLogo"
                 class="card-img-top"
                 alt="Image company"
               >
@@ -103,7 +103,7 @@
                 style="position:absolute; top:0; left:0; width:100%; height:100%; z-index:1"
               >
                 <img
-                  src="https://upload.wikimedia.org/wikipedia/commons/6/69/June_odd-eyed-cat_cropped.jpg"
+                  :src="compa.companyLogo"
                   class="card-img-top"
                   alt="Image company"
                 >
@@ -118,7 +118,65 @@
       </div>
     </div>
 
-    
+    <div class="plumbling">
+      <div class="header">
+        <h3 style="text-align:start">plumbling</h3>
+      </div>
+      <div class="in-card row" style="height: 325;">
+        <template v-for="(compa, index) in plumblingCompany">
+          <router-link to="/company" :key="index" v-if="index < 4">
+            <div
+              class="card card-info"
+              style="width: 13rem; height: 19.5rem"
+              @click="setCompany(compa)"
+            >
+              <img
+                :src="compa.companyLogo"
+                class="card-img-top"
+                alt="Image company"
+              >
+              <div class="card-body">
+                <h5 class="card-title">{{compa.companyName}}</h5>
+                <p class="card-text">{{compa.description}}</p>
+              </div>
+            </div>
+          </router-link>
+
+          <router-link to="/all" :key="index" v-if="index == 4">
+            <div
+              class="card card-info final-card"
+              style="width: 13rem; height: 19.5rem;"
+              @click="setCompanyCategory('plumbling')"
+            >
+              <div
+                class="top"
+                style="position:absolute; top:0; left:0; width:100%; height:100%; background-color:black; z-index:2; opacity:0.3;"
+              ></div>
+              <div
+                style="position:absolute; top:0; left:0; width:100%; height:100%; color:white; z-index:2; font-size: 24px; display: flex; align-items: center; justify-content: center;"
+              >
+                <h3>See more +</h3>
+              </div>
+              <div
+                class="inside"
+                style="position:absolute; top:0; left:0; width:100%; height:100%; z-index:1"
+              >
+                <img
+                  :src="compa.companyLogo"
+                  class="card-img-top"
+                  alt="Image company"
+                >
+                <div class="card-body">
+                  <h5 class="card-title">{{ compa.companyName }}</h5>
+                  <p class="card-text">{{ compa.description }}</p>
+                </div>
+              </div>
+            </div>
+          </router-link>
+        </template>
+      </div>
+    </div>
+
   </div>
 </template>
 
@@ -141,7 +199,8 @@ export default {
           companyAddress: "44/444 Bangkok"
         }
       ],
-      electricCompany: []
+      electricCompany: [],
+      plumblingCompany: []
     };
   },
   computed: {
@@ -175,6 +234,7 @@ export default {
       .then(data => {
         const applianceArray = [];
         const electricArray = [];
+        const plumblingArray = [];
         for (let key in data) {
           if (
             data[key].companyCategory == "appliance" &&
@@ -187,8 +247,15 @@ export default {
           ) {
             electricArray.push(data[key]);
           }
+          else if (
+            data[key].companyCategory == "plumbling" &&
+            plumblingArray.length < 5
+          ) {
+            plumblingArray.push(data[key]);
+          }
           this.applianceCompany = applianceArray;
           this.electricCompany = electricArray;
+          this.plumblingCompany = plumblingArray;
         }
       });
   }

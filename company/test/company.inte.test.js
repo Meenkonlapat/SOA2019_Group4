@@ -21,14 +21,18 @@ describe("API test : /api/company", () => {
                 companyName: "White Company",
                 companyDescription: "This Company has good quility",
                 companyCategory: "appliance",
-                companyAddress: "111/111 Bangkok"
+                companyAddress: "111/111 Bangkok",
+                companyLogo: "link here...",
+                companyPictures: ["picture1 link", "picture2 link"]
             },
             {
                 companyId: "000002",
                 companyName: "Black Company",
                 companyDescription: "This Company has many Diversity ",
                 companyCategory: "electric",
-                companyAddress: "222/222 Bangkok"
+                companyAddress: "222/222 Bangkok",
+                companyLogo: "link here...",
+                companyPictures: ["picture1 link", "picture2 link"]
             }
             ])
 
@@ -47,7 +51,9 @@ describe("API test : /api/company", () => {
                 companyName: "White Company",
                 companyDescription: "This Company almost good quility",
                 companyCategory: "appliance",
-                companyAddress: "111/111 Bangkok"
+                companyAddress: "111/111 Bangkok",
+                companyLogo: "link here...",
+                companyPictures: ["picture1 link", "picture2 link"]
             });
             await data.save();
             const res = await company(server).get("/api/company/" + data._id);
@@ -77,7 +83,9 @@ describe("API test : /api/company", () => {
                 companyName: "White Company",
                 companyDescription: "This Company almost good quility",
                 companyCategory: "appliance",
-                companyAddress: "111/111 Bangkok"
+                companyAddress: "111/111 Bangkok",
+                companyLogo: "link here...",
+                companyPictures: ["picture1 link", "picture2 link"]
             });
             await data.save();
             const res = await company(server).delete("/api/company/" + data._id);
@@ -107,7 +115,9 @@ describe("API test : /api/company", () => {
                 companyName: "White Company",
                 companyDescription: "This Company almost good quility",
                 companyCategory: "appliance",
-                companyAddress: "111/111 Bangkok"
+                companyAddress: "111/111 Bangkok",
+                companyLogo: "link here...",
+                companyPictures: ["picture1 link", "picture2 link"]
             });
             await data.save();
             const res = await company(server).put("/api/company/" + data._id).send({companyName: "black company"});

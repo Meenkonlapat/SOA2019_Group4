@@ -13,7 +13,9 @@ describe("Unit test : validateCompany", () => {
             companyName: "White Company",
             companyDescription: "This Company has good quility",
             companyCategory: "fire",
-            companyAddress: "111/111 Bangkok"
+            companyAddress: "111/111 Bangkok",
+            companyLogo: "link here...",
+            companyPictures: ["picture1 link", "picture2 link"]
         }
         ).error).toBeFalsy();
     });

@@ -10,7 +10,9 @@ const Company = mongoose.model("Company", new mongoose.Schema({
     companyName : String,
     companyDescription : String,
     companyCategory : String,
-    companyAddress: String
+    companyAddress: String,
+    companyLogo: String,
+    companyPictures: [{type: String}]
 }))
 
 router.get("/", async(req, res) => {
@@ -83,7 +85,9 @@ function validateCompany(company)
         companyName: Joi.string(),
         companyDescription: Joi.string(),
         companyCategory: Joi.string(),
-        companyAddress: Joi.string()
+        companyAddress: Joi.string(),
+        companyLogo: Joi.string(),
+        companyPictures: Joi.array().items(Joi.string())
     }
 
     return Joi.validate(company, schema);

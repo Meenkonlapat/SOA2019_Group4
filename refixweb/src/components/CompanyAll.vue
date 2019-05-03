@@ -12,7 +12,7 @@
             @click="setCompany(compa)"
           >
             <img
-              src="https://upload.wikimedia.org/wikipedia/commons/6/69/June_odd-eyed-cat_cropped.jpg"
+              :src="compa.companyLogo"
               class="card-img-top"
               alt="Image company"
             >
@@ -118,7 +118,7 @@ export default {
   },
   created() {
     this.$http
-      .get("https://company-dot-soa2019.appspot.com/api/company", {
+      .get("https://refixsoa2019.appspot.com/api/company", {
         params: { category: this.$store.getters["getCompanyCategory"] }
       })
       .then(response => {
