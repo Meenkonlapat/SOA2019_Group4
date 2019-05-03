@@ -96,7 +96,10 @@ UItest
 
 
 
+
+
 #ต้องเจอข้อมูลในหน้าแรก 10 เรื่อง
     #${count}=      Get Element Count    xpath://div/div/article
     #Should Be True    ${count} == 10
     #Page Should Contain Element    xpath://div/div/article    limit=10
+
