@@ -8,6 +8,6 @@ steps:
   args: ['run', 'build']
   dir: 'refixweb'
 # Deploy
-- name: 'gcr.io/refixsoa2019/firebase'
-  args: ['deploy']
-  dir: 'refixweb'
+# - name: 'gcr.io/refixsoa2019/firebase'
+#   args: ['deploy']
+#   dir: 'refixweb'

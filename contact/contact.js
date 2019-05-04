@@ -10,7 +10,8 @@ app.use(cors());
 require('./router/contactRequest.js');
 require('./start/router.js')(app);
 require('./start/db.js')();
-require("./start/eureka.js")();
+require('./start/metric.js')(app);
+// require("./start/eureka.js")();
 require("./start/prod.js")(app);
 
 const port = process.env.PORT || 3003;

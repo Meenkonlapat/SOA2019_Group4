@@ -30,6 +30,8 @@
     "helmet": "^3.16.0",
     "joi": "^14.3.1",
     "mongoose": "^5.4.20",
+    "prom-client": "^11.3.0",
+    "prometheus-api-metrics": "^2.2.2",
     "winston": "^3.2.1"
   },
   "devDependencies": {
