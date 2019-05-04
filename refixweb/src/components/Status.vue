@@ -13,7 +13,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr v-for="(req, index) in requests" :key="index">
+          <tr class="p-1" v-for="(req, index) in requests" :key="index">
             <th scope="row">{{req.requestId}}</th>
             <td>{{req.company.name}}</td>
             <td>{{req.title}}</td>
@@ -32,11 +32,7 @@
               <template
                 v-if="req.bill.length > 0 && (req.status == 'completed' || req.status == 'offered')"
               >
-                <button class="btn"><a
-                  class="btn btn-outline-success btn-sm"
-                  href="#popup1"
-                  @click="openBill(req, req.status)"
-                >Download</a></button>
+                <button class="btn btn-outline-success btn-sm" @click="openBill(req, req.status)">Download</button>
               </template>
               <template v-else>
                 <button type="button" class="btn btn-dark btn-sm" disabled>In progress</button>
@@ -44,17 +40,14 @@
             </td>
             <td class="p-2">
               <template v-if="req.status == 'offered'">
-                <button class="btn"><a
-                  class="btn btn-outline-primary btn-sm"
-                  href="#popup1"
-                  @click="confirmBill(req)"
-                >Confirm</a></button>
+                <button class="btn btn-outline-primary btn-sm" @click="confirmBill(req)">
+                Confirm</button>
               </template>
               <template v-if="req.status == 'waiting'">
                 <button type="button" class="btn btn-dark btn-sm" disabled>Waiting</button>
               </template>
               <template v-if="req.status == 'completed'">
-                <button id="btnCompleted" type="button" class="btn btn-sm">Completed</button>
+                <button type="button" class="btn btn-success btn-sm border border-success">Completed</button>
               </template>
             </td>
           </tr>
