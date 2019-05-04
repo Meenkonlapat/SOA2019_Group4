@@ -3,6 +3,8 @@ HELP.md
 !.mvn/wrapper/maven-wrapper.jar
 node_modules
 coverage
+.firebase
+.gitignore
 
 ### STS ###
 .apt_generated
