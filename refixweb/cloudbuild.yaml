@@ -7,7 +7,12 @@ steps:
 - name: 'gcr.io/cloud-builders/npm'
   args: ['run', 'build']
   dir: 'refixweb'
-# # Deploy
+# Deploy
+- name: 'gcr.io/cloud-builders/npm'
+  args: ['install', '-g', 'firebase-tools']
 # - name: 'gcr.io/refixsoa2019/firebase'
 #   args: ['deploy']
 #   dir: 'refixweb'
+- name: 'gcr.io/cloud-builders/firebase'
+  args: ['deploy']
+  dir: 'refixweb'
