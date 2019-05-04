@@ -32,11 +32,11 @@
               <template
                 v-if="req.bill.length > 0 && (req.status == 'completed' || req.status == 'offered')"
               >
-                <a
+                <button class="btn"><a
                   class="btn btn-outline-success btn-sm"
                   href="#popup1"
                   @click="openBill(req, req.status)"
-                >Download</a>
+                >Download</a></button>
               </template>
               <template v-else>
                 <button type="button" class="btn btn-dark btn-sm" disabled>In progress</button>
@@ -44,11 +44,11 @@
             </td>
             <td class="p-2">
               <template v-if="req.status == 'offered'">
-                <a
+                <button class="btn"><a
                   class="btn btn-outline-primary btn-sm"
                   href="#popup1"
                   @click="confirmBill(req)"
-                >Confirm</a>
+                >Confirm</a></button>
               </template>
               <template v-if="req.status == 'waiting'">
                 <button type="button" class="btn btn-dark btn-sm" disabled>Waiting</button>
