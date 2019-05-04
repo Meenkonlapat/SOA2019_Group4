@@ -1,16 +1,87 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<<<<<<< HEAD
 <robot generator="Robot 3.1.1 (Python 3.5.2 on win32)" rpa="false" generated="20190504 18:13:44.935">
 <suite id="s1" name="Test1 Robot" source="C:\Users\chintawee\Desktop\Node.js Project\SOA2019_Group4\UI test by Robotframework\test1_robot.robot">
 <test id="s1-t1" name="UItest">
+=======
+<<<<<<< HEAD
+<robot generated="20190504 15:07:38.744" rpa="false" generator="Robot 3.1.1 (Python 3.5.2 on win32)">
+<suite name="Test1 Robot" source="C:\Users\Administrator.BIO-20131228YTI\SOA2019_Group4\UI test by Robotframework\test1_robot.robot" id="s1">
+=======
+<robot generated="20190504 13:33:13.101" rpa="false" generator="Robot 3.1.1 (Python 3.5.2 on win32)">
+<suite name="Test1 Robot" source="C:\Users\chintawee\Desktop\Node.js Project\SOA2019_Group4\UI test by Robotframework\test1_robot.robot" id="s1">
+>>>>>>> 54e277fb1430af760b9683f3d08e6ac2d9e0d932
+<test name="UItest" id="s1-t1">
+>>>>>>> c8124fad8c7bdf2098ab03dcf349ecc42b84ceac
 <kw name="เปิดเว็บ">
-<kw name="Open Browser" library="SeleniumLibrary">
+<kw library="Selenium2Library" name="Open Browser">
 <doc>Opens a new browser instance to the given ``url``.</doc>
 <arguments>
 <arg>localhost:8080/</arg>
 <arg>browser=chrome</arg>
 </arguments>
+<<<<<<< HEAD
 <msg level="INFO" timestamp="20190504 18:13:45.471">Opening browser 'chrome' to base url 'localhost:8080/'.</msg>
 <status status="PASS" starttime="20190504 18:13:45.470" endtime="20190504 18:13:57.529"></status>
+=======
+<<<<<<< HEAD
+<msg level="INFO" timestamp="20190504 15:07:39.198">Opening browser 'chrome' to base url 'localhost:8080/'.</msg>
+<status endtime="20190504 15:07:43.890" starttime="20190504 15:07:39.198" status="PASS"></status>
+</kw>
+<kw library="Selenium2Library" name="Maximize Browser Window">
+<doc>Maximizes current browser window.</doc>
+<status endtime="20190504 15:07:45.015" starttime="20190504 15:07:43.890" status="PASS"></status>
+</kw>
+<kw library="BuiltIn" name="Sleep">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg level="INFO" timestamp="20190504 15:07:47.016">Slept 2 seconds</msg>
+<status endtime="20190504 15:07:47.016" starttime="20190504 15:07:45.015" status="PASS"></status>
+</kw>
+<status endtime="20190504 15:07:47.016" starttime="20190504 15:07:39.197" status="PASS"></status>
+</kw>
+<kw name="ล็อคอินลูกค้า">
+<kw library="Selenium2Library" name="Click Element">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath://*[@id="navigations"]/nav/li[4]/a</arg>
+</arguments>
+<msg level="INFO" timestamp="20190504 15:07:47.017">Clicking element 'xpath://*[@id="navigations"]/nav/li[4]/a'.</msg>
+<kw library="Selenium2Library" name="Capture Page Screenshot">
+<doc>Takes screenshot of the current page and embeds it into log file.</doc>
+<msg level="FAIL" timestamp="20190504 15:07:59.081">WebDriverException: Message: chrome not reachable
+  (Session info: chrome=74.0.3729.131)
+  (Driver info: chromedriver=74.0.3729.6 (255758eccf3d244491b8a1317aa76e1ce10d57e9-refs/branch-heads/3729@{#29}),platform=Windows NT 10.0.17134 x86_64)
+</msg>
+<status endtime="20190504 15:07:59.081" starttime="20190504 15:07:53.028" status="FAIL"></status>
+</kw>
+<msg level="WARN" timestamp="20190504 15:07:59.081">Keyword 'Capture Page Screenshot' could not be run on failure: WebDriverException: Message: chrome not reachable
+  (Session info: chrome=74.0.3729.131)
+  (Driver info: chromedriver=74.0.3729.6 (255758eccf3d244491b8a1317aa76e1ce10d57e9-refs/branch-heads/3729@{#29}),platform=Windows NT 10.0.17134 x86_64)
+</msg>
+<msg level="FAIL" timestamp="20190504 15:07:59.085">WebDriverException: Message: chrome not reachable
+  (Session info: chrome=74.0.3729.131)
+  (Driver info: chromedriver=74.0.3729.6 (255758eccf3d244491b8a1317aa76e1ce10d57e9-refs/branch-heads/3729@{#29}),platform=Windows NT 10.0.17134 x86_64)
+</msg>
+<status endtime="20190504 15:07:59.085" starttime="20190504 15:07:47.017" status="FAIL"></status>
+</kw>
+<status endtime="20190504 15:07:59.085" starttime="20190504 15:07:47.017" status="FAIL"></status>
+</kw>
+<status endtime="20190504 15:07:59.086" critical="yes" starttime="20190504 15:07:39.196" status="FAIL">WebDriverException: Message: chrome not reachable
+  (Session info: chrome=74.0.3729.131)
+  (Driver info: chromedriver=74.0.3729.6 (255758eccf3d244491b8a1317aa76e1ce10d57e9-refs/branch-heads/3729@{#29}),platform=Windows NT 10.0.17134 x86_64)
+</status>
+</test>
+<status endtime="20190504 15:07:59.088" starttime="20190504 15:07:38.746" status="FAIL"></status>
+=======
+<msg timestamp="20190504 13:33:13.720" level="INFO">Opening browser 'chrome' to base url 'localhost:8080/'.</msg>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes screenshot of the current page and embeds it into log file.</doc>
+<msg timestamp="20190504 13:33:19.916" level="INFO">Cannot capture screenshot because no browser is open.</msg>
+<status status="PASS" starttime="20190504 13:33:19.916" endtime="20190504 13:33:19.916"></status>
+>>>>>>> c8124fad8c7bdf2098ab03dcf349ecc42b84ceac
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
@@ -48,7 +119,12 @@
 </kw>
 <status critical="yes" status="PASS" starttime="20190504 18:13:45.468" endtime="20190504 18:14:28.088"></status>
 </test>
+<<<<<<< HEAD
 <status status="PASS" starttime="20190504 18:13:44.938" endtime="20190504 18:14:28.237"></status>
+=======
+<status status="FAIL" starttime="20190504 13:33:13.105" endtime="20190504 13:33:19.924"></status>
+>>>>>>> 54e277fb1430af760b9683f3d08e6ac2d9e0d932
+>>>>>>> c8124fad8c7bdf2098ab03dcf349ecc42b84ceac
 </suite>
 <statistics>
 <total>
@@ -62,5 +138,12 @@
 </suite>
 </statistics>
 <errors>
+<<<<<<< HEAD
+<msg level="WARN" timestamp="20190504 15:07:59.081">Keyword 'Capture Page Screenshot' could not be run on failure: WebDriverException: Message: chrome not reachable
+  (Session info: chrome=74.0.3729.131)
+  (Driver info: chromedriver=74.0.3729.6 (255758eccf3d244491b8a1317aa76e1ce10d57e9-refs/branch-heads/3729@{#29}),platform=Windows NT 10.0.17134 x86_64)
+</msg>
+=======
+>>>>>>> 54e277fb1430af760b9683f3d08e6ac2d9e0d932
 </errors>
 </robot>
