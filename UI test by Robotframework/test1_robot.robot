@@ -123,7 +123,7 @@ UItest
 
 คอนเฟริม
     choose Ok on Next Confirmation
-    Click Element    xpath://*[@id="status"]/div/table/tbody/tr[3]/td[5]/a
+    Click Element    xpath://*[@id="status"]/div/table/tbody/tr[9]/td[5]/button/a
     Sleep    2s
     Confirm Action
     Sleep    3s

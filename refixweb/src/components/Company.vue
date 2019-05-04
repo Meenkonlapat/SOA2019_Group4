@@ -83,10 +83,10 @@ export default {
               .then(() => {
                 console.log("created room");
                 console.log(contactObject);
-                this.$router.push("/message");
+                this.$router.push("/messenger");
               });
           } else {
-            this.$router.push("/message");
+            this.$router.push("/messenger");
           }
         });
     }

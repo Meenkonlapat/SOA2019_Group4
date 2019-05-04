@@ -19,7 +19,7 @@
         <a class="nav-link">Status</a>
       </router-link>
 
-      <router-link to="/message" router-link-active tag="li" class="col">
+      <router-link to="/messenger" router-link-active tag="li" class="col">
         <a class="nav-link">Message</a>
       </router-link>
 
