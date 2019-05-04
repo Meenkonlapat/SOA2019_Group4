@@ -114,9 +114,10 @@ export default {
   -webkit-border-radius: 2px;
   -moz-border-radius: 2px;
   border-radius: 2px;
+  background-color: aquamarine;
 }
 #button-group {
-  margin-top: 3em;
+  margin-top: 5em;
 }
 .button {
   color: #0e79f5;
