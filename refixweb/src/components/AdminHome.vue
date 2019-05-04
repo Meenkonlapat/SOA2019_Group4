@@ -1,14 +1,13 @@
 <template>
   <div id="adminHome">
     <router-link to="/">
-      <button @click="logOut()">LogOut</button>
     </router-link>
-    <div class="container text-center mt-5">
-      <h1 class="mb-4">Admin menu</h1>
-      <div class="row justify-content-around">
+    <div class="container text-center mt-3">
+      <h1 class="display-4 mb-4">Admin menu</h1>
+      <div class="row justify-content-around mt-5">
         <div class="col-4">
           <router-link to="/admin/request">
-            <div class="card bg-white card-admin">
+            <div class="card bg-white border border-dark card-admin">
               <img
                 src="https://upload.wikimedia.org/wikipedia/commons/6/69/June_odd-eyed-cat_cropped.jpg"
                 class="card-img image-admin"
@@ -22,22 +21,33 @@
         </div>
         <div class="col-4">
           <router-link to="/message">
-            <div class="card bg-white card-admin i-am-centerd center">
+            <div class="card bg-white border border-dark card-admin i-am-centerd center">
               <img
                 src="https://upload.wikimedia.org/wikipedia/commons/6/69/June_odd-eyed-cat_cropped.jpg"
                 class="card-img image-admin"
                 alt="messenger"
               >
-              <div class="card-img-overlay center align-items-center">
-                <h1>Messager</h1>
+              <div class="card-img-overlay">
+                <h1 class="card-title">Messager</h1>
               </div>
             </div>
           </router-link>
         </div>
       </div>
+      <button type="button" class="btn btn-outline-dark btn-sm mt-3" @click="logOut()">Logout</button>
     </div>
   </div>
 </template>
+
+<style>
+.card-title{
+    top: 50%;
+    left: 50%;
+    position: ABSOLUTE;
+    margin: 0;
+    transform: translate(-50%, -50%);
+}
+</style>
 
 <script>
 export default {
