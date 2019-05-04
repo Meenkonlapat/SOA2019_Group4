@@ -1,4 +1,7 @@
 steps:
+# cd to web directory
+- name: 'ubuntu'
+  args: ['cd', '/refixweb']
 # Install
 - name: 'gcr.io/cloud-builders/npm'
   args: ['install']

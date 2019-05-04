@@ -1,6 +1,5 @@
 <template>
   <div class="container" id="home">
-  hello world
     <div class="device">
       <div class="header">
         <h3 style="text-align:start">Appliance</h3>
