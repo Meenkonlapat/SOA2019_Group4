@@ -1,6 +1,7 @@
 <template>
   <div id="addExtension">
     <div class="container mt-5">
+      
       <div class="d-flex justify-content-center mb-3 h3">Add repair detail</div>
       <form class="mb-3">
         <div class="form-row">
@@ -37,8 +38,8 @@
           </tr>
         </tbody>
       </table>
-      <router-link to="/admin">
-        <button class="btn" id="backPage">Previous</button>
+      <router-link to="/admin/request">
+        <button class="btn" id="backPage">confirm</button>
       </router-link>
     </div>
   </div>
@@ -136,7 +137,7 @@ export default {
   margin-top: 0.5em;
   color: #ffffff;
   display: inline-block;
-  font-size: 14px;
+  font-size: 18px;
   padding: -5px;
   border: 2px solid #48b2ff;
   background-color: #48b2ff;
@@ -162,5 +163,6 @@ export default {
 #backPage:hover::after {
   opacity: 1;
 }
+
 
 </style>
