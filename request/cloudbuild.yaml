@@ -1,0 +1,7 @@
+steps:
+- name: 'gcr.io/cloud-builders/npm'
+  args: ['install']
+  dir: 'request'
+- name: 'gcr.io/cloud-builders/gcloud'
+  args: [ 'app', 'deploy']
+  dir: 'request'

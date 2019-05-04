@@ -1,7 +1,5 @@
 <template>
   <div id="adminHome">
-    <router-link to="/">
-    </router-link>
     <div class="container text-center mt-3">
       <h1 class="display-4 mb-4">Admin menu</h1>
       <div class="row justify-content-around mt-5">
@@ -34,7 +32,9 @@
           </router-link>
         </div>
       </div>
-      <button type="button" class="btn btn-outline-dark btn-sm mt-3" @click="logOut()">Logout</button>
+      <router-link to="/">
+        <button type="button" class="btn btn-outline-dark btn-sm mt-3" @click="logOut()">Logout</button>
+      </router-link>
     </div>
   </div>
 </template>

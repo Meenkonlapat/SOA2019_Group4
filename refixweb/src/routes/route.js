@@ -56,12 +56,8 @@ export const routes = [
         if (!store.getters['getCurrentUser'].name) {
             next('/login');
         }
-        else if (!store.getters["getIsCompany"])
-        {
+        else{
             next();
-        }
-        else {
-            next('/admin');
         }
     }},
     {
