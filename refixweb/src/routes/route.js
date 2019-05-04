@@ -52,7 +52,7 @@ export const routes = [
             next('/admin');
         }
     }},
-    { path: '/message', component: Message, beforeEnter: (to, from, next)=>{
+    { path: '/messenger', component: Message, beforeEnter: (to, from, next)=>{
         if (!store.getters['getCurrentUser'].name) {
             next('/login');
         }

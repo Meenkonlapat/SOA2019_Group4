@@ -2,7 +2,7 @@
   <div id="lookAllRequrst">
     <div class="container">
 
-    <router-link to="/admin"><button class="btn">
+    <router-link to="/admin"><button class="btn" id="backPage">
       Previous
     </button></router-link>
       <table class="table table-borderless mt-5 border table-light text-center">
@@ -75,6 +75,37 @@ export default {
 
 
 <style>
+#backPage {
+  margin-top: .5em;
+  color: #ffffff;
+  display: inline-block;
+  font-size: 14px;
+  padding: -5px;
+  border: 2px solid #48b2ff;
+  background-color: #48b2ff;
+  text-align: center;
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  letter-spacing: 0.012px;
+  text-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.2);
+  transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+  -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+  -moz-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+#backPage::after {
+  opacity: 0;
+}
+#backPage:hover {
+  color: #fff;
+  border: 2px solid rgb(34, 163, 255);
+  background-color: rgb(34, 163, 255);
+}
+#backPage:hover::after {
+  opacity: 1;
+}
+
 #btnView {
   margin-top: -0.5em;
   color: #ffffff;
