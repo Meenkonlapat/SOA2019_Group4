@@ -21,15 +21,15 @@
           </router-link>
         </div>
         <div class="col-4">
-          <router-link to="/message">
-            <div class="card bg-white card-admin i-am-centerd center">
+          <router-link to="/messenger">
+            <div class="card bg-white card-admin">
               <img
                 src="https://upload.wikimedia.org/wikipedia/commons/6/69/June_odd-eyed-cat_cropped.jpg"
                 class="card-img image-admin"
                 alt="messenger"
               >
-              <div class="card-img-overlay center align-items-center">
-                <h1>Messager</h1>
+              <div class="card-img-overlay">
+                <h1 class="card-title">Messenger</h1>
               </div>
             </div>
           </router-link>
