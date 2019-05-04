@@ -1,6 +1,10 @@
 <template>
   <div id="lookAllRequrst">
     <div class="container">
+
+    <router-link to="/admin"><button class="btn">
+      Previous
+    </button></router-link>
       <table class="table table-borderless mt-5 border table-light text-center">
         <thead>
           <tr class="table-bordered">
