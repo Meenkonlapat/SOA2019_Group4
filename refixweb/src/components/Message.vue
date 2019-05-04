@@ -4,6 +4,7 @@
       <aside class="user">
         <header>
           <h1>Messenger</h1>
+
         </header>
         <ul>
           <li v-for="(contact, index) in contacts" :key="index" @click="setTargetUser(contact)">
@@ -215,12 +216,12 @@ export default {
 }
 
 #chat-screen {
-  background-image: linear-gradient(120deg, #2c92eb 0%, #2857d8 100%);
+  background-image: linear-gradient(120deg, #2c92eb 0%, #B5D6FB 100%);
   background-size: cover;
 }
 
 .user header {
-  background-color: #ffbb00;
+  background-color:#2c92eb;
   padding: 2rem 0;
   display: flex;
   align-items: center;

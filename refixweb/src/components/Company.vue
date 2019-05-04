@@ -2,7 +2,7 @@
   <div class="container" id="company">
     <!-- {{company}} -->
     <div class="header">
-      <h3 style="text-align:start; margin-bottom: 1em;">{{company.companyName}}</h3>
+      <h3 style="text-align:start; margin-bottom: 1em; margin-left: 0.30em;">{{company.companyName}}</h3>
     </div>
     <div class="row">
       <div class="col-4">
@@ -12,8 +12,8 @@
           id="imgCompany"
         >
       </div>
-      <div class="col-8">
-        <div id="address">{{company.companyDescription}}</div>
+      <div class="col-8" style="border: 3px outset lightblue; border-radius: 10px;">
+        <div id="address" style="margin-top: 1em;">{{company.companyDescription}}</div>
         <div id="button-group">
           <router-link to="/request">
           <div class="btn btn-outline-primary">Request</div>
@@ -104,20 +104,23 @@ export default {
   max-height: 300px;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
-  border-radius: 3px;
+  border-radius: 20px;
+  border-style: outset;
+  border-color: grey;
+  border-width: 3px;
 }
 .port {
   margin-left: 15px;
   margin-top: 2em;
-  max-width: 130px;
+  max-width: 200px;
   max-height: 130px;
   -webkit-border-radius: 2px;
   -moz-border-radius: 2px;
   border-radius: 2px;
-  background-color: aquamarine;
+  border-style: groove;
 }
 #button-group {
-  margin-top: 5em;
+  margin-top: 13em;
 }
 .button {
   color: #0e79f5;
