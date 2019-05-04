@@ -40,7 +40,7 @@
             </td>
             <td class="p-2">
               <template v-if="req.status == 'offered'">
-                <button class="btn btn-outline-primary btn-sm" @click="confirmBill(req)">
+                <button type="button" name="confirm" class="btn btn-outline-primary btn-sm" @click="confirmBill(req)">
                 Confirm</button>
               </template>
               <template v-if="req.status == 'waiting'">
