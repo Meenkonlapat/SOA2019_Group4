@@ -7,28 +7,33 @@ library  SeleniumLibrary
 *** Test cases ***
 UItest
     เปิดเว็บ
-    ล็อคอินลูกค้า
-    เลือกบริษัท
-    แจ้งซ่อม
-    ไปหน้าโฮม
-    เลือกบริษัท
-    ติดต่อหาช่าง
-    ล็อคเอ้าลูกค้า
-    ล็อคอินช่าง
-    ติดต่อหาลูกค้า
-    ปิด
-    เปิดเว็บ
-    ล็อคอินช่าง
-    ดูการแจ้งซ่อม
-    แก้บิล
-    ปิด
-    เปิดเว็บ
-    ล็อคอินลูกค้า
-    ไปสเตตัส
+    #ล็อคอินลูกค้า
+    #เปิดเว็บ
+    #ล็อคอินช่าง
+    #สลับ
+    #เปิดเว็บ
+    #ล็อคอินลูกค้า
+    #เลือกบริษัท
+    #แจ้งซ่อม
+    #ไปหน้าโฮม
+    #เลือกบริษัท
+    #ติดต่อหาช่าง
+    #ล็อคเอ้าลูกค้า
+    #ล็อคอินช่าง
+    #ติดต่อหาลูกค้า
+    #ปิด
+    #เปิดเว็บ
+    #ล็อคอินช่าง
+    #ดูการแจ้งซ่อม
+    #แก้บิล
+    #ปิด
+    #เปิดเว็บ
+    #ล็อคอินลูกค้า
+    #ไปสเตตัส
     #โหลด
-    คอนเฟริม
+    #คอนเฟริม
     #โหลด
-    ล็อคเอ้าลูกค้า
+    #ล็อคเอ้าลูกค้า
     #ปิด
 
 *** Keyword ***
@@ -36,6 +41,9 @@ UItest
     Open Browser    localhost:8080/  browser=chrome
     Maximize Browser Window
     Sleep    2s
+    Go To    https://www.google.co.th/
+    Sleep    2s
+    Go Back
 
 ล็อคอินลูกค้า
     Click Element    xpath://*[@id="navigations"]/nav/li[4]/a
@@ -124,14 +132,24 @@ UItest
 
 คอนเฟริม
     choose Ok on Next Confirmation
-    Click Element    xpath://*[@id="status"]/div/table/tbody/tr[9]/td[5]/button/a
+    Click Button    xpath://*[@id="status"]/div/table/tbody/tr[3]/td[5]/button
     Sleep    2s
     Confirm Action
     Sleep    3s
     Press Keys    None    ENTER  
     Sleep    2s
 
+ย้อนหน้าช่าง
+    Click Element    xpath://*[@id="lookAllRequrst"]/div/a/button
+    Sleep    2s
 
+ล็อคเอ้าช่าง
+    Click Element    xpath://*[@id="adminHome"]/a/button
+    Sleep    2s
+
+สลับ
+    Switch Browser
+    Sleep    2s
 
 #ต้องเจอข้อมูลในหน้าแรก 10 เรื่อง
     #${count}=      Get Element Count    xpath://div/div/article
