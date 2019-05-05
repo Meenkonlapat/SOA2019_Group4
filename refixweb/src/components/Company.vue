@@ -12,8 +12,8 @@
           id="imgCompany"
         >
       </div>
-      <div class="col-8" style="border: 3px outset lightblue; border-radius: 10px;">
-        <div id="address" style="margin-top: 1em;">{{company.companyDescription}}</div>
+      <div class="col-8">
+        <p>{{company.companyDescription}}</p>
         <div id="button-group">
           <router-link to="/request">
           <div class="btn btn-outline-primary">Request</div>
@@ -102,12 +102,9 @@ export default {
 #imgCompany {
   max-width: 300px;
   max-height: 300px;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  border-radius: 20px;
-  border-style: outset;
-  border-color: grey;
-  border-width: 3px;
+  /* -webkit-border-radius: 3px;
+  -moz-border-radius: 3px; */
+  
 }
 .port {
   margin-left: 15px;
@@ -120,7 +117,7 @@ export default {
   border-style: groove;
 }
 #button-group {
-  margin-top: 13em;
+  margin-top: 1em;
 }
 .button {
   color: #0e79f5;
@@ -173,4 +170,5 @@ export default {
 a:hover {
   text-decoration: none;
 }
+
 </style>
