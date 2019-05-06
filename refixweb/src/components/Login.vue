@@ -77,7 +77,7 @@ export default {
         user = {
           name : "companya",
           ID: "000001",
-          address: "44/444 Bangkok"
+          address: "11/111 Bangkok"
         }
         this.$store.dispatch("commitIsCompany", true);
         this.$router.push("/admin")
