@@ -5,9 +5,9 @@
       <div class="row justify-content-around mt-5">
         <div class="col-4">
           <router-link to="/admin/request">
-            <div class="card bg-white border border-dark card-admin">
+            <div class=" bg-white card-admin">
               <img
-                src="https://upload.wikimedia.org/wikipedia/commons/6/69/June_odd-eyed-cat_cropped.jpg"
+                src="../assets/request.png"
                 class="card-img image-admin"
                 alt="request all"
               >
@@ -19,9 +19,9 @@
         </div>
         <div class="col-4">
                 <router-link to="/messenger">
-            <div class="card bg-white card-admin border border-dark">
+            <div class=" bg-white card-admin ">
               <img
-                src="https://upload.wikimedia.org/wikipedia/commons/6/69/June_odd-eyed-cat_cropped.jpg"
+                src="../assets/messenger.png"
                 class="card-img image-admin"
                 alt="messenger"
               >
@@ -33,7 +33,7 @@
         </div>
       </div>
       <router-link to="/">
-        <button type="button" class="btn btn-outline-dark btn-sm mt-3" @click="logOut()">Logout</button>
+        <button type="button" class="btn btn-outline-dark btn-sm mt-3" style="font-size:18px; padding-right:1.5rem;padding-left:1.5rem;" @click="logOut()">Logout</button>
       </router-link>
     </div>
   </div>
@@ -69,20 +69,18 @@ export default {
   margin-top: 20px;
 }
 .image-admin {
-  opacity: 0.7;
+  opacity: .3;
 }
 .card-admin {
-  color: #fff;
+  color: #333;
   position: relative;
   display: inline-block;
   font-family: "Playfair Display", serif;
   font-size: 16px;
   margin-right: 4px;
   margin-left: 15px;
+  padding: .5rem;
   margin-bottom: 20px;
-  -webkit-border-radius: 6px;
-  -moz-border-radius: 6px;
-  border-radius: 6px;
   transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
   -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
   -moz-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
@@ -91,7 +89,7 @@ export default {
   opacity: 0;
 }
 .card-admin:hover {
-  box-shadow: 0 4px 6px 0 hsla(0, 0%, 0%, 0.2);
+  box-shadow: 0 0px 6px 0 hsla(0, 0%, 0%, 0.2); 
 }
 .card-admin:hover::after {
   opacity: 1;
