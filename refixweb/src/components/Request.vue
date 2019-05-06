@@ -10,7 +10,7 @@
       <div class="form-group row">
         <label for="text" class="col-sm-2 col-form-label">Repair:</label>
         <div class="col-sm-10">
-          <input type="text" class="form-control" v-model="repairTitle">
+          <input name="repair" type="text" class="form-control" v-model="repairTitle">
         </div>
       </div>
       <div class="form-group row">
@@ -22,12 +22,12 @@
       <div class="form-group row">
         <label for="text" class="col-sm-2 col-form-label">Detail:</label>
         <div class="col-sm-10">
-          <textarea type="text" class="form-control" v-model="repairDetail" rows="10"/>
+          <textarea name="repairDetail" type="text" class="form-control" v-model="repairDetail" rows="10"/>
         </div>
       </div>
     </form>
     <div class="wrapper">
-      <button class="btn confirm-button" @click="confirmRequest()">Confirm</button>
+      <button name="confirm_request" class="btn confirm-button" @click="confirmRequest()">Confirm</button>
       <router-link to="/all">
         <button
           class="btn cancel-button"

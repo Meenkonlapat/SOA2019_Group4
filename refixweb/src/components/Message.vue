@@ -50,7 +50,7 @@
           </article>
         </section>
         <div class="msg-compose">
-          <textarea placeholder="Say something..." v-model="message" @keydown.enter="sendMessage()" />
+          <textarea name="chattext" placeholder="Say something..." v-model="message" @keydown.enter="sendMessage()" />
           <div id="sendButton" @click="sendMessage()"><font-awesome-icon icon="paper-plane" class="icon"/></div>
         </div>
       </section>

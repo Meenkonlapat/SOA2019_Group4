@@ -6,12 +6,12 @@
       <form class="mb-3">
         <div class="form-row">
           <div class="col-10">
-            <input type="text" class="form-control" placeholder="Detail" v-model="detail">
+            <input name="detailbill" type="text" class="form-control" placeholder="Detail" v-model="detail">
           </div>
           <div class="col">
-            <input type="text" class="form-control" placeholder="Price" v-model="price">
+            <input name="price" type="text" class="form-control" placeholder="Price" v-model="price">
           </div>
-          <button type="button" class="btn btn-success btn-sm" @click="addBill()">Confirm</button>
+          <button name="addBill" type="button" class="btn btn-success btn-sm" @click="addBill()">Confirm</button>
         </div>
       </form>
       <div class="d-flex justify-content-center mb-3 h3">List bill</div>

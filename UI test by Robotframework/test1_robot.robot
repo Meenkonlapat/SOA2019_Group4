@@ -35,38 +35,38 @@ UItest
     Sleep    2s
     
 ล็อคอินลูกค้า
-    Click Element    xpath://*[@id="navigations"]/nav/li[4]/a
+    Click Element    name:login
     Sleep    2s
-    Input Text    xpath://*[@id="usr"]    asd
+    Input Text    id:usr    asd
     Sleep    2s
     Press Keys    None    ENTER  
     Sleep    2s
 
 ล็อคเอ้าลูกค้า
     choose Ok on Next Confirmation
-    Click Element    xpath://*[@id="navigations"]/nav/li[4]/div/a
+    Click Element    name:logout
     Sleep    2s
     Confirm Action
     Sleep    2s
 
 ล็อคอินช่าง
-    Click Element    xpath://*[@id="navigations"]/nav/li[4]/a
+    Click Element    name:login
     Sleep    2s
-    Input Text    xpath://*[@id="usr"]    companya
+    Input Text    id:usr    companya
     Sleep    2s
-    Click Element    xpath://*[@id="login"]/div/div[4]/button
+    Press Keys    None    ENTER  
     Sleep    2s
 
 ดูการแจ้งซ่อม
-    Click Element    xpath://*[@id="adminHome"]/div/div/div[1]/a/div/div
+    Click Element    name:repair_request
     Sleep    2s
-    Click Element    xpath://*[@id="btnView"]
+    Click Element    id:btnView
     Sleep    2s
-    Input Text    xpath://*[@id="addExtension"]/div/form/div/div[1]/input    ค่าหลอดไฟ
+    Input Text    name:detailbill    ค่าหลอดไฟ
     Sleep    2s
-    Input Text    xpath://*[@id="addExtension"]/div/form/div/div[2]/input    200
+    Input Text    name:price    200
     Sleep    2s
-    Click Element    xpath://*[@id="addExtension"]/div/form/div/button
+    Click Element    name:addBill
     Sleep    2s
 
 ปิด
@@ -78,43 +78,43 @@ UItest
     Sleep    2s
 
 แจ้งซ่อม
-    Click Element    xpath://*[@id="button-group"]/a/div
+    Click Element    requestBT
     Sleep    2s
-    Input Text    xpath://*[@id="request"]/form/div[2]/div/input    ไฟดับ
-    Input Text    xpath://*[@id="request"]/form/div[4]/div/textarea    หลอดไฟขาด
+    Input Text    name:repair    ไฟดับ
+    Input Text    name:repairDetail    หลอดไฟขาด
     Sleep    2s
     choose Ok on Next Confirmation
-    Click Element    xpath://*[@id="request"]/div/button
+    Click Element    name:confirm_request
     Sleep    2s
     Confirm Action
     Sleep    3s
 
 ไปหน้าโฮม
-    Click Element    xpath://*[@id="navigations"]/nav/li[1]/a
+    Click Element    name:home
     Sleep    2s
 
 ติดต่อหาช่าง
-    Click Element    xpath://*[@id="button-group"]/div
+    Click Element    name:contactBT
     Sleep    2s
     Click Element    xpath://*[@id="messager"]/div/aside/ul/li
     Sleep    2s
-    Input Text    xpath://*[@id="chat-screen"]/div/textarea    ไปดับต้องซ่อมไง
+    Input Text    name:chattext    ไปดับต้องซ่อมไง
     Sleep    2s
-    Click Element    xpath://*[@id="sendButton"]
+    Click Element    id:sendButton
     Sleep   2s
 
 ติดต่อหาลูกค้า
-    Click Element    xpath://*[@id="adminHome"]/div/div/div[2]
+    Click Element    message_mechanic
     Sleep    2s
     Click Element    xpath://*[@id="messager"]/div/aside/ul/li
     Sleep    2s
-    Input Text    xpath://*[@id="chat-screen"]/div/textarea    เปลี่ยนหลอด
+    Input Text    name:chattext    เปลี่ยนหลอด
     Sleep    2s
-    Click Element    xpath://*[@id="sendButton"]
+    Click Element    id:sendButton
     Sleep    2s
 
 ไปสเตตัส
-    Click Element    xpath://*[@id="navigations"]/nav/li[2]/a
+    Click Element    name:status
     Sleep    2s
 
 คอนเฟริม
@@ -127,12 +127,12 @@ UItest
     Sleep    2s
 
 ย้อนหน้าช่าง
-    Click Button    //*[@id="backPage"]
+    Click Button    id:backPage
     Sleep    2s
 
 ล็อคเอ้าช่าง
     choose Ok on Next Confirmation
-    Click Button    //*[@id="adminHome"]/div/a/button
+    Click Button    name:logout2
     Sleep    2s
     Confirm Action
     Sleep    2s
