@@ -12,8 +12,8 @@
           id="imgCompany"
         >
       </div>
-      <div class="col-8" style="border: 3px outset lightblue; border-radius: 10px;">
-        <div id="address" style="margin-top: 1em;">{{company.companyDescription}}</div>
+      <div class="col-8">
+        <p id="text-description">{{company.companyDescription}}</p>
         <div id="button-group">
           <router-link to="/request">
           <div name="requestBT" class="btn btn-outline-primary">Request</div>
@@ -102,25 +102,26 @@ export default {
 #imgCompany {
   max-width: 300px;
   max-height: 300px;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  border-radius: 20px;
-  border-style: outset;
-  border-color: grey;
-  border-width: 3px;
+  padding: .2rem;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  
 }
 .port {
   margin-left: 15px;
   margin-top: 2em;
+  padding: .2rem;
   max-width: 200px;
   max-height: 130px;
   -webkit-border-radius: 2px;
   -moz-border-radius: 2px;
   border-radius: 2px;
-  border-style: groove;
+  border: 1px solid rgba(0, 0, 0, 0.15);
 }
 #button-group {
-  margin-top: 13em;
+  margin-top: 1em;
 }
 .button {
   color: #0e79f5;
@@ -172,5 +173,13 @@ export default {
 }
 a:hover {
   text-decoration: none;
+}
+#text-description{
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  text-align: justify;
+  padding: .5rem;
 }
 </style>

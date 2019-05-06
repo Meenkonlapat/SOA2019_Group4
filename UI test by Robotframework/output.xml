@@ -1,37 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<<<<<<< HEAD
 <robot generator="Robot 3.1.1 (Python 3.5.2 on win32)" generated="20190506 13:17:16.737" rpa="false">
 <suite name="Test1 Robot" source="C:\Users\chintawee\Desktop\Node.js Project\SOA2019_Group4\UI test by Robotframework\test1_robot.robot" id="s1">
+=======
+<robot generated="20190505 22:32:51.799" rpa="false" generator="Robot 3.1.1 (Python 3.5.2 on win32)">
+<suite source="C:\Users\Administrator.BIO-20131228YTI\SOA2019_Group4\UI test by Robotframework\test1_robot.robot" name="Test1 Robot" id="s1">
+>>>>>>> 52cc40e72140cef5eb90743be9a2afbdee1be123
 <test name="UItest" id="s1-t1">
 <kw name="เปิดเว็บ">
-<kw name="Open Browser" library="Selenium2Library">
+<kw library="Selenium2Library" name="Open Browser">
 <doc>Opens a new browser instance to the given ``url``.</doc>
 <arguments>
 <arg>localhost:8080/</arg>
 <arg>browser=chrome</arg>
 </arguments>
+<<<<<<< HEAD
 <msg timestamp="20190506 13:17:19.243" level="INFO">Opening browser 'chrome' to base url 'localhost:8080/'.</msg>
 <status status="PASS" endtime="20190506 13:17:36.789" starttime="20190506 13:17:19.243"></status>
+=======
+<msg timestamp="20190505 22:32:53.526" level="INFO">Opening browser 'chrome' to base url 'localhost:8080/'.</msg>
+<status starttime="20190505 22:32:53.525" endtime="20190505 22:33:11.308" status="PASS"></status>
+>>>>>>> 52cc40e72140cef5eb90743be9a2afbdee1be123
 </kw>
-<kw name="Maximize Browser Window" library="Selenium2Library">
+<kw library="Selenium2Library" name="Maximize Browser Window">
 <doc>Maximizes current browser window.</doc>
+<<<<<<< HEAD
 <status status="PASS" endtime="20190506 13:17:38.345" starttime="20190506 13:17:36.789"></status>
+=======
+<status starttime="20190505 22:33:11.308" endtime="20190505 22:33:12.489" status="PASS"></status>
+>>>>>>> 52cc40e72140cef5eb90743be9a2afbdee1be123
 </kw>
-<kw name="Sleep" library="BuiltIn">
+<kw library="BuiltIn" name="Sleep">
 <doc>Pauses the test executed for the given time.</doc>
 <arguments>
 <arg>2s</arg>
 </arguments>
+<<<<<<< HEAD
 <msg timestamp="20190506 13:17:40.348" level="INFO">Slept 2 seconds</msg>
 <status status="PASS" endtime="20190506 13:17:40.348" starttime="20190506 13:17:38.345"></status>
 </kw>
 <status status="PASS" endtime="20190506 13:17:40.348" starttime="20190506 13:17:19.243"></status>
+=======
+<msg timestamp="20190505 22:33:14.491" level="INFO">Slept 2 seconds</msg>
+<status starttime="20190505 22:33:12.489" endtime="20190505 22:33:14.491" status="PASS"></status>
+</kw>
+<status starttime="20190505 22:32:53.525" endtime="20190505 22:33:14.491" status="PASS"></status>
+>>>>>>> 52cc40e72140cef5eb90743be9a2afbdee1be123
 </kw>
 <kw name="ล็อคอินลูกค้า">
-<kw name="Click Element" library="Selenium2Library">
+<kw library="Selenium2Library" name="Click Element">
 <doc>Click element identified by ``locator``.</doc>
 <arguments>
 <arg>name:login</arg>
 </arguments>
+<<<<<<< HEAD
 <msg timestamp="20190506 13:17:40.350" level="INFO">Clicking element 'name:login'.</msg>
 <status status="PASS" endtime="20190506 13:17:40.576" starttime="20190506 13:17:40.349"></status>
 </kw>
@@ -790,10 +812,32 @@
 <total>
 <stat pass="1" fail="0">Critical Tests</stat>
 <stat pass="1" fail="0">All Tests</stat>
+=======
+<msg timestamp="20190505 22:33:14.492" level="INFO">Clicking element 'xpath://*[@id="navigations"]/nav/li[4]/a'.</msg>
+<kw library="Selenium2Library" name="Capture Page Screenshot">
+<doc>Takes screenshot of the current page and embeds it into log file.</doc>
+<msg timestamp="20190505 22:33:15.408" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-37.png"&gt;&lt;img src="selenium-screenshot-37.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status starttime="20190505 22:33:14.660" endtime="20190505 22:33:15.408" status="PASS"></status>
+</kw>
+<msg timestamp="20190505 22:33:15.463" level="FAIL">Element with locator 'xpath://*[@id="navigations"]/nav/li[4]/a' not found.</msg>
+<status starttime="20190505 22:33:14.492" endtime="20190505 22:33:15.463" status="FAIL"></status>
+</kw>
+<status starttime="20190505 22:33:14.491" endtime="20190505 22:33:15.463" status="FAIL"></status>
+</kw>
+<status starttime="20190505 22:32:53.524" critical="yes" endtime="20190505 22:33:15.478" status="FAIL">Element with locator 'xpath://*[@id="navigations"]/nav/li[4]/a' not found.</status>
+</test>
+<status starttime="20190505 22:32:51.836" endtime="20190505 22:33:15.492" status="FAIL"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="1" pass="0">Critical Tests</stat>
+<stat fail="1" pass="0">All Tests</stat>
+>>>>>>> 52cc40e72140cef5eb90743be9a2afbdee1be123
 </total>
 <tag>
 </tag>
 <suite>
+<<<<<<< HEAD
 <stat name="Test1 Robot" pass="1" id="s1" fail="0">Test1 Robot</stat>
 </suite>
 </statistics>
@@ -809,5 +853,11 @@
 <msg timestamp="20190506 13:19:07.798" level="WARN">Keyword 'Selenium2Library.Confirm Action' is deprecated. Use `Handle Alert` instead.</msg>
 <msg timestamp="20190506 13:19:09.809" level="WARN">Keyword 'Selenium2Library.Choose Ok On Next Confirmation' is deprecated. Use `Handle Alert` directly instead.</msg>
 <msg timestamp="20190506 13:19:11.920" level="WARN">Keyword 'Selenium2Library.Confirm Action' is deprecated. Use `Handle Alert` instead.</msg>
+=======
+<stat fail="1" name="Test1 Robot" id="s1" pass="0">Test1 Robot</stat>
+</suite>
+</statistics>
+<errors>
+>>>>>>> 52cc40e72140cef5eb90743be9a2afbdee1be123
 </errors>
 </robot>
