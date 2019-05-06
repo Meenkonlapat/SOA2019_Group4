@@ -16,9 +16,9 @@
         <div id="address" style="margin-top: 1em;">{{company.companyDescription}}</div>
         <div id="button-group">
           <router-link to="/request">
-          <div class="btn btn-outline-primary">Request</div>
+          <div name="requestBT" class="btn btn-outline-primary">Request</div>
           </router-link>
-          <div class="btn btn-outline-info ml-3" @click="addContact(company)">Contact</div>
+          <div name="contactBT" class="btn btn-outline-info ml-3" @click="addContact(company)">Contact</div>
         </div>
       </div>
       <div class="portfolio">

@@ -3,7 +3,7 @@
     <div class="container text-center mt-3">
       <h1 class="display-4 mb-4">Admin menu</h1>
       <div class="row justify-content-around mt-5">
-        <div class="col-4">
+        <div name="repair_request" class="col-4">
           <router-link to="/admin/request">
             <div class="card bg-white border border-dark card-admin">
               <img
@@ -17,7 +17,7 @@
             </div>
           </router-link>
         </div>
-        <div class="col-4">
+        <div name="message_mechanic" class="col-4">
                 <router-link to="/messenger">
             <div class="card bg-white card-admin border border-dark">
               <img
@@ -33,7 +33,7 @@
         </div>
       </div>
       <router-link to="/">
-        <button type="button" class="btn btn-outline-dark btn-sm mt-3" @click="logOut()">Logout</button>
+        <button name="logout2" type="button" class="btn btn-outline-dark btn-sm mt-3" @click="logOut()">Logout</button>
       </router-link>
     </div>
   </div>

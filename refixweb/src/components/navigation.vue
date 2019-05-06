@@ -12,26 +12,26 @@
 
     <nav class="nav container">
       <router-link to="/" router-link-active tag="li" class="col">
-        <a class="nav-link">Home</a>
+        <a name="home" class="nav-link">Home</a>
       </router-link>
 
       <router-link to="/status" router-link-active tag="li" class="col">
-        <a class="nav-link">Status</a>
+        <a name="status" class="nav-link">Status</a>
       </router-link>
 
       <router-link to="/messenger" router-link-active tag="li" class="col">
-        <a class="nav-link">Message</a>
+        <a name="message" class="nav-link">Message</a>
       </router-link>
 
       <template v-if="!currentUser.name">
         <router-link to="/login" router-link-active tag="li" class="col">
-          <a class="nav-link">Login</a>
+          <a name="login" class="nav-link">Login</a>
         </router-link>
       </template>
 
       <template v-else>
         <router-link to="/" router-link-active tag="li" class="col">
-          <div @click="logOut()"><a class="nav-link">LogOut</a></div>
+          <div @click="logOut()"><a name="logout" class="nav-link">LogOut</a></div>
         </router-link>
       </template>
     </nav>
