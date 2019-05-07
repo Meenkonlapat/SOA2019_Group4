@@ -3,12 +3,12 @@
     <div class="container" v-if="isCompany" style="margin-bottom:2.4em;">
       <router-link to="/admin">
         <button class="btn" id="backPage">Previous</button>
-      </router-link></div>
+      </router-link>
+    </div>
     <div class="container chat-box-msg">
       <aside class="user">
         <header>
           <h1>Messenger</h1>
-
         </header>
         <ul>
           <li v-for="(contact, index) in contacts" :key="index" @click="setTargetUser(contact)">
@@ -21,13 +21,9 @@
                 <p v-if="isCompany">{{ contact.customerName }}</p>
                 <p v-else>{{ contact.companyName }}</p>
               </div>
-              <div class="text">
-                <!-- <p>{{ contact.chat[contact.chat.length-1].message}}</p> -->
-              </div>
+              <div class="text"></div>
             </div>
-            <div class="time-stamp">
-              <!-- <p>{{ contact.chat[contact.chat.length-1].date}}</p> -->
-            </div>
+            <div class="time-stamp"></div>
           </li>
         </ul>
       </aside>
@@ -50,8 +46,15 @@
           </article>
         </section>
         <div class="msg-compose">
-          <textarea name="chattext" placeholder="Say something..." v-model="message" @keydown.enter="sendMessage()" />
-          <div id="sendButton" @click="sendMessage()"><font-awesome-icon icon="paper-plane" class="icon"/></div>
+          <textarea
+            name="chattext"
+            placeholder="Say something..."
+            v-model="message"
+            @keydown.enter="sendMessage()"
+          />
+          <div id="sendButton" @click="sendMessage()">
+            <font-awesome-icon icon="paper-plane" class="icon"/>
+          </div>
         </div>
       </section>
     </div>
@@ -124,30 +127,6 @@ export default {
     this.socket.on("message", data => {
       this.chats.push(data);
     });
-    // setTimeout(()=>{
-    //   this.$http
-    //   .get("https://contact-dot-refixsoa2019.appspot.com/api/contact")
-    //   .then(response => {
-    //     return response.json();
-    //   })
-    //   .then(data => {
-    //     const result = [];
-    //     for (let key in data) {
-    //       if (this.isCompany) {
-    //         if (data[key].companyId == this.currentUser.ID){
-    //           result.push(data[key]);
-    //         }
-    //       } else {
-    //         if (data[key].customerId == this.currentUser.ID) {
-    //           result.push(data[key]);
-    //         }
-    //       }
-    //     }
-    //     this.contacts = result;
-    //     console.log("in mounted settimeout");
-    //     console.log(this.contacts);
-    //   });
-    // }, 2000)
   },
   created() {
     this.$http
@@ -159,7 +138,7 @@ export default {
         const result = [];
         for (let key in data) {
           if (this.isCompany) {
-            if (data[key].companyId == this.currentUser.ID){
+            if (data[key].companyId == this.currentUser.ID) {
               result.push(data[key]);
             }
           } else {
@@ -220,12 +199,12 @@ export default {
 }
 
 #chat-screen {
-  background-image: linear-gradient(120deg, #2c92eb 0%, #B5D6FB 100%);
+  background-image: linear-gradient(120deg, #2c92eb 0%, #b5d6fb 100%);
   background-size: cover;
 }
 
 .user header {
-  background-color:#2c92eb;
+  background-color: #2c92eb;
   padding: 2rem 0;
   display: flex;
   align-items: center;

@@ -59,8 +59,8 @@
 
 <script>
 import jsPDF from "jspdf";
-import refixLogo from "./refixLogo.js";
-import waterMark from "./exampleWaterMark.js";
+import refixLogo from "../assets/refixLogo.js";
+import waterMask from "../assets/exampleWaterMask.js"
 
 export default {
   data() {

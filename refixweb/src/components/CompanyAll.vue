@@ -11,11 +11,7 @@
             style="width: 13rem; height: 19.5rem"
             @click="setCompany(compa)"
           >
-            <img
-              :src="compa.companyLogo"
-              class="card-img-top"
-              alt="Image company"
-            >
+            <img :src="compa.companyLogo" class="card-img-top" alt="Image company">
             <div class="card-body">
               <h5 class="card-title">{{ compa.companyName }}</h5>
               <p class="card-text">{{ compa.description }}</p>

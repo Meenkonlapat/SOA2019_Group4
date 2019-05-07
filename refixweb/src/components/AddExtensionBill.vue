@@ -1,17 +1,33 @@
 <template>
   <div id="addExtension">
     <div class="container mt-5">
-      
       <div class="d-flex justify-content-center mb-3 h3">Add repair detail</div>
       <form class="mb-3">
         <div class="form-row">
           <div class="col-10">
-            <input name="detailbill" type="text" class="form-control" placeholder="Detail" v-model="detail">
+            <input
+              name="detailbill"
+              type="text"
+              class="form-control"
+              placeholder="Detail"
+              v-model="detail"
+            >
           </div>
           <div class="col">
-            <input name="price" type="text" class="form-control" placeholder="Price" v-model="price">
+            <input
+              name="price"
+              type="text"
+              class="form-control"
+              placeholder="Price"
+              v-model="price"
+            >
           </div>
-          <button name="addBill" type="button" class="btn btn-success btn-sm" @click="addBill()">Confirm</button>
+          <button
+            name="addBill"
+            type="button"
+            class="btn btn-success btn-sm"
+            @click="addBill()"
+          >Confirm</button>
         </div>
       </form>
       <div class="d-flex justify-content-center mb-3 h3">List bill</div>
@@ -73,14 +89,14 @@ export default {
           "https://request-dot-refixsoa2019.appspot.com/api/request/" +
             this.request._id +
             "/bill",
-          {bill: this.request.bill}
+          { bill: this.request.bill }
         )
-        .then((response) => {
+        .then(response => {
           console.log("add bill complete");
           this.setRequestStatus();
         });
     },
-    deleteBill(index){
+    deleteBill(index) {
       this.request.bill.splice(index, 1);
       this.calculateSum();
       this.$http
@@ -88,18 +104,17 @@ export default {
           "https://request-dot-refixsoa2019.appspot.com/api/request/" +
             this.request._id +
             "/bill",
-          {bill: this.request.bill}
+          { bill: this.request.bill }
         )
-        .then((response) => {
+        .then(response => {
           console.log("remove bill complete");
           this.setRequestStatus();
         });
     },
-    setRequestStatus(){
-      if (this.request.bill.length > 0){
+    setRequestStatus() {
+      if (this.request.bill.length > 0) {
         this.request.status = "offered";
-      }
-      else if (this.request.bill.length == 0){
+      } else if (this.request.bill.length == 0) {
         this.request.status = "waiting";
       }
       this.$http
@@ -107,9 +122,9 @@ export default {
           "https://request-dot-refixsoa2019.appspot.com/api/request/" +
             this.request._id +
             "/status",
-          {status: this.request.status}
+          { status: this.request.status }
         )
-        .then((response) => {
+        .then(response => {
           console.log("remove update status complete");
         });
     }
@@ -126,7 +141,7 @@ export default {
       }
     }
   },
-  mounted(){
+  mounted() {
     this.calculateSum();
   }
 };
@@ -163,6 +178,4 @@ export default {
 #backPage:hover::after {
   opacity: 1;
 }
-
-
 </style>

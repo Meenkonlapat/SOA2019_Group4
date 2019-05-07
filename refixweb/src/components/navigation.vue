@@ -9,7 +9,6 @@
         style="padding-top: 7px;"
       >
     </router-link>
-
     <nav class="nav container">
       <router-link to="/" router-link-active tag="li" class="col">
         <a name="home" class="nav-link">Home</a>
@@ -22,16 +21,16 @@
       <router-link to="/messenger" router-link-active tag="li" class="col">
         <a name="message" class="nav-link">Message</a>
       </router-link>
-
       <template v-if="!currentUser.name">
         <router-link to="/login" router-link-active tag="li" class="col">
           <a name="login" class="nav-link">Login</a>
         </router-link>
       </template>
-
       <template v-else>
         <router-link to="/" router-link-active tag="li" class="col">
-          <div @click="logOut()"><a name="logout" class="nav-link">LogOut</a></div>
+          <div @click="logOut()">
+            <a name="logout" class="nav-link">LogOut</a>
+          </div>
         </router-link>
       </template>
     </nav>
@@ -41,22 +40,21 @@
 <script>
 export default {
   methods: {
-    logOut(){
-      if (confirm("Do you want to logout?"))
-      {
-        this.$store.dispatch("commitCurrentUser", {name:"", ID:""});
+    logOut() {
+      if (confirm("Do you want to logout?")) {
+        this.$store.dispatch("commitCurrentUser", { name: "", ID: "" });
         this.$store.dispatch("commitIsCompany", false);
       }
     }
   },
-  computed:{
-    currentUser:{
+  computed: {
+    currentUser: {
       get() {
         return this.$store.getters["getCurrentUser"];
       }
     },
-    inLoginPage:{
-      get(){
+    inLoginPage: {
+      get() {
         return this.$store.getters["getInLoginPage"];
       }
     }

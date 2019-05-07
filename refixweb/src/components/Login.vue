@@ -28,10 +28,7 @@
         </div>
       </div>
       <div class="text-center">
-        <!-- <router-link to="/"> -->
-          <button type="button" class="btn login" @click="setCurrentUser()">Login</button>
-        <!-- </router-link> -->
-
+        <button type="button" class="btn login" @click="setCurrentUser()">Login</button>
         <hr style="background-color: #d9dadc;">
         <p class="textAcc">
           <b>Don't have an account?</b>
@@ -56,34 +53,30 @@ export default {
   methods: {
     setCurrentUser() {
       let user = {
-          name: "",
-          ID:""
+        name: "",
+        ID: ""
       };
       if (!this.username) {
         alert("username is empty!");
         return;
-      }
-      else if (this.username == "asd")
-      {
-          user = {
-              name: "asd",
-              ID: "000001",
-              address: "123/123 Bangkok"
-          }
-          this.$router.push("/")
-      }
-      else if (this.username == "companya")
-      {
+      } else if (this.username == "asd") {
         user = {
-          name : "companya",
+          name: "asd",
+          ID: "000001",
+          address: "123/123 Bangkok"
+        };
+        this.$router.push("/");
+      } else if (this.username == "companya") {
+        user = {
+          name: "companya",
           ID: "000001",
           address: "11/111 Bangkok"
-        }
+        };
         this.$store.dispatch("commitIsCompany", true);
-        this.$router.push("/admin")
+        this.$router.push("/admin");
       }
       this.$store.dispatch("commitCurrentUser", user);
-    },
+    }
   },
   beforeRouteLeave(to, from, next) {
     this.$store.dispatch("commitInLoginPage", false);

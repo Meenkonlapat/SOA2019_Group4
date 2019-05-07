@@ -12,18 +12,13 @@
               style="width: 13rem; height: 19.5rem"
               @click="setCompany(compa)"
             >
-              <img
-                :src="compa.companyLogo"
-                class="card-img-top"
-                alt="Image company"
-              >
+              <img :src="compa.companyLogo" class="card-img-top" alt="Image company">
               <div class="card-body">
                 <h5 class="card-title">{{compa.companyName}}</h5>
                 <p class="card-text">{{compa.description}}</p>
               </div>
             </div>
           </router-link>
-
           <router-link to="/all" :key="index" v-if="index == 4">
             <div
               class="card card-info final-card"
@@ -43,11 +38,7 @@
                 class="inside"
                 style="position:absolute; top:0; left:0; width:100%; height:100%; z-index:1"
               >
-                <img
-                  :src="compa.companyLogo"
-                  class="card-img-top"
-                  alt="Image company"
-                >
+                <img :src="compa.companyLogo" class="card-img-top" alt="Image company">
                 <div class="card-body">
                   <h5 class="card-title">{{ compa.companyName }}</h5>
                   <p class="card-text">{{ compa.description }}</p>
@@ -58,7 +49,6 @@
         </template>
       </div>
     </div>
-
     <div class="electric">
       <div class="header">
         <h3 style="text-align:start">Electric</h3>
@@ -71,18 +61,13 @@
               style="width: 13rem; height: 19.5rem"
               @click="setCompany(compa)"
             >
-              <img
-                :src="compa.companyLogo"
-                class="card-img-top"
-                alt="Image company"
-              >
+              <img :src="compa.companyLogo" class="card-img-top" alt="Image company">
               <div class="card-body">
                 <h5 class="card-title">{{compa.companyName}}</h5>
                 <p class="card-text">{{compa.description}}</p>
               </div>
             </div>
           </router-link>
-
           <router-link to="/all" :key="index" v-if="index == 4">
             <div
               class="card card-info final-card"
@@ -102,11 +87,7 @@
                 class="inside"
                 style="position:absolute; top:0; left:0; width:100%; height:100%; z-index:1"
               >
-                <img
-                  :src="compa.companyLogo"
-                  class="card-img-top"
-                  alt="Image company"
-                >
+                <img :src="compa.companyLogo" class="card-img-top" alt="Image company">
                 <div class="card-body">
                   <h5 class="card-title">{{ compa.companyName }}</h5>
                   <p class="card-text">{{ compa.description }}</p>
@@ -117,7 +98,6 @@
         </template>
       </div>
     </div>
-
     <div class="plumbling">
       <div class="header">
         <h3 style="text-align:start">Plumbling</h3>
@@ -130,18 +110,13 @@
               style="width: 13rem; height: 19.5rem"
               @click="setCompany(compa)"
             >
-              <img
-                :src="compa.companyLogo"
-                class="card-img-top"
-                alt="Image company"
-              >
+              <img :src="compa.companyLogo" class="card-img-top" alt="Image company">
               <div class="card-body">
                 <h5 class="card-title">{{compa.companyName}}</h5>
                 <p class="card-text">{{compa.description}}</p>
               </div>
             </div>
           </router-link>
-
           <router-link to="/all" :key="index" v-if="index == 4">
             <div
               class="card card-info final-card"
@@ -161,11 +136,7 @@
                 class="inside"
                 style="position:absolute; top:0; left:0; width:100%; height:100%; z-index:1"
               >
-                <img
-                  :src="compa.companyLogo"
-                  class="card-img-top"
-                  alt="Image company"
-                >
+                <img :src="compa.companyLogo" class="card-img-top" alt="Image company">
                 <div class="card-body">
                   <h5 class="card-title">{{ compa.companyName }}</h5>
                   <p class="card-text">{{ compa.description }}</p>
@@ -176,7 +147,6 @@
         </template>
       </div>
     </div>
-
   </div>
 </template>
 
@@ -246,8 +216,7 @@ export default {
             electricArray.length < 5
           ) {
             electricArray.push(data[key]);
-          }
-          else if (
+          } else if (
             data[key].companyCategory == "plumbling" &&
             plumblingArray.length < 5
           ) {

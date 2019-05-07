@@ -1,34 +1,28 @@
 <template>
   <div class="container" id="company">
-    <!-- {{company}} -->
     <div class="header">
       <h3 style="text-align:start; margin-bottom: 1em; margin-left: 0.30em;">{{company.companyName}}</h3>
     </div>
     <div class="row">
       <div class="col-4">
-        <img
-          :src="company.companyLogo"
-          alt="Image Company"
-          id="imgCompany"
-        >
+        <img :src="company.companyLogo" alt="Image Company" id="imgCompany">
       </div>
       <div class="col-8">
         <p id="text-description">{{company.companyDescription}}</p>
         <div id="button-group">
           <router-link to="/request">
-          <div name="requestBT" class="btn btn-outline-primary">Request</div>
+            <div name="requestBT" class="btn btn-outline-primary">Request</div>
           </router-link>
-          <div name="contactBT" class="btn btn-outline-info ml-3" @click="addContact(company)">Contact</div>
+          <div
+            name="contactBT"
+            class="btn btn-outline-info ml-3"
+            @click="addContact(company)"
+          >Contact</div>
         </div>
       </div>
       <div class="portfolio">
         <template v-for="(pict, index) in company.companyPictures">
-          <img
-          :src="pict"
-          alt="img port"
-          class="port"
-          :key="index"
-        >
+          <img :src="pict" alt="img port" class="port" :key="index">
         </template>
       </div>
     </div>
@@ -102,17 +96,16 @@ export default {
 #imgCompany {
   max-width: 300px;
   max-height: 300px;
-  padding: .2rem;
+  padding: 0.2rem;
   -webkit-border-radius: 2px;
   -moz-border-radius: 2px;
   border-radius: 2px;
   border: 1px solid rgba(0, 0, 0, 0.15);
-  
 }
 .port {
   margin-left: 15px;
   margin-top: 2em;
-  padding: .2rem;
+  padding: 0.2rem;
   max-width: 200px;
   max-height: 130px;
   -webkit-border-radius: 2px;
@@ -174,12 +167,12 @@ export default {
 a:hover {
   text-decoration: none;
 }
-#text-description{
+#text-description {
   border: 1px solid rgba(0, 0, 0, 0.15);
   border-radius: 6px;
   -webkit-border-radius: 6px;
   -moz-border-radius: 6px;
   text-align: justify;
-  padding: .5rem;
+  padding: 0.5rem;
 }
 </style>

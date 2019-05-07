@@ -22,7 +22,13 @@
       <div class="form-group row">
         <label for="text" class="col-sm-2 col-form-label">Detail:</label>
         <div class="col-sm-10">
-          <textarea name="repairDetail" type="text" class="form-control" v-model="repairDetail" rows="10"/>
+          <textarea
+            name="repairDetail"
+            type="text"
+            class="form-control"
+            v-model="repairDetail"
+            rows="10"
+          />
         </div>
       </div>
     </form>
@@ -174,8 +180,8 @@ label {
   border-color: #fff;
   color: #fff;
 }
-textarea{
+textarea {
   resize: none;
-  width:100%;
+  width: 100%;
 }
 </style>
