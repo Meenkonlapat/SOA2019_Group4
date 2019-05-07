@@ -30,7 +30,7 @@ UItest
 
 *** Keyword ***
 เปิดเว็บ
-    Open Browser    localhost:8080/  browser=chrome
+    Open Browser    https://refixsoa2019.firebaseapp.com/  browser=chrome
     Maximize Browser Window
     Sleep    2s
     
